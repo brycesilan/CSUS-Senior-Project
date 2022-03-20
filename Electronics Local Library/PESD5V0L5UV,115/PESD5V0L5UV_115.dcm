@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PESD5V0L5UV,115
+D PESDxL5UF; PESDxL5UV; PESDxL5UY - Low capacitance unidirectional fivefold ESD protection diode arrays
+K
+F https://assets.nexperia.com/documents/data-sheet/PESDXL5UF_V_Y.pdf
+$ENDCMP
+#
+#End Doc Library

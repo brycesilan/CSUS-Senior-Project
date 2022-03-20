@@ -1,0 +1,24 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# TBL004-508-02BE-2GY
+#
+DEF TBL004-508-02BE-2GY J 0 40 Y Y 1 L N
+F0 "J" -220 200 50 H V L BNN
+F1 "TBL004-508-02BE-2GY" -200 -200 50 H V L BNN
+F2 "CUI_TBL004-508-02BE-2GY" 0 0 50 H I L BNN
+F3 "" 0 0 50 H I L BNN
+F4 "Manufacturer Recommendations" 0 0 50 H I L BNN "STANDARD"
+F5 "CUI" 0 0 50 H I L BNN "MANUFACTURER"
+DRAW
+S -200 -100 200 200 0 0 10 f
+X 1 1_A -400 100 200 R 40 40 0 0 P 
+X 1 1_B -400 100 200 R 40 40 0 0 P 
+X 2 2_A -400 0 200 R 40 40 0 0 P 
+X 2 2_B -400 0 200 R 40 40 0 0 P 
+ENDDRAW
+ENDDEF
+#
+# End Library

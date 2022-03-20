@@ -1,0 +1,1524 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Notes Line
+	7875 675  7900 675 
+Wire Notes Line
+	7625 6400 7625 650 
+Wire Notes Line
+	7775 5100 7775 5075
+Text Notes 8075 825  0    118  ~ 0
+Daughterboard Connectors
+$Comp
+L Connector_Generic:Conn_02x07_Odd_Even J1
+U 1 1 604F169C
+P 9175 1625
+F 0 "J1" H 9225 2050 50  0000 C CNN
+F 1 "Conn_02x07_Odd_Even" H 9225 2051 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical" H 9175 1625 50  0001 C CNN
+F 3 "~" H 9175 1625 50  0001 C CNN
+	1    9175 1625
+	1    0    0    -1  
+$EndComp
+Text GLabel 9475 1525 2    50   Input ~ 0
+LED4_1xA3
+Text GLabel 9475 1425 2    50   Input ~ 0
+LED3_1xA2
+Text GLabel 8975 1425 0    50   Input ~ 0
+LED1_1xA0
+$Comp
+L power:+5V #PWR0101
+U 1 1 6050F459
+P 8925 1275
+AR Path="/6050F459" Ref="#PWR0101"  Part="1" 
+AR Path="/60470140/6050F459" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/6050F459" Ref="#PWR028"  Part="1" 
+F 0 "#PWR0101" H 8925 1125 50  0001 C CNN
+F 1 "+5V" H 8940 1448 50  0000 C CNN
+F 2 "" H 8925 1275 50  0001 C CNN
+F 3 "" H 8925 1275 50  0001 C CNN
+	1    8925 1275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8925 1275 8925 1325
+Wire Wire Line
+	8925 1325 8975 1325
+$Comp
+L power:+5V #PWR0102
+U 1 1 60519506
+P 9525 1275
+AR Path="/60519506" Ref="#PWR0102"  Part="1" 
+AR Path="/60470140/60519506" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/60519506" Ref="#PWR032"  Part="1" 
+F 0 "#PWR0102" H 9525 1125 50  0001 C CNN
+F 1 "+5V" H 9540 1448 50  0000 C CNN
+F 2 "" H 9525 1275 50  0001 C CNN
+F 3 "" H 9525 1275 50  0001 C CNN
+	1    9525 1275
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9525 1275 9525 1325
+Wire Wire Line
+	9525 1325 9475 1325
+Text GLabel 8975 1625 0    50   Output ~ 0
+SENSOR1
+Text GLabel 9475 1725 2    50   Output ~ 0
+SENSOR3
+Text GLabel 8975 1825 0    50   Output ~ 0
+SENSOR2
+Text GLabel 9475 1925 2    50   Output ~ 0
+SENSOR4
+$Comp
+L Connector_Generic:Conn_02x07_Odd_Even J2
+U 1 1 60534764
+P 9150 2975
+F 0 "J2" H 9200 3400 50  0000 C CNN
+F 1 "Conn_02x07_Odd_Even" H 9200 3401 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical" H 9150 2975 50  0001 C CNN
+F 3 "~" H 9150 2975 50  0001 C CNN
+	1    9150 2975
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0103
+U 1 1 6053476E
+P 8900 2625
+AR Path="/6053476E" Ref="#PWR0103"  Part="1" 
+AR Path="/60470140/6053476E" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/6053476E" Ref="#PWR025"  Part="1" 
+F 0 "#PWR0103" H 8900 2475 50  0001 C CNN
+F 1 "+5V" H 8915 2798 50  0000 C CNN
+F 2 "" H 8900 2625 50  0001 C CNN
+F 3 "" H 8900 2625 50  0001 C CNN
+	1    8900 2625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 2625 8900 2675
+Wire Wire Line
+	8900 2675 8950 2675
+$Comp
+L power:+5V #PWR0104
+U 1 1 60534776
+P 9500 2625
+AR Path="/60534776" Ref="#PWR0104"  Part="1" 
+AR Path="/60470140/60534776" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/60534776" Ref="#PWR029"  Part="1" 
+F 0 "#PWR0104" H 9500 2475 50  0001 C CNN
+F 1 "+5V" H 9515 2798 50  0000 C CNN
+F 2 "" H 9500 2625 50  0001 C CNN
+F 3 "" H 9500 2625 50  0001 C CNN
+	1    9500 2625
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 2625 9500 2675
+Wire Wire Line
+	9500 2675 9450 2675
+$Comp
+L Connector_Generic:Conn_02x07_Odd_Even J3
+U 1 1 60539C08
+P 9150 4325
+F 0 "J3" H 9200 4750 50  0000 C CNN
+F 1 "Conn_02x07_Odd_Even" H 9200 4751 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical" H 9150 4325 50  0001 C CNN
+F 3 "~" H 9150 4325 50  0001 C CNN
+	1    9150 4325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0105
+U 1 1 60539C12
+P 8900 3975
+AR Path="/60539C12" Ref="#PWR0105"  Part="1" 
+AR Path="/60470140/60539C12" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/60539C12" Ref="#PWR026"  Part="1" 
+F 0 "#PWR0105" H 8900 3825 50  0001 C CNN
+F 1 "+5V" H 8915 4148 50  0000 C CNN
+F 2 "" H 8900 3975 50  0001 C CNN
+F 3 "" H 8900 3975 50  0001 C CNN
+	1    8900 3975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 3975 8900 4025
+Wire Wire Line
+	8900 4025 8950 4025
+$Comp
+L power:+5V #PWR0106
+U 1 1 60539C1A
+P 9500 3975
+AR Path="/60539C1A" Ref="#PWR0106"  Part="1" 
+AR Path="/60470140/60539C1A" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/60539C1A" Ref="#PWR030"  Part="1" 
+F 0 "#PWR0106" H 9500 3825 50  0001 C CNN
+F 1 "+5V" H 9515 4148 50  0000 C CNN
+F 2 "" H 9500 3975 50  0001 C CNN
+F 3 "" H 9500 3975 50  0001 C CNN
+	1    9500 3975
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 3975 9500 4025
+Wire Wire Line
+	9500 4025 9450 4025
+$Comp
+L Connector_Generic:Conn_02x07_Odd_Even J4
+U 1 1 6053FBBF
+P 9150 5650
+F 0 "J4" H 9200 6075 50  0000 C CNN
+F 1 "Conn_02x07_Odd_Even" H 9200 6076 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical" H 9150 5650 50  0001 C CNN
+F 3 "~" H 9150 5650 50  0001 C CNN
+	1    9150 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0107
+U 1 1 6053FBC9
+P 8900 5300
+AR Path="/6053FBC9" Ref="#PWR0107"  Part="1" 
+AR Path="/60470140/6053FBC9" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/6053FBC9" Ref="#PWR027"  Part="1" 
+F 0 "#PWR0107" H 8900 5150 50  0001 C CNN
+F 1 "+5V" H 8915 5473 50  0000 C CNN
+F 2 "" H 8900 5300 50  0001 C CNN
+F 3 "" H 8900 5300 50  0001 C CNN
+	1    8900 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 5300 8900 5350
+Wire Wire Line
+	8900 5350 8950 5350
+$Comp
+L power:+5V #PWR0108
+U 1 1 6053FBD1
+P 9500 5300
+AR Path="/6053FBD1" Ref="#PWR0108"  Part="1" 
+AR Path="/60470140/6053FBD1" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/6053FBD1" Ref="#PWR031"  Part="1" 
+F 0 "#PWR0108" H 9500 5150 50  0001 C CNN
+F 1 "+5V" H 9515 5473 50  0000 C CNN
+F 2 "" H 9500 5300 50  0001 C CNN
+F 3 "" H 9500 5300 50  0001 C CNN
+	1    9500 5300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 5300 9500 5350
+Wire Wire Line
+	9500 5350 9450 5350
+Text GLabel 8975 1525 0    50   Input ~ 0
+LED2_1xA1
+Text GLabel 9450 2875 2    50   Input ~ 0
+LED8_1xA7
+Text GLabel 8950 2775 0    50   Input ~ 0
+LED5_1xA4
+Text GLabel 9450 2775 2    50   Input ~ 0
+LED7_1xA6
+Text GLabel 8950 2875 0    50   Input ~ 0
+LED6_1xA5
+Text GLabel 8950 2975 0    50   Output ~ 0
+SENSOR5
+Text GLabel 9450 3075 2    50   Output ~ 0
+SENSOR7
+Text GLabel 8950 3175 0    50   Output ~ 0
+SENSOR6
+Text GLabel 9450 3275 2    50   Output ~ 0
+SENSOR8
+Text GLabel 8950 4125 0    50   Input ~ 0
+LED9_1xB0
+Text GLabel 9450 4125 2    50   Input ~ 0
+LED11_1xB2
+Text GLabel 8950 4225 0    50   Input ~ 0
+LED10_1xB1
+Text GLabel 9450 4225 2    50   Input ~ 0
+LED12_1xB3
+Text GLabel 8950 4325 0    50   Output ~ 0
+SENSOR9
+Text GLabel 9450 4425 2    50   Output ~ 0
+SENSOR11
+Text GLabel 8950 4525 0    50   Output ~ 0
+SENSOR10
+Text GLabel 9450 4625 2    50   Output ~ 0
+SENSOR12
+Text GLabel 8950 5450 0    50   Input ~ 0
+LED13_1xB4
+Text GLabel 9450 5450 2    50   Input ~ 0
+LED15_1xB6
+Text GLabel 8950 5550 0    50   Input ~ 0
+LED14_1xB5
+Text GLabel 9450 5550 2    50   Input ~ 0
+LED16_1xB7
+Text GLabel 8950 5650 0    50   Output ~ 0
+SENSOR13
+Text GLabel 9450 5750 2    50   Output ~ 0
+SENSOR15
+Text GLabel 8950 5850 0    50   Output ~ 0
+SENSOR14
+Text GLabel 9450 5950 2    50   Output ~ 0
+SENSOR16
+$Comp
+L OzoneController-rescue:GND-power-OzoneController-rescue #PWR0109
+U 1 1 6051E80D
+P 8475 2000
+AR Path="/6051E80D" Ref="#PWR0109"  Part="1" 
+AR Path="/5FDBCBB6/6051E80D" Ref="#PWR?"  Part="1" 
+AR Path="/60470140/6051E80D" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/6051E80D" Ref="#PWR024"  Part="1" 
+F 0 "#PWR0109" H 8475 1750 50  0001 C CNN
+F 1 "GND" H 8480 1827 50  0000 C CNN
+F 2 "" H 8475 2000 50  0001 C CNN
+F 3 "" H 8475 2000 50  0001 C CNN
+	1    8475 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8475 1725 8475 1925
+Wire Wire Line
+	8975 1725 8475 1725
+Wire Wire Line
+	8975 1925 8475 1925
+Connection ~ 8475 1925
+Wire Wire Line
+	8475 1925 8475 2000
+$Comp
+L OzoneController-rescue:GND-power-OzoneController-rescue #PWR0110
+U 1 1 605244B7
+P 10000 1975
+AR Path="/605244B7" Ref="#PWR0110"  Part="1" 
+AR Path="/5FDBCBB6/605244B7" Ref="#PWR?"  Part="1" 
+AR Path="/60470140/605244B7" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/605244B7" Ref="#PWR036"  Part="1" 
+F 0 "#PWR0110" H 10000 1725 50  0001 C CNN
+F 1 "GND" H 10005 1802 50  0000 C CNN
+F 2 "" H 10000 1975 50  0001 C CNN
+F 3 "" H 10000 1975 50  0001 C CNN
+	1    10000 1975
+	-1   0    0    -1  
+$EndComp
+$Comp
+L OzoneController-rescue:GND-power-OzoneController-rescue #PWR0111
+U 1 1 60550E9C
+P 8450 3350
+AR Path="/60550E9C" Ref="#PWR0111"  Part="1" 
+AR Path="/5FDBCBB6/60550E9C" Ref="#PWR?"  Part="1" 
+AR Path="/60470140/60550E9C" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/60550E9C" Ref="#PWR021"  Part="1" 
+F 0 "#PWR0111" H 8450 3100 50  0001 C CNN
+F 1 "GND" H 8455 3177 50  0000 C CNN
+F 2 "" H 8450 3350 50  0001 C CNN
+F 3 "" H 8450 3350 50  0001 C CNN
+	1    8450 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 3075 8450 3275
+Wire Wire Line
+	8950 3075 8450 3075
+Wire Wire Line
+	8950 3275 8450 3275
+Connection ~ 8450 3275
+Wire Wire Line
+	8450 3275 8450 3350
+$Comp
+L OzoneController-rescue:GND-power-OzoneController-rescue #PWR0112
+U 1 1 60554107
+P 8450 4700
+AR Path="/60554107" Ref="#PWR0112"  Part="1" 
+AR Path="/5FDBCBB6/60554107" Ref="#PWR?"  Part="1" 
+AR Path="/60470140/60554107" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/60554107" Ref="#PWR022"  Part="1" 
+F 0 "#PWR0112" H 8450 4450 50  0001 C CNN
+F 1 "GND" H 8455 4527 50  0000 C CNN
+F 2 "" H 8450 4700 50  0001 C CNN
+F 3 "" H 8450 4700 50  0001 C CNN
+	1    8450 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 4425 8450 4625
+Wire Wire Line
+	8950 4425 8450 4425
+Wire Wire Line
+	8950 4625 8450 4625
+Connection ~ 8450 4625
+Wire Wire Line
+	8450 4625 8450 4700
+$Comp
+L OzoneController-rescue:GND-power-OzoneController-rescue #PWR0113
+U 1 1 6055761C
+P 8450 6025
+AR Path="/6055761C" Ref="#PWR0113"  Part="1" 
+AR Path="/5FDBCBB6/6055761C" Ref="#PWR?"  Part="1" 
+AR Path="/60470140/6055761C" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/6055761C" Ref="#PWR023"  Part="1" 
+F 0 "#PWR0113" H 8450 5775 50  0001 C CNN
+F 1 "GND" H 8455 5852 50  0000 C CNN
+F 2 "" H 8450 6025 50  0001 C CNN
+F 3 "" H 8450 6025 50  0001 C CNN
+	1    8450 6025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 5750 8450 5950
+Wire Wire Line
+	8950 5750 8450 5750
+Wire Wire Line
+	8950 5950 8450 5950
+Connection ~ 8450 5950
+Wire Wire Line
+	8450 5950 8450 6025
+Wire Wire Line
+	10000 1625 10000 1825
+Wire Wire Line
+	9475 1625 10000 1625
+Wire Wire Line
+	9475 1825 10000 1825
+Connection ~ 10000 1825
+Wire Wire Line
+	10000 1825 10000 1975
+$Comp
+L OzoneController-rescue:GND-power-OzoneController-rescue #PWR0114
+U 1 1 60561590
+P 9975 3325
+AR Path="/60561590" Ref="#PWR0114"  Part="1" 
+AR Path="/5FDBCBB6/60561590" Ref="#PWR?"  Part="1" 
+AR Path="/60470140/60561590" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/60561590" Ref="#PWR033"  Part="1" 
+F 0 "#PWR0114" H 9975 3075 50  0001 C CNN
+F 1 "GND" H 9980 3152 50  0000 C CNN
+F 2 "" H 9975 3325 50  0001 C CNN
+F 3 "" H 9975 3325 50  0001 C CNN
+	1    9975 3325
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9975 2975 9975 3175
+Wire Wire Line
+	9450 2975 9975 2975
+Wire Wire Line
+	9450 3175 9975 3175
+Connection ~ 9975 3175
+Wire Wire Line
+	9975 3175 9975 3325
+$Comp
+L OzoneController-rescue:GND-power-OzoneController-rescue #PWR0115
+U 1 1 60564C6E
+P 9975 4675
+AR Path="/60564C6E" Ref="#PWR0115"  Part="1" 
+AR Path="/5FDBCBB6/60564C6E" Ref="#PWR?"  Part="1" 
+AR Path="/60470140/60564C6E" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/60564C6E" Ref="#PWR034"  Part="1" 
+F 0 "#PWR0115" H 9975 4425 50  0001 C CNN
+F 1 "GND" H 9980 4502 50  0000 C CNN
+F 2 "" H 9975 4675 50  0001 C CNN
+F 3 "" H 9975 4675 50  0001 C CNN
+	1    9975 4675
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9975 4325 9975 4525
+Wire Wire Line
+	9450 4325 9975 4325
+Wire Wire Line
+	9450 4525 9975 4525
+Connection ~ 9975 4525
+Wire Wire Line
+	9975 4525 9975 4675
+$Comp
+L OzoneController-rescue:GND-power-OzoneController-rescue #PWR0116
+U 1 1 6056667F
+P 9975 6000
+AR Path="/6056667F" Ref="#PWR0116"  Part="1" 
+AR Path="/5FDBCBB6/6056667F" Ref="#PWR?"  Part="1" 
+AR Path="/60470140/6056667F" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/6056667F" Ref="#PWR035"  Part="1" 
+F 0 "#PWR0116" H 9975 5750 50  0001 C CNN
+F 1 "GND" H 9980 5827 50  0000 C CNN
+F 2 "" H 9975 6000 50  0001 C CNN
+F 3 "" H 9975 6000 50  0001 C CNN
+	1    9975 6000
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9975 5650 9975 5850
+Wire Wire Line
+	9450 5650 9975 5650
+Wire Wire Line
+	9450 5850 9975 5850
+Connection ~ 9975 5850
+Wire Wire Line
+	9975 5850 9975 6000
+Text GLabel 1300 1225 0    50   Input ~ 0
+LED1_1xA0
+Text GLabel 1300 1525 0    50   Input ~ 0
+LED2_1xA1
+Text GLabel 1300 2125 0    50   Input ~ 0
+LED4_1xA3
+Text GLabel 1300 1825 0    50   Input ~ 0
+LED3_1xA2
+$Comp
+L Device:R_Small_US R1
+U 1 1 613E95AC
+P 1650 1225
+F 0 "R1" V 1445 1225 50  0000 C CNN
+F 1 "4.99k" V 1536 1225 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1650 1225 50  0001 C CNN
+F 3 "~" H 1650 1225 50  0001 C CNN
+	1    1650 1225
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R5
+U 1 1 613F0E4C
+P 1900 1525
+F 0 "R5" V 1695 1525 50  0000 C CNN
+F 1 "4.99k" V 1786 1525 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1900 1525 50  0001 C CNN
+F 3 "~" H 1900 1525 50  0001 C CNN
+	1    1900 1525
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R9
+U 1 1 613F1CFE
+P 2175 1825
+F 0 "R9" V 1970 1825 50  0000 C CNN
+F 1 "4.99k" V 2061 1825 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2175 1825 50  0001 C CNN
+F 3 "~" H 2175 1825 50  0001 C CNN
+	1    2175 1825
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R13
+U 1 1 613FD332
+P 2425 2125
+F 0 "R13" V 2220 2125 50  0000 C CNN
+F 1 "4.99k" V 2311 2125 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2425 2125 50  0001 C CNN
+F 3 "~" H 2425 2125 50  0001 C CNN
+	1    2425 2125
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED_Small D13
+U 1 1 613FE0EE
+P 3425 2125
+F 0 "D13" H 3425 1918 50  0000 C CNN
+F 1 "GRN" H 3425 2009 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 3425 2125 50  0001 C CNN
+F 3 "~" V 3425 2125 50  0001 C CNN
+	1    3425 2125
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D5
+U 1 1 61405668
+P 2900 1525
+F 0 "D5" H 2900 1318 50  0000 C CNN
+F 1 "GRN" H 2900 1409 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 2900 1525 50  0001 C CNN
+F 3 "~" V 2900 1525 50  0001 C CNN
+	1    2900 1525
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D9
+U 1 1 61406E1A
+P 3175 1825
+F 0 "D9" H 3175 1618 50  0000 C CNN
+F 1 "GRN" H 3175 1709 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 3175 1825 50  0001 C CNN
+F 3 "~" V 3175 1825 50  0001 C CNN
+	1    3175 1825
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D1
+U 1 1 614040E1
+P 2650 1225
+F 0 "D1" H 2650 1018 50  0000 C CNN
+F 1 "GRN" H 2650 1109 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 2650 1225 50  0001 C CNN
+F 3 "~" V 2650 1225 50  0001 C CNN
+	1    2650 1225
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 614105BF
+P 3800 1225
+F 0 "#PWR0117" H 3800 975 50  0001 C CNN
+F 1 "GND" H 3805 1052 50  0000 C CNN
+F 2 "" H 3800 1225 50  0001 C CNN
+F 3 "" H 3800 1225 50  0001 C CNN
+	1    3800 1225
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0118
+U 1 1 61413056
+P 3800 1525
+F 0 "#PWR0118" H 3800 1275 50  0001 C CNN
+F 1 "GND" H 3805 1352 50  0000 C CNN
+F 2 "" H 3800 1525 50  0001 C CNN
+F 3 "" H 3800 1525 50  0001 C CNN
+	1    3800 1525
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0119
+U 1 1 61413E30
+P 3825 1825
+F 0 "#PWR0119" H 3825 1575 50  0001 C CNN
+F 1 "GND" H 3830 1652 50  0000 C CNN
+F 2 "" H 3825 1825 50  0001 C CNN
+F 3 "" H 3825 1825 50  0001 C CNN
+	1    3825 1825
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0120
+U 1 1 614149D8
+P 3825 2125
+F 0 "#PWR0120" H 3825 1875 50  0001 C CNN
+F 1 "GND" H 3830 1952 50  0000 C CNN
+F 2 "" H 3825 2125 50  0001 C CNN
+F 3 "" H 3825 2125 50  0001 C CNN
+	1    3825 2125
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 1225 3800 1225
+Wire Wire Line
+	3000 1525 3800 1525
+Wire Wire Line
+	3275 1825 3825 1825
+Wire Wire Line
+	3525 2125 3825 2125
+Wire Wire Line
+	2550 1225 1750 1225
+Wire Wire Line
+	2800 1525 2000 1525
+Wire Wire Line
+	3075 1825 2275 1825
+Wire Wire Line
+	2525 2125 3325 2125
+Wire Wire Line
+	1300 1525 1800 1525
+Wire Wire Line
+	1550 1225 1300 1225
+Wire Wire Line
+	1300 1825 2075 1825
+Wire Wire Line
+	1300 2125 2325 2125
+$Comp
+L Device:R_Small_US R2
+U 1 1 61463F3A
+P 1650 2725
+F 0 "R2" V 1445 2725 50  0000 C CNN
+F 1 "4.99k" V 1536 2725 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1650 2725 50  0001 C CNN
+F 3 "~" H 1650 2725 50  0001 C CNN
+	1    1650 2725
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R6
+U 1 1 61463F40
+P 1900 3025
+F 0 "R6" V 1695 3025 50  0000 C CNN
+F 1 "4.99k" V 1786 3025 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1900 3025 50  0001 C CNN
+F 3 "~" H 1900 3025 50  0001 C CNN
+	1    1900 3025
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R10
+U 1 1 61463F46
+P 2175 3325
+F 0 "R10" V 1970 3325 50  0000 C CNN
+F 1 "4.99k" V 2061 3325 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2175 3325 50  0001 C CNN
+F 3 "~" H 2175 3325 50  0001 C CNN
+	1    2175 3325
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R14
+U 1 1 61463F4C
+P 2425 3625
+F 0 "R14" V 2220 3625 50  0000 C CNN
+F 1 "4.99k" V 2311 3625 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2425 3625 50  0001 C CNN
+F 3 "~" H 2425 3625 50  0001 C CNN
+	1    2425 3625
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED_Small D14
+U 1 1 61463F52
+P 3425 3625
+F 0 "D14" H 3425 3418 50  0000 C CNN
+F 1 "GRN" H 3425 3509 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 3425 3625 50  0001 C CNN
+F 3 "~" V 3425 3625 50  0001 C CNN
+	1    3425 3625
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D6
+U 1 1 61463F58
+P 2900 3025
+F 0 "D6" H 2900 2818 50  0000 C CNN
+F 1 "GRN" H 2900 2909 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 2900 3025 50  0001 C CNN
+F 3 "~" V 2900 3025 50  0001 C CNN
+	1    2900 3025
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D10
+U 1 1 61463F5E
+P 3175 3325
+F 0 "D10" H 3175 3118 50  0000 C CNN
+F 1 "GRN" H 3175 3209 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 3175 3325 50  0001 C CNN
+F 3 "~" V 3175 3325 50  0001 C CNN
+	1    3175 3325
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D2
+U 1 1 61463F64
+P 2650 2725
+F 0 "D2" H 2650 2518 50  0000 C CNN
+F 1 "GRN" H 2650 2609 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 2650 2725 50  0001 C CNN
+F 3 "~" V 2650 2725 50  0001 C CNN
+	1    2650 2725
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 61463F6A
+P 3800 2725
+F 0 "#PWR0121" H 3800 2475 50  0001 C CNN
+F 1 "GND" H 3805 2552 50  0000 C CNN
+F 2 "" H 3800 2725 50  0001 C CNN
+F 3 "" H 3800 2725 50  0001 C CNN
+	1    3800 2725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 61463F70
+P 3800 3025
+F 0 "#PWR0122" H 3800 2775 50  0001 C CNN
+F 1 "GND" H 3805 2852 50  0000 C CNN
+F 2 "" H 3800 3025 50  0001 C CNN
+F 3 "" H 3800 3025 50  0001 C CNN
+	1    3800 3025
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 61463F76
+P 3825 3325
+F 0 "#PWR0123" H 3825 3075 50  0001 C CNN
+F 1 "GND" H 3830 3152 50  0000 C CNN
+F 2 "" H 3825 3325 50  0001 C CNN
+F 3 "" H 3825 3325 50  0001 C CNN
+	1    3825 3325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0124
+U 1 1 61463F7C
+P 3825 3625
+F 0 "#PWR0124" H 3825 3375 50  0001 C CNN
+F 1 "GND" H 3830 3452 50  0000 C CNN
+F 2 "" H 3825 3625 50  0001 C CNN
+F 3 "" H 3825 3625 50  0001 C CNN
+	1    3825 3625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 2725 3800 2725
+Wire Wire Line
+	3000 3025 3800 3025
+Wire Wire Line
+	3275 3325 3825 3325
+Wire Wire Line
+	3525 3625 3825 3625
+Wire Wire Line
+	2550 2725 1750 2725
+Wire Wire Line
+	2800 3025 2000 3025
+Wire Wire Line
+	3075 3325 2275 3325
+Wire Wire Line
+	2525 3625 3325 3625
+Wire Wire Line
+	1300 3025 1800 3025
+Wire Wire Line
+	1550 2725 1300 2725
+Wire Wire Line
+	1300 3325 2075 3325
+Wire Wire Line
+	1300 3625 2325 3625
+$Comp
+L Device:R_Small_US R3
+U 1 1 6148C7CC
+P 1650 4225
+F 0 "R3" V 1445 4225 50  0000 C CNN
+F 1 "4.99k" V 1536 4225 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1650 4225 50  0001 C CNN
+F 3 "~" H 1650 4225 50  0001 C CNN
+	1    1650 4225
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R7
+U 1 1 6148C7D2
+P 1900 4525
+F 0 "R7" V 1695 4525 50  0000 C CNN
+F 1 "4.99k" V 1786 4525 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1900 4525 50  0001 C CNN
+F 3 "~" H 1900 4525 50  0001 C CNN
+	1    1900 4525
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R11
+U 1 1 6148C7D8
+P 2175 4825
+F 0 "R11" V 1970 4825 50  0000 C CNN
+F 1 "4.99k" V 2061 4825 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2175 4825 50  0001 C CNN
+F 3 "~" H 2175 4825 50  0001 C CNN
+	1    2175 4825
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R15
+U 1 1 6148C7DE
+P 2425 5125
+F 0 "R15" V 2220 5125 50  0000 C CNN
+F 1 "4.99k" V 2311 5125 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2425 5125 50  0001 C CNN
+F 3 "~" H 2425 5125 50  0001 C CNN
+	1    2425 5125
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED_Small D15
+U 1 1 6148C7E4
+P 3425 5125
+F 0 "D15" H 3425 4918 50  0000 C CNN
+F 1 "GRN" H 3425 5009 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 3425 5125 50  0001 C CNN
+F 3 "~" V 3425 5125 50  0001 C CNN
+	1    3425 5125
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D7
+U 1 1 6148C7EA
+P 2900 4525
+F 0 "D7" H 2900 4318 50  0000 C CNN
+F 1 "GRN" H 2900 4409 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 2900 4525 50  0001 C CNN
+F 3 "~" V 2900 4525 50  0001 C CNN
+	1    2900 4525
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D11
+U 1 1 6148C7F0
+P 3175 4825
+F 0 "D11" H 3175 4618 50  0000 C CNN
+F 1 "GRN" H 3175 4709 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 3175 4825 50  0001 C CNN
+F 3 "~" V 3175 4825 50  0001 C CNN
+	1    3175 4825
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D3
+U 1 1 6148C7F6
+P 2650 4225
+F 0 "D3" H 2650 4018 50  0000 C CNN
+F 1 "GRN" H 2650 4109 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 2650 4225 50  0001 C CNN
+F 3 "~" V 2650 4225 50  0001 C CNN
+	1    2650 4225
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0125
+U 1 1 6148C7FC
+P 3800 4225
+F 0 "#PWR0125" H 3800 3975 50  0001 C CNN
+F 1 "GND" H 3805 4052 50  0000 C CNN
+F 2 "" H 3800 4225 50  0001 C CNN
+F 3 "" H 3800 4225 50  0001 C CNN
+	1    3800 4225
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0126
+U 1 1 6148C802
+P 3800 4525
+F 0 "#PWR0126" H 3800 4275 50  0001 C CNN
+F 1 "GND" H 3805 4352 50  0000 C CNN
+F 2 "" H 3800 4525 50  0001 C CNN
+F 3 "" H 3800 4525 50  0001 C CNN
+	1    3800 4525
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0127
+U 1 1 6148C808
+P 3825 4825
+F 0 "#PWR0127" H 3825 4575 50  0001 C CNN
+F 1 "GND" H 3830 4652 50  0000 C CNN
+F 2 "" H 3825 4825 50  0001 C CNN
+F 3 "" H 3825 4825 50  0001 C CNN
+	1    3825 4825
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0128
+U 1 1 6148C80E
+P 3825 5125
+F 0 "#PWR0128" H 3825 4875 50  0001 C CNN
+F 1 "GND" H 3830 4952 50  0000 C CNN
+F 2 "" H 3825 5125 50  0001 C CNN
+F 3 "" H 3825 5125 50  0001 C CNN
+	1    3825 5125
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 4225 3800 4225
+Wire Wire Line
+	3000 4525 3800 4525
+Wire Wire Line
+	3275 4825 3825 4825
+Wire Wire Line
+	3525 5125 3825 5125
+Wire Wire Line
+	2550 4225 1750 4225
+Wire Wire Line
+	2800 4525 2000 4525
+Wire Wire Line
+	3075 4825 2275 4825
+Wire Wire Line
+	2525 5125 3325 5125
+Wire Wire Line
+	1300 4525 1800 4525
+Wire Wire Line
+	1550 4225 1300 4225
+Wire Wire Line
+	1300 4825 2075 4825
+Wire Wire Line
+	1300 5125 2325 5125
+$Comp
+L Device:R_Small_US R4
+U 1 1 6148C824
+P 1650 5725
+F 0 "R4" V 1445 5725 50  0000 C CNN
+F 1 "4.99k" V 1536 5725 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1650 5725 50  0001 C CNN
+F 3 "~" H 1650 5725 50  0001 C CNN
+	1    1650 5725
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R8
+U 1 1 6148C82A
+P 1900 6025
+F 0 "R8" V 1695 6025 50  0000 C CNN
+F 1 "4.99k" V 1786 6025 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1900 6025 50  0001 C CNN
+F 3 "~" H 1900 6025 50  0001 C CNN
+	1    1900 6025
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R12
+U 1 1 6148C830
+P 2175 6325
+F 0 "R12" V 1970 6325 50  0000 C CNN
+F 1 "4.99k" V 2061 6325 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2175 6325 50  0001 C CNN
+F 3 "~" H 2175 6325 50  0001 C CNN
+	1    2175 6325
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R16
+U 1 1 6148C836
+P 2425 6625
+F 0 "R16" V 2220 6625 50  0000 C CNN
+F 1 "4.99k" V 2311 6625 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2425 6625 50  0001 C CNN
+F 3 "~" H 2425 6625 50  0001 C CNN
+	1    2425 6625
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED_Small D16
+U 1 1 6148C83C
+P 3425 6625
+F 0 "D16" H 3425 6418 50  0000 C CNN
+F 1 "GRN" H 3425 6509 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 3425 6625 50  0001 C CNN
+F 3 "~" V 3425 6625 50  0001 C CNN
+	1    3425 6625
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D8
+U 1 1 6148C842
+P 2900 6025
+F 0 "D8" H 2900 5818 50  0000 C CNN
+F 1 "GRN" H 2900 5909 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 2900 6025 50  0001 C CNN
+F 3 "~" V 2900 6025 50  0001 C CNN
+	1    2900 6025
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D12
+U 1 1 6148C848
+P 3175 6325
+F 0 "D12" H 3175 6118 50  0000 C CNN
+F 1 "GRN" H 3175 6209 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 3175 6325 50  0001 C CNN
+F 3 "~" V 3175 6325 50  0001 C CNN
+	1    3175 6325
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED_Small D4
+U 1 1 6148C84E
+P 2650 5725
+F 0 "D4" H 2650 5518 50  0000 C CNN
+F 1 "GRN" H 2650 5609 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 2650 5725 50  0001 C CNN
+F 3 "~" V 2650 5725 50  0001 C CNN
+	1    2650 5725
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0129
+U 1 1 6148C854
+P 3800 5725
+F 0 "#PWR0129" H 3800 5475 50  0001 C CNN
+F 1 "GND" H 3805 5552 50  0000 C CNN
+F 2 "" H 3800 5725 50  0001 C CNN
+F 3 "" H 3800 5725 50  0001 C CNN
+	1    3800 5725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0130
+U 1 1 6148C85A
+P 3800 6025
+F 0 "#PWR0130" H 3800 5775 50  0001 C CNN
+F 1 "GND" H 3805 5852 50  0000 C CNN
+F 2 "" H 3800 6025 50  0001 C CNN
+F 3 "" H 3800 6025 50  0001 C CNN
+	1    3800 6025
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0131
+U 1 1 6148C860
+P 3825 6325
+F 0 "#PWR0131" H 3825 6075 50  0001 C CNN
+F 1 "GND" H 3830 6152 50  0000 C CNN
+F 2 "" H 3825 6325 50  0001 C CNN
+F 3 "" H 3825 6325 50  0001 C CNN
+	1    3825 6325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0132
+U 1 1 6148C866
+P 3825 6625
+F 0 "#PWR0132" H 3825 6375 50  0001 C CNN
+F 1 "GND" H 3830 6452 50  0000 C CNN
+F 2 "" H 3825 6625 50  0001 C CNN
+F 3 "" H 3825 6625 50  0001 C CNN
+	1    3825 6625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 5725 3800 5725
+Wire Wire Line
+	3000 6025 3800 6025
+Wire Wire Line
+	3275 6325 3825 6325
+Wire Wire Line
+	3525 6625 3825 6625
+Wire Wire Line
+	2550 5725 1750 5725
+Wire Wire Line
+	2800 6025 2000 6025
+Wire Wire Line
+	3075 6325 2275 6325
+Wire Wire Line
+	2525 6625 3325 6625
+Wire Wire Line
+	1300 6025 1800 6025
+Wire Wire Line
+	1550 5725 1300 5725
+Wire Wire Line
+	1300 6325 2075 6325
+Wire Wire Line
+	1300 6625 2325 6625
+Text Notes 1225 850  0    118  ~ 0
+GPIO Digital Out Testing
+Wire Notes Line
+	4350 6450 4350 700 
+Text Notes 5150 800  0    118  ~ 0
+Analog Input Testing
+$Comp
+L power:+5V #PWR0133
+U 1 1 614CCA32
+P 5525 1225
+AR Path="/614CCA32" Ref="#PWR0133"  Part="1" 
+AR Path="/60470140/614CCA32" Ref="#PWR?"  Part="1" 
+AR Path="/6046BF11/614CCA32" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0133" H 5525 1075 50  0001 C CNN
+F 1 "+5V" H 5540 1398 50  0000 C CNN
+F 2 "" H 5525 1225 50  0001 C CNN
+F 3 "" H 5525 1225 50  0001 C CNN
+	1    5525 1225
+	-1   0    0    -1  
+$EndComp
+Text GLabel 1300 2725 0    50   Input ~ 0
+LED5_1xA4
+Text GLabel 1300 3025 0    50   Input ~ 0
+LED6_1xA5
+Text GLabel 1300 3625 0    50   Input ~ 0
+LED8_1xA7
+Text GLabel 1300 3325 0    50   Input ~ 0
+LED7_1xA6
+Text GLabel 1300 4225 0    50   Input ~ 0
+LED9_1xB0
+Text GLabel 1300 4525 0    50   Input ~ 0
+LED10_1xB1
+Text GLabel 1300 4825 0    50   Input ~ 0
+LED11_1xB2
+Text GLabel 1300 5125 0    50   Input ~ 0
+LED12_1xB3
+Text GLabel 1300 5725 0    50   Input ~ 0
+LED13_1xB4
+Text GLabel 1300 6025 0    50   Input ~ 0
+LED14_1xB5
+Text GLabel 1300 6325 0    50   Input ~ 0
+LED15_1xB6
+Text GLabel 1300 6625 0    50   Input ~ 0
+LED16_1xB7
+$Comp
+L Device:R_US R17
+U 1 1 61515E71
+P 5525 1500
+F 0 "R17" H 5593 1546 50  0000 L CNN
+F 1 "1.37k" H 5593 1455 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5565 1490 50  0001 C CNN
+F 3 "~" H 5525 1500 50  0001 C CNN
+	1    5525 1500
+	-1   0    0    -1  
+$EndComp
+Text Notes 6700 2025 0    50   ~ 0
+3.09V\n
+Text Notes 6700 1725 0    50   ~ 0
+3.29V\n
+Text Notes 6700 2325 0    50   ~ 0
+2.88V\n
+Text Notes 6700 2625 0    50   ~ 0
+2.67V\n
+Text Notes 6700 2925 0    50   ~ 0
+2.47V\n
+Text Notes 6700 3225 0    50   ~ 0
+2.26V\n
+$Comp
+L Device:R_Small_US R19
+U 1 1 615648E7
+P 5525 2150
+F 0 "R19" H 5457 2196 50  0000 R CNN
+F 1 "165" H 5457 2105 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 2150 50  0001 C CNN
+F 3 "~" H 5525 2150 50  0001 C CNN
+	1    5525 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R18
+U 1 1 61560523
+P 5525 1850
+F 0 "R18" H 5457 1896 50  0000 R CNN
+F 1 "165" H 5457 1805 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 1850 50  0001 C CNN
+F 3 "~" H 5525 1850 50  0001 C CNN
+	1    5525 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R21
+U 1 1 615910BB
+P 5525 2750
+F 0 "R21" H 5457 2796 50  0000 R CNN
+F 1 "165" H 5457 2705 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 2750 50  0001 C CNN
+F 3 "~" H 5525 2750 50  0001 C CNN
+	1    5525 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R20
+U 1 1 615910C1
+P 5525 2450
+F 0 "R20" H 5457 2496 50  0000 R CNN
+F 1 "165" H 5457 2405 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 2450 50  0001 C CNN
+F 3 "~" H 5525 2450 50  0001 C CNN
+	1    5525 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R23
+U 1 1 61596373
+P 5525 3350
+F 0 "R23" H 5457 3396 50  0000 R CNN
+F 1 "165" H 5457 3305 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 3350 50  0001 C CNN
+F 3 "~" H 5525 3350 50  0001 C CNN
+	1    5525 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R22
+U 1 1 61596379
+P 5525 3050
+F 0 "R22" H 5457 3096 50  0000 R CNN
+F 1 "165" H 5457 3005 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 3050 50  0001 C CNN
+F 3 "~" H 5525 3050 50  0001 C CNN
+	1    5525 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R25
+U 1 1 6159637F
+P 5525 3950
+F 0 "R25" H 5457 3996 50  0000 R CNN
+F 1 "165" H 5457 3905 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 3950 50  0001 C CNN
+F 3 "~" H 5525 3950 50  0001 C CNN
+	1    5525 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R24
+U 1 1 61596385
+P 5525 3650
+F 0 "R24" H 5457 3696 50  0000 R CNN
+F 1 "165" H 5457 3605 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 3650 50  0001 C CNN
+F 3 "~" H 5525 3650 50  0001 C CNN
+	1    5525 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R27
+U 1 1 6159C009
+P 5525 4550
+F 0 "R27" H 5457 4596 50  0000 R CNN
+F 1 "165" H 5457 4505 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 4550 50  0001 C CNN
+F 3 "~" H 5525 4550 50  0001 C CNN
+	1    5525 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R26
+U 1 1 6159C00F
+P 5525 4250
+F 0 "R26" H 5457 4296 50  0000 R CNN
+F 1 "165" H 5457 4205 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 4250 50  0001 C CNN
+F 3 "~" H 5525 4250 50  0001 C CNN
+	1    5525 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R29
+U 1 1 6159C015
+P 5525 5150
+F 0 "R29" H 5457 5196 50  0000 R CNN
+F 1 "165" H 5457 5105 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 5150 50  0001 C CNN
+F 3 "~" H 5525 5150 50  0001 C CNN
+	1    5525 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R28
+U 1 1 6159C01B
+P 5525 4850
+F 0 "R28" H 5457 4896 50  0000 R CNN
+F 1 "165" H 5457 4805 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 4850 50  0001 C CNN
+F 3 "~" H 5525 4850 50  0001 C CNN
+	1    5525 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R31
+U 1 1 615A1059
+P 5525 5750
+F 0 "R31" H 5457 5796 50  0000 R CNN
+F 1 "165" H 5457 5705 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 5750 50  0001 C CNN
+F 3 "~" H 5525 5750 50  0001 C CNN
+	1    5525 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R30
+U 1 1 615A105F
+P 5525 5450
+F 0 "R30" H 5457 5496 50  0000 R CNN
+F 1 "165" H 5457 5405 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 5450 50  0001 C CNN
+F 3 "~" H 5525 5450 50  0001 C CNN
+	1    5525 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R33
+U 1 1 615A1065
+P 5525 6350
+F 0 "R33" H 5457 6396 50  0000 R CNN
+F 1 "165" H 5457 6305 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 6350 50  0001 C CNN
+F 3 "~" H 5525 6350 50  0001 C CNN
+	1    5525 6350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R32
+U 1 1 615A106B
+P 5525 6050
+F 0 "R32" H 5457 6096 50  0000 R CNN
+F 1 "165" H 5457 6005 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5525 6050 50  0001 C CNN
+F 3 "~" H 5525 6050 50  0001 C CNN
+	1    5525 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0134
+U 1 1 615AC5EA
+P 5525 6550
+F 0 "#PWR0134" H 5525 6300 50  0001 C CNN
+F 1 "GND" H 5525 6400 50  0000 C CNN
+F 2 "" H 5525 6550 50  0001 C CNN
+F 3 "" H 5525 6550 50  0001 C CNN
+	1    5525 6550
+	1    0    0    -1  
+$EndComp
+Text GLabel 6200 1700 2    50   Output ~ 0
+SENSOR1
+Wire Wire Line
+	5525 1650 5525 1700
+Wire Wire Line
+	5525 1950 5525 2000
+Wire Wire Line
+	5525 2250 5525 2300
+Wire Wire Line
+	5525 2550 5525 2600
+Wire Wire Line
+	5525 2850 5525 2900
+Wire Wire Line
+	5525 3150 5525 3200
+Wire Wire Line
+	5525 3450 5525 3500
+Wire Wire Line
+	5525 3750 5525 3800
+Wire Wire Line
+	5525 4050 5525 4100
+Wire Wire Line
+	5525 4350 5525 4400
+Wire Wire Line
+	5525 4650 5525 4700
+Wire Wire Line
+	5525 4950 5525 5000
+Wire Wire Line
+	5525 5250 5525 5300
+Wire Wire Line
+	5525 5550 5525 5600
+Wire Wire Line
+	5525 5850 5525 5900
+Wire Wire Line
+	5525 6150 5525 6200
+Wire Wire Line
+	5525 6450 5525 6550
+Text GLabel 6200 2000 2    50   Output ~ 0
+SENSOR2
+Text GLabel 6200 2300 2    50   Output ~ 0
+SENSOR3
+Text GLabel 6200 2600 2    50   Output ~ 0
+SENSOR4
+Text GLabel 6200 2900 2    50   Output ~ 0
+SENSOR5
+Text GLabel 6200 3200 2    50   Output ~ 0
+SENSOR6
+Text GLabel 6200 3500 2    50   Output ~ 0
+SENSOR7
+Text GLabel 6200 3800 2    50   Output ~ 0
+SENSOR8
+Text GLabel 6200 4100 2    50   Output ~ 0
+SENSOR9
+Text GLabel 6200 4400 2    50   Output ~ 0
+SENSOR10
+Text GLabel 6200 4700 2    50   Output ~ 0
+SENSOR11
+Text GLabel 6200 5000 2    50   Output ~ 0
+SENSOR12
+Text GLabel 6200 5300 2    50   Output ~ 0
+SENSOR13
+Text GLabel 6200 5600 2    50   Output ~ 0
+SENSOR14
+Text GLabel 6200 5900 2    50   Output ~ 0
+SENSOR15
+Text GLabel 6200 6200 2    50   Output ~ 0
+SENSOR16
+Wire Wire Line
+	5525 1225 5525 1350
+Wire Wire Line
+	5525 1700 6200 1700
+Connection ~ 5525 1700
+Wire Wire Line
+	5525 1700 5525 1750
+Wire Wire Line
+	5525 2000 6200 2000
+Connection ~ 5525 2000
+Wire Wire Line
+	5525 2000 5525 2050
+Wire Wire Line
+	6200 2300 5525 2300
+Connection ~ 5525 2300
+Wire Wire Line
+	5525 2300 5525 2350
+Wire Wire Line
+	6200 2600 5525 2600
+Connection ~ 5525 2600
+Wire Wire Line
+	5525 2600 5525 2650
+Wire Wire Line
+	5525 2900 6200 2900
+Connection ~ 5525 2900
+Wire Wire Line
+	5525 2900 5525 2950
+Wire Wire Line
+	5525 3200 6200 3200
+Connection ~ 5525 3200
+Wire Wire Line
+	5525 3200 5525 3250
+Wire Wire Line
+	5525 3500 6200 3500
+Connection ~ 5525 3500
+Wire Wire Line
+	5525 3500 5525 3550
+Wire Wire Line
+	5525 3800 6200 3800
+Connection ~ 5525 3800
+Wire Wire Line
+	5525 3800 5525 3850
+Wire Wire Line
+	5525 4100 6200 4100
+Connection ~ 5525 4100
+Wire Wire Line
+	5525 4100 5525 4150
+Wire Wire Line
+	5525 4400 6200 4400
+Connection ~ 5525 4400
+Wire Wire Line
+	5525 4400 5525 4450
+Wire Wire Line
+	5525 4700 6200 4700
+Connection ~ 5525 4700
+Wire Wire Line
+	5525 4700 5525 4750
+Wire Wire Line
+	5525 5000 6200 5000
+Connection ~ 5525 5000
+Wire Wire Line
+	5525 5000 5525 5050
+Wire Wire Line
+	5525 5300 6200 5300
+Connection ~ 5525 5300
+Wire Wire Line
+	5525 5300 5525 5350
+Wire Wire Line
+	5525 5600 6200 5600
+Connection ~ 5525 5600
+Wire Wire Line
+	5525 5600 5525 5650
+Wire Wire Line
+	5525 5900 6200 5900
+Connection ~ 5525 5900
+Wire Wire Line
+	5525 5900 5525 5950
+Wire Wire Line
+	5525 6200 6200 6200
+Connection ~ 5525 6200
+Wire Wire Line
+	5525 6200 5525 6250
+Text Notes 6700 3825 0    50   ~ 0
+1.85V\n
+Text Notes 6700 3525 0    50   ~ 0
+2.06V\n
+Text Notes 6700 4125 0    50   ~ 0
+1.65V\n
+Text Notes 6700 4425 0    50   ~ 0
+1.44V\n
+Text Notes 6700 4725 0    50   ~ 0
+1.23V\n
+Text Notes 6700 5025 0    50   ~ 0
+1.03V\n
+Text Notes 6700 5625 0    50   ~ 0
+0.62V\n
+Text Notes 6700 5325 0    50   ~ 0
+0.82V\n
+Text Notes 6700 5925 0    50   ~ 0
+0.41V\n
+Text Notes 6700 6225 0    50   ~ 0
+0.21V\n
+Text Notes 7225 7000 0    157  ~ 31
+Analog + Digital IO Test Board
+$EndSCHEMATC

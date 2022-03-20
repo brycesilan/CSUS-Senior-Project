@@ -1,0 +1,9 @@
+Manufacturer=Nexperia
+PartNumber=PESD5V0L5UV,115
+PartCategory=Diode ESD (Uni-directional)
+PackageCategory=SO Transistor Flat Lead
+PinCount=6
+Version=2.1
+Released=2020-12-11 12:11:45
+Downloaded=2021-03-17 05:52:17
+3D=Y

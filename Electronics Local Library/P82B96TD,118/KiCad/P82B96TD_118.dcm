@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP P82B96TD,118
+D Dual bidirectional bus buffer
+K
+F http://www.nxp.com/docs/en/data-sheet/P82B96.pdf
+$ENDCMP
+#
+#End Doc Library

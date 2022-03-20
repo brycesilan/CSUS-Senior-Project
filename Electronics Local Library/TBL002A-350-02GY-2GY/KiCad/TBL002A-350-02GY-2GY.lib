@@ -1,0 +1,25 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model TBL002A-350-02GY-2GY
+#/12292057/234694/2.49/2/4/Connector
+DEF TBL002A-350-02GY-2GY J 0 30 Y Y 1 F N
+F0 "J" 750 300 50 H V L CNN
+F1 "TBL002A-350-02GY-2GY" 750 200 50 H V L CNN
+F2 "TBL002A35002GY2GY" 750 100 50 H I L CNN
+F3 "https://eu.mouser.com/datasheet/2/670/tbl002a_350-1600859.pdf" 750 0 50 H I L CNN
+F4 "Fixed Terminal Blocks Terminal block, screwless, 3.50, 45, 2 poles, cool gray" 750 -100 50 H I L CNN "Description"
+F5 "13.25" 750 -200 50 H I L CNN "Height"
+F6 "CUI Inc." 750 -300 50 H I L CNN "Manufacturer_Name"
+F7 "TBL002A-350-02GY-2GY" 750 -400 50 H I L CNN "Manufacturer_Part_Number"
+F8 "490-TBL002A3502GY2GY" 750 -500 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.co.uk/ProductDetail/CUI-Devices/TBL002A-350-02GY-2GY?qs=PzGy0jfpSMucGnRK%252BJ3faw%3D%3D" 750 -600 50 H I L CNN "Mouser Price/Stock"
+F10 "TBL002A-350-02GY-2GY" 750 -700 50 H I L CNN "Arrow Part Number"
+F11 "https://www.arrow.com/en/products/tbl002a-350-02gy-2gy/cui-devices" 750 -800 50 H I L CNN "Arrow Price/Stock"
+DRAW
+X A1 A1 0 0 200 R 50 50 0 0 P
+X B1 B1 900 0 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 700 100 700 -100 200 -100 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library

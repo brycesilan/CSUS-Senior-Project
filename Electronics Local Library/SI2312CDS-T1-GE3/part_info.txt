@@ -1,0 +1,9 @@
+Manufacturer=Vishay
+PartNumber=SI2312CDS-T1-GE3
+PartCategory=MOSFET (N-Channel)
+PackageCategory=SOT23 (3-Pin)
+PinCount=3
+Version=1.1
+Released=2019-03-10 11:25:47
+Downloaded=2021-03-09 05:28:28
+3D=Y

@@ -1,0 +1,9 @@
+Manufacturer=CUI Inc.
+PartNumber=TBL002A-350-02GY-2GY
+PartCategory=Connector
+PackageCategory=Other
+PinCount=2
+Version=1.3
+Released=2020-10-04 15:26:12
+Downloaded=2021-03-29 07:51:34
+3D=Y
