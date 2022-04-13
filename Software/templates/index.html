@@ -16,11 +16,14 @@
             
             <div class="py-5 text-center">
                 <h1 class="text-danger">Hydroponic Farm Data</h1>
-                <h3 class="text-success">
+                <h3 class="text-primary">
                     This website allows you to check pH, Temperature, Humidity, and Moisture readings along with light control from your hydroponic farm! 
                 </h3>
+                <br>
+                <a href="/read">
+                    <button type="button" class="btn btn-primary btn-lg">Request All Readings</button>
+                </a>
             </div>
-            
       
             <div class="justify-content-center text-dark px-4 py-4 rounded">
                 <div class="row">
@@ -52,10 +55,12 @@
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div class="mx-1">
                             <h1>Temperature</h1>
-                            <button type="button" class="btn btn-primary btn-sm">Request Temperature Reading</button>
+                            <a href="/temperature">
+                                <button type="button" class="btn btn-primary btn-sm">Request Temperature Reading</button>
+                            </a>
                         </div>
                         <div class="justify-content-center">
-                            <h3>Temperature Result</h3>
+                            <h3>{{ temperature_f }}&#8457; / {{ temperature_c }}&#8451;</h3>
                         </div>
                     </div>
                     
@@ -63,10 +68,12 @@
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
                             <h1>Humidity</h1>
-                            <button type="button" class="btn btn-primary btn-sm">Request Humidity Reading</button>
+                            <a href="/humidity">
+                                <button type="button" class="btn btn-primary btn-sm">Request Humidity Reading</button>
+                            </a>
                         </div>
                         <div class="justify-content-center">
-                            <h3>Humidity Result</h3>
+                            <h3>{{ humidity }}%</h3>
                         </div>
                     </div>
                 </div>
