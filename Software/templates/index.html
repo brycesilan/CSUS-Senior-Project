@@ -31,20 +31,22 @@
                     <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
                             <h1>Moisture</h1>
-                            <button type="button" class="btn btn-primary btn-sm">Request Moisture Reading</button>
+                            <!-- <button type="button" class="btn btn-primary btn-sm">Request Moisture Reading</button> -->
                         </div>
                         <div class="justify-content-center mx-1">
-                            <h3>Moisture Result</h3>
+                            <h1>Moisture Result</h1>
                         </div>
                     </div>
                     
                     <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                         <div class="mx-1">
                             <h1>pH</h1>
-                            <button type="button" class="btn btn-primary btn-sm">Request pH Reading</button>
+                            <!-- <a href="/pH">
+                                <button type="button" class="btn btn-primary btn-sm">Request pH</button>
+                            </a> -->
                         </div>
                         <div class="justify-content-center">
-                            <h3>pH Result</h3>
+                            <h1>{{ ph_value }}</h1>
                         </div>
                     </div>
 
@@ -55,12 +57,12 @@
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div class="mx-1">
                             <h1>Temperature</h1>
-                            <a href="/temperature">
+                            <!-- <a href="/temperature">
                                 <button type="button" class="btn btn-primary btn-sm">Request Temperature Reading</button>
-                            </a>
+                            </a> -->
                         </div>
                         <div class="justify-content-center">
-                            <h3>{{ temperature_f }}&#8457; / {{ temperature_c }}&#8451;</h3>
+                            <h1>{{ temperature_f }}&#8457; / {{ temperature_c }}&#8451;</h1>
                         </div>
                     </div>
                     
@@ -68,12 +70,12 @@
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
                             <h1>Humidity</h1>
-                            <a href="/humidity">
+                            <!-- <a href="/humidity">
                                 <button type="button" class="btn btn-primary btn-sm">Request Humidity Reading</button>
-                            </a>
+                            </a> -->
                         </div>
                         <div class="justify-content-center">
-                            <h3>{{ humidity }}%</h3>
+                            <h1>{{ humidity }}%</h1>
                         </div>
                     </div>
                 </div>
@@ -89,7 +91,15 @@
                         </div>
                     </div>
                 
-                    <div class="col"></div>
+                    <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
+                        <div  class="mx-1">
+                            <h1>Water</h1>
+                            <button type="button" class="btn btn-primary btn-sm">Toggle Water</button>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>Water control status</h3>
+                        </div>
+                    </div>
                 </div>
 
                 
