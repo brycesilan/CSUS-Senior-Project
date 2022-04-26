@@ -1,0 +1,1203 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F249C
+P 3450 2350
+AR Path="/60470140/605F249C" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F249C" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F249C" Ref="Q1"  Part="1" 
+F 0 "Q1" H 3880 2450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 3880 2405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 3900 2300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 3900 2200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 3900 2100 50  0001 L CNN "Description"
+F 5 "1.12" H 3900 2000 50  0001 L CNN "Height"
+F 6 "Vishay" H 3900 1900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 3900 1800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 3900 1700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 3900 1600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 3900 1500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 3900 1400 50  0001 L CNN "Arrow Price/Stock"
+	1    3450 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 1950 3750 1900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F24B2
+P 3450 3350
+AR Path="/60470140/605F24B2" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F24B2" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F24B2" Ref="Q2"  Part="1" 
+F 0 "Q2" H 3880 3450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 3880 3405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 3900 3300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 3900 3200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 3900 3100 50  0001 L CNN "Description"
+F 5 "1.12" H 3900 3000 50  0001 L CNN "Height"
+F 6 "Vishay" H 3900 2900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 3900 2800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 3900 2700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 3900 2600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 3900 2500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 3900 2400 50  0001 L CNN "Arrow Price/Stock"
+	1    3450 3350
+	1    0    0    -1  
+$EndComp
+Text GLabel 3750 2900 0    50   Input ~ 0
+Solenoid2_GND
+Wire Wire Line
+	3750 2950 3750 2900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F24C8
+P 3450 4350
+AR Path="/60470140/605F24C8" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F24C8" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F24C8" Ref="Q3"  Part="1" 
+F 0 "Q3" H 3880 4450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 3880 4405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 3900 4300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 3900 4200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 3900 4100 50  0001 L CNN "Description"
+F 5 "1.12" H 3900 4000 50  0001 L CNN "Height"
+F 6 "Vishay" H 3900 3900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 3900 3800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 3900 3700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 3900 3600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 3900 3500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 3900 3400 50  0001 L CNN "Arrow Price/Stock"
+	1    3450 4350
+	1    0    0    -1  
+$EndComp
+Text GLabel 3750 3900 0    50   Input ~ 0
+Solenoid3_GND
+Wire Wire Line
+	3750 3950 3750 3900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F24DE
+P 3450 5350
+AR Path="/60470140/605F24DE" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F24DE" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F24DE" Ref="Q4"  Part="1" 
+F 0 "Q4" H 3880 5450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 3880 5405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 3900 5300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 3900 5200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 3900 5100 50  0001 L CNN "Description"
+F 5 "1.12" H 3900 5000 50  0001 L CNN "Height"
+F 6 "Vishay" H 3900 4900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 3900 4800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 3900 4700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 3900 4600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 3900 4500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 3900 4400 50  0001 L CNN "Arrow Price/Stock"
+	1    3450 5350
+	1    0    0    -1  
+$EndComp
+Text GLabel 3750 4900 0    50   Input ~ 0
+Solenoid4_GND
+Wire Wire Line
+	3750 4950 3750 4900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F24F4
+P 5175 2350
+AR Path="/60470140/605F24F4" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F24F4" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F24F4" Ref="Q5"  Part="1" 
+F 0 "Q5" H 5605 2450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 5605 2405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 5625 2300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 5625 2200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 5625 2100 50  0001 L CNN "Description"
+F 5 "1.12" H 5625 2000 50  0001 L CNN "Height"
+F 6 "Vishay" H 5625 1900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 5625 1800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 5625 1700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 5625 1600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 5625 1500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 5625 1400 50  0001 L CNN "Arrow Price/Stock"
+	1    5175 2350
+	1    0    0    -1  
+$EndComp
+Text GLabel 5475 1900 0    50   Input ~ 0
+Solenoid5_GND
+Wire Wire Line
+	5475 1950 5475 1900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F250A
+P 5175 3350
+AR Path="/60470140/605F250A" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F250A" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F250A" Ref="Q6"  Part="1" 
+F 0 "Q6" H 5605 3450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 5605 3405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 5625 3300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 5625 3200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 5625 3100 50  0001 L CNN "Description"
+F 5 "1.12" H 5625 3000 50  0001 L CNN "Height"
+F 6 "Vishay" H 5625 2900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 5625 2800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 5625 2700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 5625 2600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 5625 2500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 5625 2400 50  0001 L CNN "Arrow Price/Stock"
+	1    5175 3350
+	1    0    0    -1  
+$EndComp
+Text GLabel 5475 2900 0    50   Input ~ 0
+Solenoid6_GND
+Wire Wire Line
+	5475 2950 5475 2900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F2520
+P 5175 4350
+AR Path="/60470140/605F2520" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2520" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F2520" Ref="Q7"  Part="1" 
+F 0 "Q7" H 5605 4450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 5605 4405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 5625 4300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 5625 4200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 5625 4100 50  0001 L CNN "Description"
+F 5 "1.12" H 5625 4000 50  0001 L CNN "Height"
+F 6 "Vishay" H 5625 3900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 5625 3800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 5625 3700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 5625 3600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 5625 3500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 5625 3400 50  0001 L CNN "Arrow Price/Stock"
+	1    5175 4350
+	1    0    0    -1  
+$EndComp
+Text GLabel 5475 3900 0    50   Input ~ 0
+Solenoid7_GND
+Wire Wire Line
+	5475 3950 5475 3900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F2536
+P 5175 5350
+AR Path="/60470140/605F2536" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2536" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F2536" Ref="Q8"  Part="1" 
+F 0 "Q8" H 5605 5450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 5605 5405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 5625 5300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 5625 5200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 5625 5100 50  0001 L CNN "Description"
+F 5 "1.12" H 5625 5000 50  0001 L CNN "Height"
+F 6 "Vishay" H 5625 4900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 5625 4800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 5625 4700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 5625 4600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 5625 4500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 5625 4400 50  0001 L CNN "Arrow Price/Stock"
+	1    5175 5350
+	1    0    0    -1  
+$EndComp
+Text GLabel 5475 4900 0    50   Input ~ 0
+Solenoid8_GND
+Wire Wire Line
+	5475 4950 5475 4900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F254C
+P 6950 2350
+AR Path="/60470140/605F254C" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F254C" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F254C" Ref="Q9"  Part="1" 
+F 0 "Q9" H 7380 2450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 7380 2405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 7400 2300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 7400 2200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 7400 2100 50  0001 L CNN "Description"
+F 5 "1.12" H 7400 2000 50  0001 L CNN "Height"
+F 6 "Vishay" H 7400 1900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 7400 1800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 7400 1700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 7400 1600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 7400 1500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 7400 1400 50  0001 L CNN "Arrow Price/Stock"
+	1    6950 2350
+	1    0    0    -1  
+$EndComp
+Text GLabel 7250 1900 0    50   Input ~ 0
+Solenoid9_GND
+Wire Wire Line
+	7250 1950 7250 1900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F2562
+P 6950 3350
+AR Path="/60470140/605F2562" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2562" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F2562" Ref="Q10"  Part="1" 
+F 0 "Q10" H 7380 3450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 7380 3405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 7400 3300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 7400 3200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 7400 3100 50  0001 L CNN "Description"
+F 5 "1.12" H 7400 3000 50  0001 L CNN "Height"
+F 6 "Vishay" H 7400 2900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 7400 2800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 7400 2700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 7400 2600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 7400 2500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 7400 2400 50  0001 L CNN "Arrow Price/Stock"
+	1    6950 3350
+	1    0    0    -1  
+$EndComp
+Text GLabel 7250 2900 0    50   Input ~ 0
+Solenoid10_GND
+Wire Wire Line
+	7250 2950 7250 2900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F2578
+P 6950 4350
+AR Path="/60470140/605F2578" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2578" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F2578" Ref="Q11"  Part="1" 
+F 0 "Q11" H 7380 4450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 7380 4405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 7400 4300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 7400 4200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 7400 4100 50  0001 L CNN "Description"
+F 5 "1.12" H 7400 4000 50  0001 L CNN "Height"
+F 6 "Vishay" H 7400 3900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 7400 3800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 7400 3700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 7400 3600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 7400 3500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 7400 3400 50  0001 L CNN "Arrow Price/Stock"
+	1    6950 4350
+	1    0    0    -1  
+$EndComp
+Text GLabel 7250 3900 0    50   Input ~ 0
+Solenoid11_GND
+Wire Wire Line
+	7250 3950 7250 3900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F258E
+P 6950 5350
+AR Path="/60470140/605F258E" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F258E" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F258E" Ref="Q12"  Part="1" 
+F 0 "Q12" H 7380 5450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 7380 5405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 7400 5300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 7400 5200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 7400 5100 50  0001 L CNN "Description"
+F 5 "1.12" H 7400 5000 50  0001 L CNN "Height"
+F 6 "Vishay" H 7400 4900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 7400 4800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 7400 4700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 7400 4600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 7400 4500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 7400 4400 50  0001 L CNN "Arrow Price/Stock"
+	1    6950 5350
+	1    0    0    -1  
+$EndComp
+Text GLabel 7250 4900 0    50   Input ~ 0
+Solenoid12_GND
+Wire Wire Line
+	7250 4950 7250 4900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F25A4
+P 8750 2350
+AR Path="/60470140/605F25A4" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F25A4" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F25A4" Ref="Q13"  Part="1" 
+F 0 "Q13" H 9180 2450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 9180 2405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 9200 2300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 9200 2200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 9200 2100 50  0001 L CNN "Description"
+F 5 "1.12" H 9200 2000 50  0001 L CNN "Height"
+F 6 "Vishay" H 9200 1900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 9200 1800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 9200 1700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 9200 1600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 9200 1500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 9200 1400 50  0001 L CNN "Arrow Price/Stock"
+	1    8750 2350
+	1    0    0    -1  
+$EndComp
+Text GLabel 9050 1900 0    50   Input ~ 0
+Solenoid13_GND
+Wire Wire Line
+	9050 1950 9050 1900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F25BA
+P 8750 3350
+AR Path="/60470140/605F25BA" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F25BA" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F25BA" Ref="Q14"  Part="1" 
+F 0 "Q14" H 9180 3450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 9180 3405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 9200 3300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 9200 3200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 9200 3100 50  0001 L CNN "Description"
+F 5 "1.12" H 9200 3000 50  0001 L CNN "Height"
+F 6 "Vishay" H 9200 2900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 9200 2800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 9200 2700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 9200 2600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 9200 2500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 9200 2400 50  0001 L CNN "Arrow Price/Stock"
+	1    8750 3350
+	1    0    0    -1  
+$EndComp
+Text GLabel 9050 2900 0    50   Input ~ 0
+Solenoid14_GND
+Wire Wire Line
+	9050 2950 9050 2900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F25D0
+P 8750 4350
+AR Path="/60470140/605F25D0" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F25D0" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F25D0" Ref="Q15"  Part="1" 
+F 0 "Q15" H 9180 4450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 9180 4405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 9200 4300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 9200 4200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 9200 4100 50  0001 L CNN "Description"
+F 5 "1.12" H 9200 4000 50  0001 L CNN "Height"
+F 6 "Vishay" H 9200 3900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 9200 3800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 9200 3700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 9200 3600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 9200 3500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 9200 3400 50  0001 L CNN "Arrow Price/Stock"
+	1    8750 4350
+	1    0    0    -1  
+$EndComp
+Text GLabel 9050 3900 0    50   Input ~ 0
+Solenoid15_GND
+Wire Wire Line
+	9050 3950 9050 3900
+$Comp
+L SI2312CDS-T1-GE3:SI2312CDS-T1-GE3 Q?
+U 1 1 605F25E6
+P 8750 5350
+AR Path="/60470140/605F25E6" Ref="Q?"  Part="1" 
+AR Path="/6046BF11/60846882/605F25E6" Ref="Q?"  Part="1" 
+AR Path="/605CED84/605F25E6" Ref="Q16"  Part="1" 
+F 0 "Q16" H 9180 5450 50  0000 L CNN
+F 1 "SI2312CDS-T1-GE3" H 9180 5405 50  0001 L CNN
+F 2 "SOT95P237X112-3N" H 9200 5300 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/SI2312CDS-T1-GE3.pdf" H 9200 5200 50  0001 L CNN
+F 4 "VISHAY - SI2312CDS-T1-GE3 - MOSFET,N CHANNEL,20V,6A,DIODE,SOT23" H 9200 5100 50  0001 L CNN "Description"
+F 5 "1.12" H 9200 5000 50  0001 L CNN "Height"
+F 6 "Vishay" H 9200 4900 50  0001 L CNN "Manufacturer_Name"
+F 7 "SI2312CDS-T1-GE3" H 9200 4800 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "781-SI2312CDS-T1-GE3" H 9200 4700 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/SI2312CDS-T1-GE3?qs=WX95TUc1y56uUDLD4gVrGA%3D%3D" H 9200 4600 50  0001 L CNN "Mouser Price/Stock"
+F 10 "SI2312CDS-T1-GE3" H 9200 4500 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/si2312cds-t1-ge3/vishay" H 9200 4400 50  0001 L CNN "Arrow Price/Stock"
+	1    8750 5350
+	1    0    0    -1  
+$EndComp
+Text GLabel 9050 4900 0    50   Input ~ 0
+Solenoid16_GND
+Wire Wire Line
+	9050 4950 9050 4900
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2603
+P 3150 5450
+AR Path="/60470140/605F2603" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2603" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2603" Ref="R11"  Part="1" 
+F 0 "R11" H 3218 5496 50  0000 L CNN
+F 1 "1M" H 3218 5405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3150 5450 50  0001 C CNN
+F 3 "~" H 3150 5450 50  0001 C CNN
+	1    3150 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2609
+P 3350 5350
+AR Path="/60470140/605F2609" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2609" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2609" Ref="R15"  Part="1" 
+F 0 "R15" V 3145 5350 50  0000 C CNN
+F 1 "300" V 3236 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3350 5350 50  0001 C CNN
+F 3 "~" H 3350 5350 50  0001 C CNN
+	1    3350 5350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3050 5350 3150 5350
+Connection ~ 3150 5350
+Wire Wire Line
+	3150 5350 3250 5350
+Wire Wire Line
+	3150 5550 3750 5550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2614
+P 3150 4450
+AR Path="/60470140/605F2614" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2614" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2614" Ref="R10"  Part="1" 
+F 0 "R10" H 3218 4496 50  0000 L CNN
+F 1 "1M" H 3218 4405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3150 4450 50  0001 C CNN
+F 3 "~" H 3150 4450 50  0001 C CNN
+	1    3150 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F261A
+P 3350 4350
+AR Path="/60470140/605F261A" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F261A" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F261A" Ref="R14"  Part="1" 
+F 0 "R14" V 3145 4350 50  0000 C CNN
+F 1 "300" V 3236 4350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3350 4350 50  0001 C CNN
+F 3 "~" H 3350 4350 50  0001 C CNN
+	1    3350 4350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3050 4350 3150 4350
+Connection ~ 3150 4350
+Wire Wire Line
+	3150 4350 3250 4350
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2623
+P 3150 3450
+AR Path="/60470140/605F2623" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2623" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2623" Ref="R9"  Part="1" 
+F 0 "R9" H 3218 3496 50  0000 L CNN
+F 1 "1M" H 3218 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3150 3450 50  0001 C CNN
+F 3 "~" H 3150 3450 50  0001 C CNN
+	1    3150 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2629
+P 3350 3350
+AR Path="/60470140/605F2629" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2629" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2629" Ref="R13"  Part="1" 
+F 0 "R13" V 3145 3350 50  0000 C CNN
+F 1 "300" V 3236 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3350 3350 50  0001 C CNN
+F 3 "~" H 3350 3350 50  0001 C CNN
+	1    3350 3350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3050 3350 3150 3350
+Connection ~ 3150 3350
+Wire Wire Line
+	3150 3350 3250 3350
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2632
+P 3150 2450
+AR Path="/60470140/605F2632" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2632" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2632" Ref="R8"  Part="1" 
+F 0 "R8" H 3218 2496 50  0000 L CNN
+F 1 "1M" H 3218 2405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3150 2450 50  0001 C CNN
+F 3 "~" H 3150 2450 50  0001 C CNN
+	1    3150 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2638
+P 3350 2350
+AR Path="/60470140/605F2638" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2638" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2638" Ref="R12"  Part="1" 
+F 0 "R12" V 3145 2350 50  0000 C CNN
+F 1 "300" V 3236 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 3350 2350 50  0001 C CNN
+F 3 "~" H 3350 2350 50  0001 C CNN
+	1    3350 2350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3050 2350 3150 2350
+Connection ~ 3150 2350
+Wire Wire Line
+	3150 2350 3250 2350
+Wire Wire Line
+	3150 2550 3750 2550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2642
+P 4875 2450
+AR Path="/60470140/605F2642" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2642" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2642" Ref="R16"  Part="1" 
+F 0 "R16" H 4943 2496 50  0000 L CNN
+F 1 "1M" H 4943 2405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4875 2450 50  0001 C CNN
+F 3 "~" H 4875 2450 50  0001 C CNN
+	1    4875 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2648
+P 5075 2350
+AR Path="/60470140/605F2648" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2648" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2648" Ref="R20"  Part="1" 
+F 0 "R20" V 4870 2350 50  0000 C CNN
+F 1 "300" V 4961 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5075 2350 50  0001 C CNN
+F 3 "~" H 5075 2350 50  0001 C CNN
+	1    5075 2350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4775 2350 4875 2350
+Connection ~ 4875 2350
+Wire Wire Line
+	4875 2350 4975 2350
+Wire Wire Line
+	4875 2550 5475 2550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2652
+P 4875 3450
+AR Path="/60470140/605F2652" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2652" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2652" Ref="R17"  Part="1" 
+F 0 "R17" H 4943 3496 50  0000 L CNN
+F 1 "1M" H 4943 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4875 3450 50  0001 C CNN
+F 3 "~" H 4875 3450 50  0001 C CNN
+	1    4875 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2658
+P 5075 3350
+AR Path="/60470140/605F2658" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2658" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2658" Ref="R21"  Part="1" 
+F 0 "R21" V 4870 3350 50  0000 C CNN
+F 1 "300" V 4961 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5075 3350 50  0001 C CNN
+F 3 "~" H 5075 3350 50  0001 C CNN
+	1    5075 3350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4775 3350 4875 3350
+Connection ~ 4875 3350
+Wire Wire Line
+	4875 3350 4975 3350
+Wire Wire Line
+	4875 3550 5475 3550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2662
+P 4875 4450
+AR Path="/60470140/605F2662" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2662" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2662" Ref="R18"  Part="1" 
+F 0 "R18" H 4943 4496 50  0000 L CNN
+F 1 "1M" H 4943 4405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4875 4450 50  0001 C CNN
+F 3 "~" H 4875 4450 50  0001 C CNN
+	1    4875 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2668
+P 5075 4350
+AR Path="/60470140/605F2668" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2668" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2668" Ref="R22"  Part="1" 
+F 0 "R22" V 4870 4350 50  0000 C CNN
+F 1 "300" V 4961 4350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5075 4350 50  0001 C CNN
+F 3 "~" H 5075 4350 50  0001 C CNN
+	1    5075 4350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4775 4350 4875 4350
+Connection ~ 4875 4350
+Wire Wire Line
+	4875 4350 4975 4350
+Wire Wire Line
+	4875 4550 5475 4550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2672
+P 4875 5450
+AR Path="/60470140/605F2672" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2672" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2672" Ref="R19"  Part="1" 
+F 0 "R19" H 4943 5496 50  0000 L CNN
+F 1 "1M" H 4943 5405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4875 5450 50  0001 C CNN
+F 3 "~" H 4875 5450 50  0001 C CNN
+	1    4875 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2678
+P 5075 5350
+AR Path="/60470140/605F2678" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2678" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2678" Ref="R23"  Part="1" 
+F 0 "R23" V 4870 5350 50  0000 C CNN
+F 1 "300" V 4961 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 5075 5350 50  0001 C CNN
+F 3 "~" H 5075 5350 50  0001 C CNN
+	1    5075 5350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4775 5350 4875 5350
+Connection ~ 4875 5350
+Wire Wire Line
+	4875 5350 4975 5350
+Wire Wire Line
+	4875 5550 5475 5550
+Wire Wire Line
+	3150 4550 3750 4550
+Wire Wire Line
+	3150 3550 3750 3550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F268B
+P 6650 2450
+AR Path="/60470140/605F268B" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F268B" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F268B" Ref="R24"  Part="1" 
+F 0 "R24" H 6718 2496 50  0000 L CNN
+F 1 "1M" H 6718 2405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6650 2450 50  0001 C CNN
+F 3 "~" H 6650 2450 50  0001 C CNN
+	1    6650 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2691
+P 6850 2350
+AR Path="/60470140/605F2691" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2691" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2691" Ref="R28"  Part="1" 
+F 0 "R28" V 6645 2350 50  0000 C CNN
+F 1 "300" V 6736 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6850 2350 50  0001 C CNN
+F 3 "~" H 6850 2350 50  0001 C CNN
+	1    6850 2350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 2350 6650 2350
+Connection ~ 6650 2350
+Wire Wire Line
+	6650 2350 6750 2350
+Wire Wire Line
+	6650 2550 7250 2550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F269B
+P 6650 3450
+AR Path="/60470140/605F269B" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F269B" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F269B" Ref="R25"  Part="1" 
+F 0 "R25" H 6718 3496 50  0000 L CNN
+F 1 "1M" H 6718 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6650 3450 50  0001 C CNN
+F 3 "~" H 6650 3450 50  0001 C CNN
+	1    6650 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26A1
+P 6850 3350
+AR Path="/60470140/605F26A1" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26A1" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26A1" Ref="R29"  Part="1" 
+F 0 "R29" V 6645 3350 50  0000 C CNN
+F 1 "300" V 6736 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6850 3350 50  0001 C CNN
+F 3 "~" H 6850 3350 50  0001 C CNN
+	1    6850 3350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 3350 6650 3350
+Connection ~ 6650 3350
+Wire Wire Line
+	6650 3350 6750 3350
+Wire Wire Line
+	6650 3550 7250 3550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26AB
+P 6650 4450
+AR Path="/60470140/605F26AB" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26AB" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26AB" Ref="R26"  Part="1" 
+F 0 "R26" H 6718 4496 50  0000 L CNN
+F 1 "1M" H 6718 4405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6650 4450 50  0001 C CNN
+F 3 "~" H 6650 4450 50  0001 C CNN
+	1    6650 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26B1
+P 6850 4350
+AR Path="/60470140/605F26B1" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26B1" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26B1" Ref="R30"  Part="1" 
+F 0 "R30" V 6645 4350 50  0000 C CNN
+F 1 "300" V 6736 4350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6850 4350 50  0001 C CNN
+F 3 "~" H 6850 4350 50  0001 C CNN
+	1    6850 4350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 4350 6650 4350
+Connection ~ 6650 4350
+Wire Wire Line
+	6650 4350 6750 4350
+Wire Wire Line
+	6650 4550 7250 4550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26BB
+P 6650 5450
+AR Path="/60470140/605F26BB" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26BB" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26BB" Ref="R27"  Part="1" 
+F 0 "R27" H 6718 5496 50  0000 L CNN
+F 1 "1M" H 6718 5405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6650 5450 50  0001 C CNN
+F 3 "~" H 6650 5450 50  0001 C CNN
+	1    6650 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26C1
+P 6850 5350
+AR Path="/60470140/605F26C1" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26C1" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26C1" Ref="R31"  Part="1" 
+F 0 "R31" V 6645 5350 50  0000 C CNN
+F 1 "300" V 6736 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6850 5350 50  0001 C CNN
+F 3 "~" H 6850 5350 50  0001 C CNN
+	1    6850 5350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 5350 6650 5350
+Connection ~ 6650 5350
+Wire Wire Line
+	6650 5350 6750 5350
+Wire Wire Line
+	6650 5550 7250 5550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26CF
+P 8450 2450
+AR Path="/60470140/605F26CF" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26CF" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26CF" Ref="R32"  Part="1" 
+F 0 "R32" H 8518 2496 50  0000 L CNN
+F 1 "1M" H 8518 2405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8450 2450 50  0001 C CNN
+F 3 "~" H 8450 2450 50  0001 C CNN
+	1    8450 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26D5
+P 8650 2350
+AR Path="/60470140/605F26D5" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26D5" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26D5" Ref="R36"  Part="1" 
+F 0 "R36" V 8445 2350 50  0000 C CNN
+F 1 "300" V 8536 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8650 2350 50  0001 C CNN
+F 3 "~" H 8650 2350 50  0001 C CNN
+	1    8650 2350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8350 2350 8450 2350
+Connection ~ 8450 2350
+Wire Wire Line
+	8450 2350 8550 2350
+Wire Wire Line
+	8450 2550 9050 2550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26DF
+P 8450 3450
+AR Path="/60470140/605F26DF" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26DF" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26DF" Ref="R33"  Part="1" 
+F 0 "R33" H 8518 3496 50  0000 L CNN
+F 1 "1M" H 8518 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8450 3450 50  0001 C CNN
+F 3 "~" H 8450 3450 50  0001 C CNN
+	1    8450 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26E5
+P 8650 3350
+AR Path="/60470140/605F26E5" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26E5" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26E5" Ref="R37"  Part="1" 
+F 0 "R37" V 8445 3350 50  0000 C CNN
+F 1 "300" V 8536 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8650 3350 50  0001 C CNN
+F 3 "~" H 8650 3350 50  0001 C CNN
+	1    8650 3350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8350 3350 8450 3350
+Connection ~ 8450 3350
+Wire Wire Line
+	8450 3350 8550 3350
+Wire Wire Line
+	8450 3550 9050 3550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26EF
+P 8450 4450
+AR Path="/60470140/605F26EF" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26EF" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26EF" Ref="R34"  Part="1" 
+F 0 "R34" H 8518 4496 50  0000 L CNN
+F 1 "1M" H 8518 4405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8450 4450 50  0001 C CNN
+F 3 "~" H 8450 4450 50  0001 C CNN
+	1    8450 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26F5
+P 8650 4350
+AR Path="/60470140/605F26F5" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26F5" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26F5" Ref="R38"  Part="1" 
+F 0 "R38" V 8445 4350 50  0000 C CNN
+F 1 "300" V 8536 4350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8650 4350 50  0001 C CNN
+F 3 "~" H 8650 4350 50  0001 C CNN
+	1    8650 4350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8350 4350 8450 4350
+Connection ~ 8450 4350
+Wire Wire Line
+	8450 4350 8550 4350
+Wire Wire Line
+	8450 4550 9050 4550
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F26FF
+P 8450 5450
+AR Path="/60470140/605F26FF" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F26FF" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F26FF" Ref="R35"  Part="1" 
+F 0 "R35" H 8518 5496 50  0000 L CNN
+F 1 "1M" H 8518 5405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8450 5450 50  0001 C CNN
+F 3 "~" H 8450 5450 50  0001 C CNN
+	1    8450 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small_US R?
+U 1 1 605F2705
+P 8650 5350
+AR Path="/60470140/605F2705" Ref="R?"  Part="1" 
+AR Path="/6046BF11/60846882/605F2705" Ref="R?"  Part="1" 
+AR Path="/605CED84/605F2705" Ref="R39"  Part="1" 
+F 0 "R39" V 8445 5350 50  0000 C CNN
+F 1 "300" V 8536 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8650 5350 50  0001 C CNN
+F 3 "~" H 8650 5350 50  0001 C CNN
+	1    8650 5350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8350 5350 8450 5350
+Connection ~ 8450 5350
+Wire Wire Line
+	8450 5350 8550 5350
+Wire Wire Line
+	8450 5550 9050 5550
+Text GLabel 3750 1900 0    50   Input ~ 0
+Solenoid1_GND
+$Comp
+L power:GND #PWR018
+U 1 1 606A71C2
+P 3750 5550
+F 0 "#PWR018" H 3750 5300 50  0001 C CNN
+F 1 "GND" H 3755 5377 50  0000 C CNN
+F 2 "" H 3750 5550 50  0001 C CNN
+F 3 "" H 3750 5550 50  0001 C CNN
+	1    3750 5550
+	1    0    0    -1  
+$EndComp
+Connection ~ 3750 5550
+$Comp
+L power:GND #PWR022
+U 1 1 606AA024
+P 5475 5550
+F 0 "#PWR022" H 5475 5300 50  0001 C CNN
+F 1 "GND" H 5480 5377 50  0000 C CNN
+F 2 "" H 5475 5550 50  0001 C CNN
+F 3 "" H 5475 5550 50  0001 C CNN
+	1    5475 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR026
+U 1 1 606AB713
+P 7250 5550
+F 0 "#PWR026" H 7250 5300 50  0001 C CNN
+F 1 "GND" H 7255 5377 50  0000 C CNN
+F 2 "" H 7250 5550 50  0001 C CNN
+F 3 "" H 7250 5550 50  0001 C CNN
+	1    7250 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR030
+U 1 1 606ACB4B
+P 9050 5550
+F 0 "#PWR030" H 9050 5300 50  0001 C CNN
+F 1 "GND" H 9055 5377 50  0000 C CNN
+F 2 "" H 9050 5550 50  0001 C CNN
+F 3 "" H 9050 5550 50  0001 C CNN
+	1    9050 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR017
+U 1 1 606B82C5
+P 3750 4550
+F 0 "#PWR017" H 3750 4300 50  0001 C CNN
+F 1 "GND" H 3755 4377 50  0000 C CNN
+F 2 "" H 3750 4550 50  0001 C CNN
+F 3 "" H 3750 4550 50  0001 C CNN
+	1    3750 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR021
+U 1 1 606B82CB
+P 5475 4550
+F 0 "#PWR021" H 5475 4300 50  0001 C CNN
+F 1 "GND" H 5480 4377 50  0000 C CNN
+F 2 "" H 5475 4550 50  0001 C CNN
+F 3 "" H 5475 4550 50  0001 C CNN
+	1    5475 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR025
+U 1 1 606B82D1
+P 7250 4550
+F 0 "#PWR025" H 7250 4300 50  0001 C CNN
+F 1 "GND" H 7255 4377 50  0000 C CNN
+F 2 "" H 7250 4550 50  0001 C CNN
+F 3 "" H 7250 4550 50  0001 C CNN
+	1    7250 4550
+	1    0    0    -1  
+$EndComp
+Connection ~ 5475 4550
+Connection ~ 7250 4550
+$Comp
+L power:GND #PWR029
+U 1 1 606BD299
+P 9050 4550
+F 0 "#PWR029" H 9050 4300 50  0001 C CNN
+F 1 "GND" H 9055 4377 50  0000 C CNN
+F 2 "" H 9050 4550 50  0001 C CNN
+F 3 "" H 9050 4550 50  0001 C CNN
+	1    9050 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR016
+U 1 1 606C28D7
+P 3750 3550
+F 0 "#PWR016" H 3750 3300 50  0001 C CNN
+F 1 "GND" H 3755 3377 50  0000 C CNN
+F 2 "" H 3750 3550 50  0001 C CNN
+F 3 "" H 3750 3550 50  0001 C CNN
+	1    3750 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR020
+U 1 1 606C28DD
+P 5475 3550
+F 0 "#PWR020" H 5475 3300 50  0001 C CNN
+F 1 "GND" H 5480 3377 50  0000 C CNN
+F 2 "" H 5475 3550 50  0001 C CNN
+F 3 "" H 5475 3550 50  0001 C CNN
+	1    5475 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR024
+U 1 1 606C28E3
+P 7250 3550
+F 0 "#PWR024" H 7250 3300 50  0001 C CNN
+F 1 "GND" H 7255 3377 50  0000 C CNN
+F 2 "" H 7250 3550 50  0001 C CNN
+F 3 "" H 7250 3550 50  0001 C CNN
+	1    7250 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR028
+U 1 1 606C28E9
+P 9050 3550
+F 0 "#PWR028" H 9050 3300 50  0001 C CNN
+F 1 "GND" H 9055 3377 50  0000 C CNN
+F 2 "" H 9050 3550 50  0001 C CNN
+F 3 "" H 9050 3550 50  0001 C CNN
+	1    9050 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR015
+U 1 1 606C4BC1
+P 3750 2550
+F 0 "#PWR015" H 3750 2300 50  0001 C CNN
+F 1 "GND" H 3755 2377 50  0000 C CNN
+F 2 "" H 3750 2550 50  0001 C CNN
+F 3 "" H 3750 2550 50  0001 C CNN
+	1    3750 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR019
+U 1 1 606C4BC7
+P 5475 2550
+F 0 "#PWR019" H 5475 2300 50  0001 C CNN
+F 1 "GND" H 5480 2377 50  0000 C CNN
+F 2 "" H 5475 2550 50  0001 C CNN
+F 3 "" H 5475 2550 50  0001 C CNN
+	1    5475 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR023
+U 1 1 606C4BCD
+P 7250 2550
+F 0 "#PWR023" H 7250 2300 50  0001 C CNN
+F 1 "GND" H 7255 2377 50  0000 C CNN
+F 2 "" H 7250 2550 50  0001 C CNN
+F 3 "" H 7250 2550 50  0001 C CNN
+	1    7250 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR027
+U 1 1 606C4BD3
+P 9050 2550
+F 0 "#PWR027" H 9050 2300 50  0001 C CNN
+F 1 "GND" H 9055 2377 50  0000 C CNN
+F 2 "" H 9050 2550 50  0001 C CNN
+F 3 "" H 9050 2550 50  0001 C CNN
+	1    9050 2550
+	1    0    0    -1  
+$EndComp
+Text GLabel 8350 5350 0    50   Input ~ 0
+Solenoid16_B7
+Text GLabel 8350 4350 0    50   Input ~ 0
+Solenoid15_B6
+Text GLabel 8350 3350 0    50   Input ~ 0
+Solenoid14_B5
+Text GLabel 8350 2350 0    50   Input ~ 0
+Solenoid13_B4
+Text GLabel 6550 5350 0    50   Input ~ 0
+Solenoid12_B3
+Text GLabel 6550 4350 0    50   Input ~ 0
+Solenoid11_B2
+Text GLabel 6550 3350 0    50   Input ~ 0
+Solenoid10_B1
+Text GLabel 6550 2350 0    50   Input ~ 0
+Solenoid9_B0
+Text GLabel 4775 5350 0    50   Input ~ 0
+Solenoid8_A7
+Text GLabel 4775 4350 0    50   Input ~ 0
+Solenoid7_A6
+Text GLabel 4775 3350 0    50   Input ~ 0
+Solenoid6_A5
+Text GLabel 4775 2350 0    50   Input ~ 0
+Solenoid5_A4
+Text GLabel 3050 5350 0    50   Input ~ 0
+Solenoid4_A3
+Text GLabel 3050 4350 0    50   Input ~ 0
+Solenoid3_A2
+Text GLabel 3050 3350 0    50   Input ~ 0
+Solenoid2_A1
+Text GLabel 3050 2350 0    50   Input ~ 0
+Solenoid1_A0
+$EndSCHEMATC
