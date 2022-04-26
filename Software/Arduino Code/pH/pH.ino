@@ -1,10 +1,6 @@
 #include <Wire.h>
 
-/*
-calibration_value will be different for each new pH sensor
-*/
-
-float calibration_value = 23.57 - 0.7;
+float calibration_value = 22.84 - 0.7;
 int phval = 0;
 unsigned long int avgval;
 int buffer_arr[10], temp;
@@ -40,8 +36,9 @@ void loop() {
     avgval += buffer_arr[i];
   float volt = (float)avgval * 5.0 / 1024 / 6;
   ph_act = -5.70 * volt + calibration_value;
-  Serial.println("");
-  Serial.print("pH Val: ");
-  Serial.println(ph_act);
+  //Serial.print("");
+  //Serial.print("pH Val: ");
+  Serial.print(ph_act);
+  //Serial.print("\n");
   delay(1000);
 }
