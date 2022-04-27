@@ -30,8 +30,11 @@ def readAll():
     temperature_f = readings[1]
     humidity = readings[2]
 
-    ph_value = GetPH()
-    ph_value = ph_value.decode('utf-8')
+    # ph_value = GetPH()
+    # ph_value = ph_value.decode('utf-8')
+    ph_and_moisture = GetPHandMoisture()
+    ph_value = ph_and_moisture[0]
+    moisture_value = ph_and_moisture[1]
     
     # Map values from python variables to html variables and pass to flask render_template
     templateData = {
@@ -39,6 +42,7 @@ def readAll():
         'humidity' : humidity,
         'temperature_c' : temperature_c,
         'ph_value' : ph_value,
+        'moisture_value' : moisture_value, 
     }
 
     # print("%s seconds" % (time.time() - start_time))
@@ -78,6 +82,41 @@ def GetPH():
 
     return ph
 
+def GetPHandMoisture():
+    ph_text = "pH Value: "
+    moisture_text = "Moisture value: "
+    ph_value= ""
+    moisture_value = ""
+    value = " "
+    ser = serial.Serial('/dev/ttyUSB0', 9600, 8, 'N', 1, timeout=1)
+    i = 3
+    while True:
+        while i != 0:
+            value = ser.readline()
+            i -=1
+        value = ser.readline()
+        split_value = value.decode('utf-8').split()
+
+        while split_value[0] != "pH":
+            value = ser.readline()
+            split_value = value.decode('utf-8').split()
+        ph_value = split_value[2]
+
+        while split_value[0] != "Moisture":
+            value = ser.readline()
+            split_value = value.decode('utf-8').split()
+        moisture_value = split_value[2]
+        # if split_value[0] == "pH":
+        #     ph_value = split_value[2]
+            # print(ph_value)
+        
+        # value = ser.readline()
+        # split_value = value.decode('utf-8').split()
+        # if split_value[0] == "Moisture":
+        #     moisture_value = split_value[2]
+            # print(moisture_value)
+        break
+    return [ph_value, moisture_value]
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=5000, debug=True)
