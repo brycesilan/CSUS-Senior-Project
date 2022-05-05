@@ -48,8 +48,9 @@ def readAll():
     # print("%s seconds" % (time.time() - start_time))
     return render_template('index.html', **templateData)
 
+# Gets the Temperature and Humidity readings from DHT11 sensor
 def GetTempAndHum():
-    flag = False #Flag incase we receive an error while reading
+    flag = False # Flag incase we receive an error while reading
 
     while flag == False:
         try:
@@ -59,6 +60,7 @@ def GetTempAndHum():
             hum = dhtDevice.humidity
             flag = True #If everything is read successfully, this is our exit condition
         
+        # If an error is received, just print a message to terminal and keep reading
         except RuntimeError as error:
             # Just keep reading after an error
             print("There was an error")
@@ -68,55 +70,54 @@ def GetTempAndHum():
     
     return [temp_c, temp_f, hum]
 
-            
-def GetPH():
-    i = 3  # Counter for serial reading pH
-    ph = " "
-    ser = serial.Serial('/dev/ttyUSB0', 9600, 8, 'N', 1, timeout=1)
-    while True:
-        # Read 3 times to get a better reading
-        while i != 0:
-            ph = ser.readline()
-            i-=1
-        break
-
-    return ph
-
+# Reads pH and moisture values from the Arduino through serial and returns them.
 def GetPHandMoisture():
-    ph_text = "pH Value: "
-    moisture_text = "Moisture value: "
-    ph_value= ""
-    moisture_value = ""
-    value = " "
-    ser = serial.Serial('/dev/ttyUSB0', 9600, 8, 'N', 1, timeout=1)
-    i = 3
+    ph_value= ""  # Empty string to store pH
+    moisture_value = ""  # Empty string to store moisture
+    value = " " # Empty string to store line read from serial
+
+    ser = serial.Serial('/dev/ttyUSB0', 9600, 8, 'N', 1, timeout=1) # Serial setup
+    
+    i = 3 # The values will be read 3 times and the last one will be kept.
     while True:
+        # Read 3 times to get a better value
         while i != 0:
             value = ser.readline()
             i -=1
         value = ser.readline()
-        split_value = value.decode('utf-8').split()
+        split_value = value.decode('utf-8').split() # Splits the line read by spaces and returns them in a list
 
+        # If the first word in the list is "pH", store it's value
+        # Example string "pH Value: 7.20"
         while split_value[0] != "pH":
             value = ser.readline()
             split_value = value.decode('utf-8').split()
         ph_value = split_value[2]
 
+        # If the first word in the list is "Moisture", store it's value
+        # Example string "pH Value: 50"
         while split_value[0] != "Moisture":
             value = ser.readline()
             split_value = value.decode('utf-8').split()
         moisture_value = split_value[2]
-        # if split_value[0] == "pH":
-        #     ph_value = split_value[2]
-            # print(ph_value)
-        
-        # value = ser.readline()
-        # split_value = value.decode('utf-8').split()
-        # if split_value[0] == "Moisture":
-        #     moisture_value = split_value[2]
-            # print(moisture_value)
+
+        # Once all required values are read, just exit the forever while loop
         break
     return [ph_value, moisture_value]
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=5000, debug=True)
+
+# This function is not used anymore. It's purpose was to test out pH sensor individually. 
+# def GetPH():
+#     i = 3  # Counter for serial reading pH
+#     ph = " "
+#     ser = serial.Serial('/dev/ttyUSB0', 9600, 8, 'N', 1, timeout=1)
+#     while True:
+#         # Read 3 times to get a better reading
+#         while i != 0:
+#             ph = ser.readline()
+#             i-=1
+#         break
+
+#     return ph
