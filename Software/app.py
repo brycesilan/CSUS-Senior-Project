@@ -56,7 +56,7 @@ def readAll():
         'ph_value' : ph_value,
         'moisture_value' : moisture_value, 
     }
-
+    LogData(templateData)
     print("Render time: {}", datetime.now())
     # print("%s seconds" % (time.time() - start_time))
     return render_template('index.html', **templateData)
@@ -122,6 +122,29 @@ def GetPHandMoisture():
         break
     return [ph_value, moisture_value]
 
+# Logs data to the CSV file
+# parameter is a dictionary that is created containing all timestamps, sensor data
+def LogData(DataDictionary):
+    # Day,Time,Temperature,Humidity,pH,Moisture
+
+    # Header field names in the CSV file
+    field_names = ['Day', 'Time', 'Temperature', 'Humidity', 'pH', 'Moisture']
+
+    # Opens the CSV file in 'append' mode
+    # No need to explicitly close file as 'with open' takes care of that
+    with open('Sensor-Data.csv', 'a', newline='') as csvfile:
+        # Create a object map of header field and data dictionary 
+        writer = csv.DictWriter(csvfile, fieldnames=field_names)
+        # Append data to CSV file
+        writer.writerow({
+            'Day' : DataDictionary['timeStampDay'], 
+            'Time' : DataDictionary['timeStampTime'],
+            'Temperature' : DataDictionary['temperature_f'],
+            'Humidity' : DataDictionary['humidity'],
+            'pH' : DataDictionary['ph_value'],
+            'Moisture' : DataDictionary['moisture_value'],
+            })
+            
 
     
 
