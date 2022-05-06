@@ -5,10 +5,27 @@ import adafruit_dht
 import serial
 import sys
 import string
+import RPi.GPIO as GPIO
 import csv
 from flask import Flask, render_template, request
 app = Flask(__name__)
  
+
+GPIO.setmode(GPIO.BCM)
+
+# Create a dictionary called pins to store the pin number, name, and pin state:
+pins = {
+   6 : {'name' : 'GPIO 6', 'state' : GPIO.LOW},
+   13 : {'name' : 'GPIO 13', 'state' : GPIO.LOW},
+   19 : {'name' : 'GPIO 19', 'state' : GPIO.LOW},
+   26 : {'name' : 'GPIO 26', 'state' : GPIO.LOW},
+}
+
+# Set each pin as an output and make it low:
+for pin in pins:
+   GPIO.setup(pin, GPIO.OUT)
+   GPIO.output(pin, GPIO.LOW)
+
 # Initial the dht device, with data pin connected to:
 # dhtDevice = adafruit_dht.DHT22(board.D4)
  
