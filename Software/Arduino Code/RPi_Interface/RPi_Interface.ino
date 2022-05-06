@@ -28,7 +28,7 @@ void loop()
     int relay = Serial.read() - '0';
     defaultLow();
     
-    switch (ledNumber) {
+    switch (relay) {
       case 1:
         digitalWrite(RELAY_1_PIN, HIGH);
         break;
