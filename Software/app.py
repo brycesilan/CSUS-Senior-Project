@@ -20,6 +20,10 @@ dhtDevice = adafruit_dht.DHT11(board.D4, use_pulseio=False)
 
 @app.route("/")
 def main():
+    # starttime = time.time()
+    # while True:
+    #     readAll()
+    #     time.sleep(60.0 - ((time.time() - starttime) % 60.0))
     return render_template('index.html')
 
 
@@ -57,7 +61,7 @@ def readAll():
         'moisture_value' : moisture_value, 
     }
     LogData(templateData)
-    print("Render time: {}", datetime.now())
+    # print("Render time: {}", datetime.now())
     # print("%s seconds" % (time.time() - start_time))
     return render_template('index.html', **templateData)
 
@@ -70,9 +74,9 @@ def GetTempAndHum():
             # Read temperature and humidity from DHT11
             temp_c = dhtDevice.temperature
             temp_f = temp_c * (9 / 5) + 32
-            print("temp_f: {} - {}", temp_f, datetime.now())
+            # print("temp_f: {} - {}", temp_f, datetime.now())
             hum = dhtDevice.humidity
-            print("hum: {} - {}", hum, datetime.now())
+            # print("hum: {} - {}", hum, datetime.now())
             flag = True #If everything is read successfully, this is our exit condition
         
         # If an error is received, just print a message to terminal and keep reading
@@ -108,7 +112,7 @@ def GetPHandMoisture():
             value = ser.readline()
             split_value = value.decode('utf-8').split()
         ph_value = split_value[2]
-        print("ph_value: {} - {}", ph_value, datetime.now())
+        # print("ph_value: {} - {}", ph_value, datetime.now())
 
         # If the first word in the list is "Moisture", store it's value
         # Example string "pH Value: 50"
@@ -116,7 +120,7 @@ def GetPHandMoisture():
             value = ser.readline()
             split_value = value.decode('utf-8').split()
         moisture_value = split_value[2]
-        print("moisture: {} - {}", moisture_value, datetime.now())
+        # print("moisture: {} - {}", moisture_value, datetime.now())
 
         # Once all required values are read, just exit the forever while loop
         break
