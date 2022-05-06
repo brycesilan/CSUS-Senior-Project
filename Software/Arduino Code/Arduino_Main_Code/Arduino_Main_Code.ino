@@ -1,21 +1,12 @@
-#define RELAY_1_PIN 9
-#define RELAY_2_PIN 10 //WATER
-#define RELAY_3_PIN 11
-#define RELAY_4_PIN 12 //LIGHT
+#define RELAY_1_PIN 2
+#define RELAY_2_PIN 3 //WATER
+#define RELAY_3_PIN 4
+#define RELAY_4_PIN 5 //LIGHT
 
 #define pH_SENSOR_PIN A0
 #define MOISTURE_SENSOR_PIN A1
 
 float calibration_value = 23.50 - 0.7; //This is for the pH Sensor
-
-
-void defaultLow()
-{
-  digitalWrite(RELAY_1_PIN, LOW);
-  digitalWrite(RELAY_2_PIN, LOW);
-  digitalWrite(RELAY_3_PIN, LOW);
-  digitalWrite(RELAY_4_PIN, LOW);
-}
 
 void setup()
 {
@@ -24,27 +15,57 @@ void setup()
   pinMode(RELAY_2_PIN, OUTPUT);
   pinMode(RELAY_3_PIN, OUTPUT);
   pinMode(RELAY_4_PIN, OUTPUT);
-  defaultLow();
 }
 
 void loop()
 {
   if (Serial.available() > 0) {
     int relay = Serial.read() - '0';
-    defaultLow();
 
     switch (relay) {
       case 1:
-        digitalWrite(RELAY_1_PIN, HIGH);
+        Serial.println("RELAY 1");
+        if (digitalRead(RELAY_1_PIN) == LOW) {
+          digitalWrite(RELAY_1_PIN, HIGH);
+          Serial.println("RELAY 1 ON");
+        }
+        else {
+          digitalWrite(RELAY_1_PIN, LOW);
+          Serial.println("RELAY 1 OFF");
+        }
         break;
       case 2:
-        digitalWrite(RELAY_2_PIN, HIGH);
+        Serial.println("RELAY 2");
+        if (digitalRead(RELAY_2_PIN) == LOW) {
+          digitalWrite(RELAY_2_PIN, HIGH);
+          Serial.println("RELAY 2 ON");
+        }
+        else {
+          digitalWrite(RELAY_2_PIN, LOW);
+          Serial.println("RELAY 2 OFF");
+        }
         break;
       case 3:
-        digitalWrite(RELAY_3_PIN, HIGH);
+        Serial.println("RELAY 3");
+        if (digitalRead(RELAY_3_PIN) == LOW) {
+          digitalWrite(RELAY_3_PIN, HIGH);
+          Serial.println("RELAY 3 ON");
+        }
+        else {
+          digitalWrite(RELAY_3_PIN, LOW);
+          Serial.println("RELAY 3 OFF");
+        }
         break;
       case 4:
-        digitalWrite(RELAY_4_PIN, HIGH);
+        Serial.println("RELAY 4");
+        if (digitalRead(RELAY_4_PIN) == LOW) {
+          digitalWrite(RELAY_4_PIN, HIGH);
+          Serial.println("RELAY 4 ON");
+        }
+        else {
+          digitalWrite(RELAY_4_PIN, LOW);
+          Serial.println("RELAY 4OFF");
+        }
         break;
       default:
         // wrong pin number, do nothing
@@ -60,7 +81,6 @@ void loop()
   Serial.println(ph);
   Serial.print("Moisture value: ");
   Serial.println(moisture);
-
 }
 
 float pH_code()
