@@ -1,9 +1,11 @@
+from datetime import datetime
 import time
 import board
 import adafruit_dht
 import serial
 import sys
 import string
+import csv
 from flask import Flask, render_template, request
 app = Flask(__name__)
  
@@ -36,8 +38,18 @@ def readAll():
     ph_value = ph_and_moisture[0]
     moisture_value = ph_and_moisture[1]
     
+    # Read current time
+    timeStamp = datetime.now()
+ 
+    # Format datetime string to remove milliseconds component
+    # Split them into day and time
+    timeStampDay = timeStamp.strftime("%Y-%m-%d")
+    timeStampTime = timeStamp.strftime("%H:%M:%S")
+
     # Map values from python variables to html variables and pass to flask render_template
     templateData = {
+        'timeStampDay' : timeStampDay,
+        'timeStampTime' : timeStampTime,
         'temperature_f' : str(round(temperature_f,2)),
         'humidity' : humidity,
         'temperature_c' : temperature_c,
@@ -45,6 +57,7 @@ def readAll():
         'moisture_value' : moisture_value, 
     }
 
+    print("Render time: {}", datetime.now())
     # print("%s seconds" % (time.time() - start_time))
     return render_template('index.html', **templateData)
 
@@ -57,7 +70,9 @@ def GetTempAndHum():
             # Read temperature and humidity from DHT11
             temp_c = dhtDevice.temperature
             temp_f = temp_c * (9 / 5) + 32
+            print("temp_f: {} - {}", temp_f, datetime.now())
             hum = dhtDevice.humidity
+            print("hum: {} - {}", hum, datetime.now())
             flag = True #If everything is read successfully, this is our exit condition
         
         # If an error is received, just print a message to terminal and keep reading
@@ -67,7 +82,7 @@ def GetTempAndHum():
             flag = False
             time.sleep(2.0) # Sampling frequency for DHT11
             continue
-    
+        
     return [temp_c, temp_f, hum]
 
 # Reads pH and moisture values from the Arduino through serial and returns them.
@@ -93,6 +108,7 @@ def GetPHandMoisture():
             value = ser.readline()
             split_value = value.decode('utf-8').split()
         ph_value = split_value[2]
+        print("ph_value: {} - {}", ph_value, datetime.now())
 
         # If the first word in the list is "Moisture", store it's value
         # Example string "pH Value: 50"
@@ -100,10 +116,14 @@ def GetPHandMoisture():
             value = ser.readline()
             split_value = value.decode('utf-8').split()
         moisture_value = split_value[2]
+        print("moisture: {} - {}", moisture_value, datetime.now())
 
         # Once all required values are read, just exit the forever while loop
         break
     return [ph_value, moisture_value]
+
+
+    
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=5000, debug=True)
