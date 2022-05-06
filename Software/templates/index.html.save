@@ -125,8 +125,7 @@
   <script>
       function runPython(){
             $.ajax({
-                type: "POST",
-              url: 'gpio.py',
+              url:../gpio.py",
              context: document.body
             }).done(function() {
             });

@@ -166,6 +166,12 @@ def LogData(DataDictionary):
             'Moisture' : DataDictionary['moisture_value'],
             })
             
+@app.route('/light', methods=["POST"])
+def light_handler():
+    if pins['26']['state'] == GPIO.LOW:
+        GPIO.output(pins['26'], GPIO.HIGH)
+    elif pins['26']['state'] == GPIO.HIGH:
+        GPIO.output(pins['26'], GPIO.LOW)
 
     
 
