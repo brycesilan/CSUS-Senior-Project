@@ -12,7 +12,14 @@ app = Flask(__name__)
  
 
 GPIO.setmode(GPIO.BCM)
-
+lightPin = 26
+waterPin = 13
+lightStatus = 0
+waterStatus = 0
+statusDict = {
+        'Light': 'OFF',
+        'Water': 'OFF',
+    }
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
    6 : {'name' : 'GPIO 6', 'state' : GPIO.LOW},
@@ -166,13 +173,64 @@ def LogData(DataDictionary):
             'Moisture' : DataDictionary['moisture_value'],
             })
             
-@app.route('/light', methods=["POST"])
-def light_handler():
-    if pins['26']['state'] == GPIO.LOW:
-        GPIO.output(pins['26'], GPIO.HIGH)
-    elif pins['26']['state'] == GPIO.HIGH:
-        GPIO.output(pins['26'], GPIO.LOW)
+# @app.route('/light', methods=["POST"])
+# def light_handler():
+#     if pins['26']['state'] == GPIO.LOW:
+#         GPIO.output(pins['26'], GPIO.HIGH)
+#     elif pins['26']['state'] == GPIO.HIGH:
+#         GPIO.output(pins['26'], GPIO.LOW)
 
+def status():
+    global statusDict
+    if lightStatus == 0:
+        statusDict['Light'] = 'OFF'
+    if lightStatus == 1:
+        statusDict['Light'] = 'ON'
+    if waterStatus == 0:
+        statusDict['Water'] = 'OFF'
+    if waterStatus == 1:
+        statusDict['Water'] = 'ON'
+
+@app.route('/light_on')
+def light_on():
+    global statusDict
+    GPIO.output(lightPin, GPIO.HIGH)
+    global lightStatus 
+    lightStatus = 1
+    status()
+    print(statusDict)
+    return render_template('control.html', **statusDict)
+
+@app.route('/light_off')
+def light_off():
+    global statusDict
+    GPIO.output(lightPin, GPIO.LOW)
+    global lightStatus
+    lightStatus = 0
+    status()
+    return render_template('control.html', **statusDict)
+
+@app.route('/water_on')
+def water_on():
+    global statusDict
+    GPIO.output(waterPin, GPIO.HIGH)
+    global waterStatus
+    waterStatus = 1
+    status()
+    return render_template('control.html', **statusDict)
+
+@app.route('/water_off')
+def water_off():
+    global statusDict
+    GPIO.output(waterPin, GPIO.LOW)
+    global waterStatus
+    waterStatus = 0
+    status()
+    return render_template('control.html', **statusDict)
+
+@app.route('/control')
+def control():
+    return render_template('control.html')
     
 
 if __name__ == "__main__":

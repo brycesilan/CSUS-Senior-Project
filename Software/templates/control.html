@@ -15,26 +15,26 @@
         <div class="container">
             
             <div class="py-3 text-center">
-                <h1 class="text-danger">Team 8 Farm Data</h1>
+                <h1 class="text-danger">Team 8 Farm Light and Water Control</h1>
                 <h3 class="text-primary">
-                    This website allows you to check pH, Temperature, Humidity, and Moisture readings from your farm! 
+                    This website allows you to control light and water for your farm! 
                 </h3>
-                <br>
+                <!-- <br>
                 <a href="/read">
                     <button type="button" class="btn btn-primary btn-lg" id="RequestReadings">Request All Readings</button>
-                </a>
+                </a> -->
 
-                <br>
-                <p class="text-secondary">Last readings were done at {{ timeStampTime }} on {{timeStampDay}}</p>
+                <!-- <br>
+                <p class="text-secondary">Last readings were done at {{ timeStampTime }} on {{timeStampDay}}</p> -->
             </div>
       
             <div class="justify-content-center text-dark px-4 py-4 rounded">
-                <div class="row">
+                <!-- <div class="row">
                     
                     <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
                             <h1>Moisture</h1>
-                            <!-- <button type="button" class="btn btn-primary btn-sm">Request Moisture Reading</button> -->
+                            <button type="button" class="btn btn-primary btn-sm">Request Moisture Reading</button>
                         </div>
                         <div class="justify-content-center mx-1">
                             <h1>{{ moisture_value }}%</h1>
@@ -44,9 +44,9 @@
                     <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                         <div class="mx-1">
                             <h1>pH</h1>
-                            <!-- <a href="/pH">
+                            <a href="/pH">
                                 <button type="button" class="btn btn-primary btn-sm">Request pH</button>
-                            </a> -->
+                            </a>
                         </div>
                         <div class="justify-content-center">
                             <h1>{{ ph_value }}</h1>
@@ -54,15 +54,15 @@
                     </div>
 
                     
-                </div>
+                </div> -->
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div class="mx-1">
                             <h1>Temperature</h1>
-                            <!-- <a href="/temperature">
+                            <a href="/temperature">
                                 <button type="button" class="btn btn-primary btn-sm">Request Temperature Reading</button>
-                            </a> -->
+                            </a>
                         </div>
                         <div class="justify-content-center">
                             <h1>{{ temperature_f }}&#8457; / {{ temperature_c }}&#8451;</h1>
@@ -73,51 +73,58 @@
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
                             <h1>Humidity</h1>
-                            <!-- <a href="/humidity">
+                            <a href="/humidity">
                                 <button type="button" class="btn btn-primary btn-sm">Request Humidity Reading</button>
-                            </a> -->
+                            </a>
                         </div>
                         <div class="justify-content-center">
                             <h1>{{ humidity }}%</h1>
                         </div>
                     </div>
-                </div>
-
-                <!-- <div class="row">
-                    <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
-                        <div  class="mx-1">
-                            <h1>Light</h1>
-                            <form method="POST" id="light_on">
-                                <input type="submit", value="Turn on">
-                            </form>
-                            
-                            <input type="button" value="Toggle Light" onclick="runPython()"> -->
-                            <!-- <button type="button" class="btn btn-primary btn-sm">Toggle Light</button>
-                        </div>
-                        <div class="justify-content-center">
-                            <h3>Light status</h3>
-                        </div>
-                    </div>
-                
-                    <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
-                        <div  class="mx-1">
-                            <h1>Water</h1>
-                            <button type="button" class="btn btn-primary btn-sm">Toggle Water</button>
-                        </div>
-                        <div class="justify-content-center">
-                            <h3>Water control status</h3>
-                        </div>
-                    </div>
                 </div> -->
 
-                <div class="py-5 text-center">
-                    
-                    <a href="/control">
-                        <button type="button" class="btn btn-primary btn-lg" id="RequestReadings">Change water and light controls</button>
-                    </a>
+                <div class="row">
+                    <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div  class="mx-1">
+                            <h1>Light</h1>
+                            <a href="/light_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <a href="/light_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>{{ Light }}</h3>
+                        </div>
+                    </div>
+                
+                    <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div  class="mx-1">
+                            <h1>Water</h1>
+                            <a href="/water_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <a href="/water_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>{{ Water }}</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <br>
 
+                <div class="text-center">
+                    <a href="/read">
+                        <button type="button" class="btn btn-primary btn-lg" id="RequestReadings">Get readings</button>
+                    </a>
+                </div>
                 
             </div>
+
       </div>
     
 
@@ -128,11 +135,11 @@
     </footer>
 
   </body>
-    <script>
+    <!-- <script>
         setInterval(function () {document.getElementById("RequestReadings").click();}, 10000);
-    </script>
+    </script> -->
 
-    <script>
+    <!-- <script>
       function runPython(){
             $.ajax({
                 type: "POST",
@@ -151,7 +158,7 @@
                 method:'POST'
             });
         });
-    </script>
+    </script> -->
 
 
 
@@ -165,4 +172,3 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
-</html>
