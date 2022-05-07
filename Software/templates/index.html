@@ -15,112 +15,85 @@
         <div class="container">
             
             <div class="py-3 text-center">
+                <!-- Headings and introduction -->
                 <h1 class="text-danger">Team 8 Farm Data</h1>
                 <h3 class="text-primary">
                     This website allows you to check pH, Temperature, Humidity, and Moisture readings from your farm! 
                 </h3>
                 <br>
+                <!-- Button to request all readings -->
                 <a href="/read">
                     <button type="button" class="btn btn-primary btn-lg" id="RequestReadings">Request All Readings</button>
                 </a>
 
                 <br>
+                <!-- Displays timestamps -->
                 <p class="text-secondary">Last readings were done at {{ timeStampTime }} on {{timeStampDay}}</p>
             </div>
       
             <div class="justify-content-center text-dark px-4 py-4 rounded">
+            
+                <!-- Moisture and pH row -->
                 <div class="row">
                     
+                    <!-- Moisture-related HTML -->
                     <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
                             <h1>Moisture</h1>
-                            <!-- <button type="button" class="btn btn-primary btn-sm">Request Moisture Reading</button> -->
                         </div>
                         <div class="justify-content-center mx-1">
                             <h1>{{ moisture_value }}%</h1>
                         </div>
                     </div>
                     
+                    <!-- pH-related HTML -->
                     <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                         <div class="mx-1">
                             <h1>pH</h1>
-                            <!-- <a href="/pH">
-                                <button type="button" class="btn btn-primary btn-sm">Request pH</button>
-                            </a> -->
                         </div>
                         <div class="justify-content-center">
                             <h1>{{ ph_value }}</h1>
                         </div>
                     </div>
-
                     
                 </div>
 
+                <!-- Temperature and Humidity -->
                 <div class="row">
+                    
+                    <!-- Temperature-related HTML -->
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div class="mx-1">
                             <h1>Temperature</h1>
-                            <!-- <a href="/temperature">
-                                <button type="button" class="btn btn-primary btn-sm">Request Temperature Reading</button>
-                            </a> -->
                         </div>
                         <div class="justify-content-center">
                             <h1>{{ temperature_f }}&#8457; / {{ temperature_c }}&#8451;</h1>
                         </div>
                     </div>
                     
-
+                    <!-- Humidity-related HTML -->
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
                             <h1>Humidity</h1>
-                            <!-- <a href="/humidity">
-                                <button type="button" class="btn btn-primary btn-sm">Request Humidity Reading</button>
-                            </a> -->
                         </div>
                         <div class="justify-content-center">
                             <h1>{{ humidity }}%</h1>
                         </div>
                     </div>
+                
                 </div>
 
-                <!-- <div class="row">
-                    <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
-                        <div  class="mx-1">
-                            <h1>Light</h1>
-                            <form method="POST" id="light_on">
-                                <input type="submit", value="Turn on">
-                            </form>
-                            
-                            <input type="button" value="Toggle Light" onclick="runPython()"> -->
-                            <!-- <button type="button" class="btn btn-primary btn-sm">Toggle Light</button>
-                        </div>
-                        <div class="justify-content-center">
-                            <h3>Light status</h3>
-                        </div>
-                    </div>
-                
-                    <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
-                        <div  class="mx-1">
-                            <h1>Water</h1>
-                            <button type="button" class="btn btn-primary btn-sm">Toggle Water</button>
-                        </div>
-                        <div class="justify-content-center">
-                            <h3>Water control status</h3>
-                        </div>
-                    </div>
-                </div> -->
-
-                <div class="py-5 text-center">
-                    
+                <!-- Button to go to the controls page -->
+                <div class="py-5 text-center">    
                     <a href="/control">
                         <button type="button" class="btn btn-primary btn-lg" id="RequestReadings">Change water and light controls</button>
                     </a>
-
-                
+                </div>
+           
             </div>
       </div>
     
-
+    <!-- Team name display -->
     <footer>
         <center>
         <p style="color:#7CFC00;font-size:30px;">Team Members: Bryce Silan, Kara Tegge, Tejpal Lalihiana, and Jiawei Li</p>
@@ -128,32 +101,10 @@
     </footer>
 
   </body>
+    <!-- Script to auto-click "Request All Readings" button every 10 seconds -->
     <script>
         setInterval(function () {document.getElementById("RequestReadings").click();}, 10000);
     </script>
-
-    <script>
-      function runPython(){
-            $.ajax({
-                type: "POST",
-              url: 'gpio.py',
-             context: document.body
-            }).done(function() {
-            });
-        }
-    </script>
-
-    <script>
-        $('light_on').on('submit', function(e){
-            e.preventDefault();
-            $.ajax({
-                url:'http://0.0.0.0:5000/light_on/',
-                method:'POST'
-            });
-        });
-    </script>
-
-
 
   <!-- Optional JavaScript; choose one of the two! -->
 

@@ -12,10 +12,12 @@ app = Flask(__name__)
  
 
 GPIO.setmode(GPIO.BCM)
-lightPin = 26
-waterPin = 13
-lightStatus = 0
-waterStatus = 0
+lightPin = 26 # Light control pin number for the raspberry pi
+waterPin = 13 # water control pin number for the raspberry pi
+lightStatus = 0 # light status to be used with control.html
+waterStatus = 0 # water status to be used with control.html
+
+# dictionary to be passed to render_template on control.html
 statusDict = {
         'Light': 'OFF',
         'Water': 'OFF',
@@ -180,6 +182,7 @@ def LogData(DataDictionary):
 #     elif pins['26']['state'] == GPIO.HIGH:
 #         GPIO.output(pins['26'], GPIO.LOW)
 
+# Function that updates the status dictionary
 def status():
     global statusDict
     if lightStatus == 0:
@@ -191,14 +194,14 @@ def status():
     if waterStatus == 1:
         statusDict['Water'] = 'ON'
 
+# Turn on lights
 @app.route('/light_on')
 def light_on():
-    global statusDict
-    GPIO.output(lightPin, GPIO.HIGH)
-    global lightStatus 
-    lightStatus = 1
-    status()
-    print(statusDict)
+    global statusDict # Require the global variable 'statusDict' (just a python way to make global variables work)
+    GPIO.output(lightPin, GPIO.HIGH) # Set pin appropriately
+    global lightStatus  # Require the global variable lightStatus
+    lightStatus = 1 # Update the global variable
+    status() # Update the status dictionary
     return render_template('control.html', **statusDict)
 
 @app.route('/light_off')
@@ -228,6 +231,7 @@ def water_off():
     status()
     return render_template('control.html', **statusDict)
 
+# Renders the control page for the first time.
 @app.route('/control')
 def control():
     return render_template('control.html')
