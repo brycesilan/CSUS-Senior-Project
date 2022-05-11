@@ -1,4 +1,4 @@
-float calibration_value = 23.50 - 0.7;
+float calibration_value = 23.85 - 0.7;
 
 
 int pH_sensor = A0;
