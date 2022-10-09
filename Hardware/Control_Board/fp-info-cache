@@ -1,4 +1,4 @@
-37867571789609
+32922350006653
 DGD
 8AWG Wirepad
 
@@ -105,26 +105,12 @@ Connector
 9
 9
 Samacsys
-08261X1TGJF
-0826-1X1T-GJ-F-3
+172447-YY02
+172447-YY02
 Connector
 0
-16
-16
-Samacsys
-8254337
-825433-7-4
-Connector
-0
-7
-7
-Samacsys
-5040501291
-504050-1291-1
-Connector
-0
-14
-14
+2
+2
 Samacsys
 ARDNANO30NP
 ARD-NANO30NP-4_1
@@ -133,12 +119,19 @@ Integrated Circuit
 34
 34
 Samacsys
-CAPC1005X55N
-0402
-Capacitor
+DG207011351012
+DG20-7011-35-1012-2
+Relay or Contactor
 0
-2
-2
+5
+5
+Samacsys
+HDRV8W63P0X254_1X8_2032X254X970P
+825433-
+Connector
+0
+8
+8
 Samacsys
 NE555DR
 D (R-PDSO-G8)
@@ -146,17 +139,3 @@ Integrated Circuit
 0
 8
 8
-Samacsys
-SOIC127P965X597-16N
-H2019NL
-Transformer
-0
-16
-16
-Samacsys
-SOT230P700X180-4N
-DCY (R-PDSO-G4)-11
-Integrated Circuit
-0
-4
-4
