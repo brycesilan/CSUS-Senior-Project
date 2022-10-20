@@ -32,7 +32,44 @@
             </div>
       
             <div class="justify-content-center text-dark px-4 py-4 rounded">
-            
+ 
+                <!-- Water and Light control -->
+                <div class="row">
+                    <!-- Light control -->
+                    <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div  class="mx-1">
+                            <h1>Light</h1>
+                            <!-- Light "Turn on" button -->
+                            <a href="/light_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <!-- Light "Turn off" button -->
+                            <a href="/light_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>{{ Light }}</h3>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div  class="mx-1">
+                            <h1>Water</h1>
+                            <!-- water "Turn on" button -->
+                            <a href="/water_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <!-- water "Turn off" button -->
+                            <a href="/water_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>{{ Water }}</h3>
+                        </div>
+                    </div>
+
                 <!-- Moisture and pH row -->
                 <div class="row">
                     
@@ -122,12 +159,12 @@
                 </div>
 
                 <!-- Button to go to the controls page -->
-                <div class="py-5 text-center">    
+              <!--   <div class="py-5 text-center">    
                     <a href="/control">
                         <button type="button" class="btn btn-primary btn-lg" id="RequestReadings">Change water and light controls</button>
                     </a>
                 </div>
-           
+                 -->
             </div>
       </div>
     
