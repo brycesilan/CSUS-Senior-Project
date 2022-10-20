@@ -16,42 +16,52 @@
             
             <div class="py-3 text-center">
                 <!-- Headings and introduction -->
-                <h1 class="text-danger">Team 8 Farm Data</h1>
-                <h3 class="text-primary">
+                <h1 class="text-danger"><u>Team 8 Senior Project Farm Data/Control</u></h1>
+                <!-- <h3 class="text-primary">
                     This website allows you to check pH, Temperature, Humidity, and Moisture readings from your farm! 
                 </h3>
                 <br>
+                -->
                 <!-- Button to request all readings -->
+                <!--
                 <a href="/read">
                     <button type="button" class="btn btn-primary btn-lg" id="RequestReadings">Request All Readings</button>
                 </a>
 
                 <br>
+                -->
+                
                 <!-- Displays timestamps -->
-                <p class="text-secondary">Last readings were done at {{ timeStampTime }} on {{timeStampDay}}</p>
+                <!-- 
+                    <p class="text-secondary">Last readings were done at {{ timeStampTime }} on {{timeStampDay}}</p>
+                -->
             </div>
       
             <div class="justify-content-center text-dark px-4 py-4 rounded">
  
-                <!-- Water and Light control -->
-            <div class="row">
+                <!-- Light 1 control -->
+                <div class="row">
+                    <h2 class="text-primary">
+                        <u>Level 1</u>
+                    </h2>
                     <!-- Light control -->
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
-                            <h1>Light</h1>
+                            <h1>Light 1(For Tray 1 and 2)</h1>
                             <!-- Light "Turn on" button -->
-                            <a href="/light_on">
+                            <a href="/light1_on">
                                 <button type="button" class="btn btn-primary btn-sm">Turn on</button>
                             </a>
                             <!-- Light "Turn off" button -->
-                            <a href="/light_off">
+                            <a href="/light1_off">
                                 <button type="button" class="btn btn-primary btn-sm">Turn off</button>
                             </a>
                         </div>
                         <div class="justify-content-center">
-                            <h3>{{ Light }}</h3>
+                            <h3>{{ Light 1&2 }}</h3>
                         </div>
                     </div>
+                
 
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
@@ -68,8 +78,8 @@
                         <div class="justify-content-center">
                             <h3>{{ Water }}</h3>
                         </div>
+                    </div>
                 </div>
-
                 <!-- Moisture and pH row -->
                 <div class="row">
                     
@@ -166,8 +176,13 @@
                 </div>
                  -->
             </div>
-      </div>
-    
+        </div>
+
+        <div class="py-3 text-center">
+                <!-- Displays timestamps -->
+                <p class="text-secondary">Last readings were done at {{ timeStampTime }} on {{timeStampDay}}</p>
+        </div>
+
     <!-- Team name display -->
     <footer>
         <center>
