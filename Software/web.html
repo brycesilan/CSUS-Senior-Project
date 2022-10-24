@@ -39,26 +39,237 @@
       
             <div class="justify-content-center text-dark px-4 py-4 rounded">
  
-                <!-- Light 1 control -->
+            <!-- Level 1 control -->
                 <div class="row">
-                    <h2 class="text-primary">
+                    <h2 class="text-success">
                         <u>Level 1</u>
                     </h2>
-                    <!-- Light control -->
-                    <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                </div>
+                <div class="row">
+                    <!-- Light1 control -->
+                    <div class="col d-flex flex-column bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div class="d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                            <div  class="mx-1">
+                                <h1>Light 1(For Tray 1 and 2)</h1>
+                                <!-- Light "Turn on" button -->
+                                <a href="/light1_on">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                                </a>
+                                <!-- Light "Turn off" button -->
+                                <a href="/light1_off">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                                
+                                </a>
+                            </div>
+                            <div class="justify-content-center">
+                                <h3>{{ Light 1&2 }}</h3>
+                            </div>  
+                        </div>
+                    </div>  
+                </div>
+                <!--Tray 1 & Tray2 Information-->
+                <div class="row">
+                    <!--Tray 1-->
+                    <div class="col d-flex flex-column bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <h4 class ="text-success"> <u>Tray 1</u></h4>
+                        <div class="d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                            <div  class="mx-1">
+                                <h1>Moisture1</h1>
+                                <!-- moisture1 "Turn on" button -->
+                                <a href="/moisture1_on">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                                </a>
+                                <!-- moisture1 "Turn off" button -->
+                                <a href="/moisture1_off">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                                </a>
+                            </div>  
+                            <div class="justify-content-center">
+                                <h3>{{ Moisture1 }}</h3>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                            <div class="mx-1">
+                                    <h1>Water1</h1>
+                                    <!-- water1 "Turn on" button -->
+                                    <a href="/water1_on">
+                                        <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                                    </a>
+                                    <!-- water1 "Turn off" button -->
+                                    <a href="/water1_off">
+                                        <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                                    </a>
+                            </div>
+                            <div class="justify-content-center">
+                                <h3>{{ Water1 }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Tray 2-->
+                    <div class="col d-flex flex-column bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <h4 class ="text-success"> <u>Tray 2</u></h4>
+                        <div class="d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                            <div  class="mx-1">
+                                <h1>Moisture2</h1>
+                                <!-- moisture2 "Turn on" button -->
+                                <a href="/moisture2_on">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                                </a>
+                                <!-- moisture2 "Turn off" button -->
+                                <a href="/moisture2_off">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                                </a>
+                            </div>
+                            <div class="justify-content-center">
+                                <h3>{{ Moisture2 }}</h3>
+                            </div>
+                        </div>
+                     <div class="d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div  class="mx-1">
-                            <h1>Light 1(For Tray 1 and 2)</h1>
-                            <!-- Light "Turn on" button -->
-                            <a href="/light1_on">
+                            <h1>Water2</h1>
+                            <!-- water2 "Turn on" button -->
+                            <a href="/water2_on">
                                 <button type="button" class="btn btn-primary btn-sm">Turn on</button>
                             </a>
-                            <!-- Light "Turn off" button -->
-                            <a href="/light1_off">
+                            <!-- water2 "Turn off" button -->
+                            <a href="/water2_off">
                                 <button type="button" class="btn btn-primary btn-sm">Turn off</button>
                             </a>
                         </div>
                         <div class="justify-content-center">
-                            <h3>{{ Light 1&2 }}</h3>
+                            <h3>{{ Water2 }}</h3>
+                        </div>
+                    </div>
+                </div>
+            <!--Level 1 Tray 1 & 2  -->
+                <div class="row">
+                        <div class="col d-flex flex-column bg-warning mx-2 my-2 px-2 py-2 rounded">
+                            <div  class="mx-1">
+                            <h4 class ="text-success"> 
+                                <u>Tray 1</u>
+                            </h4>
+                                <h1>Moisture1</h1>
+                                <!-- moisture1 "Turn on" button -->
+                                <a href="/moisture1_on">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                                </a>
+                                <!-- moisture1 "Turn off" button -->
+                                <a href="/moisture1_off">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                                </a>
+                                <div class="justify-content-end">
+                                    <h3>{{ Moisture1 }}</h3>
+                                </div>
+                            <div class="justify-content-end">
+                                <h3>{{ Moisture1 }}</h3>
+                            </div>
+                            <div  class="mx-1">
+                                <h1>Water1</h1>
+                                <!-- water1 "Turn on" button -->
+                                <a href="/water1_on">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                                </a>
+                                <!-- water1 "Turn off" button -->
+                                <a href="/water1_off">
+                                    <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                                </a>
+                            </div>
+                            <div class="justify-content-center">
+                                <h3>{{ Water1 }}</h3>
+                            </div>
+                        </div>
+                    <div class="col d-flex flex-column bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div  class="mx-1">
+                        <h4 class ="text-success"> 
+                            <u>Tray 2</u>
+                        </h4>
+                            <h1>Moisture2</h1>
+                            <!-- moisture2 "Turn on" button -->
+                            <a href="/moisture2_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <!-- moisture2 "Turn off" button -->
+                            <a href="/moisture2_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>{{ Moisture2 }}</h3>
+                        </div>
+                        <div  class="mx-1">
+                            <h1>Water2</h1>
+                            <!-- water2 "Turn on" button -->
+                            <a href="/water2_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <!-- water2 "Turn off" button -->
+                            <a href="/water2_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>{{ Water2 }}</h3>
+                        </div>
+                    </div>
+                </div>
+
+            <!--Level 1 Tray 2 -->
+            <div class="row">
+                <h4 class ="text-success"> 
+                    <u>Tray 2</u>
+                </h4>
+                    <div class="col d-flex flex-column bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div  class="mx-1">
+                            <h1>Moisture2</h1>
+                            <!-- moisture2 "Turn on" button -->
+                            <a href="/moisture2_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <!-- moisture2 "Turn off" button -->
+                            <a href="/moisture2_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>{{ Moisture2 }}</h3>
+                        </div>
+                        <div  class="mx-1">
+                            <h1>Water2</h1>
+                            <!-- water2 "Turn on" button -->
+                            <a href="/water2_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <!-- water2 "Turn off" button -->
+                            <a href="/water2_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>{{ Water2 }}</h3>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- Level 2 control -->
+                <div class="row">
+                    <h2 class="text-primary">
+                        <u>Level 2</u>
+                    </h2>
+                    <!-- Light2 control -->
+                    <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div  class="mx-1">
+                            <h1>Light 2(For Tray 1 and 2)</h1>
+                            <!-- Light "Turn on" button -->
+                            <a href="/light2_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <!-- Light "Turn off" button -->
+                            <a href="/light2_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>
+                        </div>
+                        <div class="justify-content-center">
+                            <h3>{{ Light 3&4 }}</h3>
                         </div>
                     </div>
                 
