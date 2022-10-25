@@ -4011,7 +4011,7 @@
     (property "Value" "Screw_Terminal_01x02" (id 1) (at 154.4828 25.8064 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "TBL004-508-02BE-2GY:CUI_TBL004-508-02BE-2GY" (id 2) (at 152.4 31.75 0)
+    (property "Footprint" "Samacsys:197054301" (id 2) (at 152.4 31.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 152.4 31.75 0)
@@ -4221,7 +4221,7 @@
     (property "Value" "Screw_Terminal_01x02" (id 1) (at 154.4828 38.5064 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "TBL004-508-02BE-2GY:CUI_TBL004-508-02BE-2GY" (id 2) (at 152.4 44.45 0)
+    (property "Footprint" "Samacsys:197054301" (id 2) (at 152.4 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 152.4 44.45 0)
@@ -4581,10 +4581,10 @@
       (reference "J1") (unit 1) (value "Raspberry_Pi_2_3") (footprint "")
     )
     (path "/bcb841d9-35e5-4c54-8b84-08cbcfa736af"
-      (reference "J2") (unit 1) (value "Screw_Terminal_01x02") (footprint "TBL004-508-02BE-2GY:CUI_TBL004-508-02BE-2GY")
+      (reference "J2") (unit 1) (value "Screw_Terminal_01x02") (footprint "Samacsys:197054301")
     )
     (path "/e54a720e-e37a-4304-9f41-3ff0b906ca43"
-      (reference "J3") (unit 1) (value "Screw_Terminal_01x02") (footprint "TBL004-508-02BE-2GY:CUI_TBL004-508-02BE-2GY")
+      (reference "J3") (unit 1) (value "Screw_Terminal_01x02") (footprint "Samacsys:197054301")
     )
     (path "/b4d9670f-2d45-4002-8536-d1693c21246b"
       (reference "J4") (unit 1) (value "19705-4301") (footprint "197054301")
