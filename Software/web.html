@@ -38,6 +38,41 @@
             </div>
       
             <div class="justify-content-center text-dark px-4 py-4 rounded">
+                <!-- PH, Temp, and Humidty row -->
+                <div class="row">
+                    <!-- pH-related HTML -->
+                    <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div class="mx-1">
+                            <h2>pH</h2>
+                        </div>
+                        <div class="justify-content-center">
+                            <h2>{{ ph_value }}</h2>
+                        </div>
+                    </div>
+                    
+                    <!-- Temperature and Humidity -->
+                        
+                    <!-- Temperature-related HTML -->
+                    <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
+                        <div class="mx-1">
+                            <h2>Temperature</h2>
+                        </div>
+                        <div class="justify-content-center">
+                            <h2>{{ temperature_f }}&#8457; / {{ temperature_c }}&#8451;</h2>
+                        </div>
+                    </div>
+                    
+                    <!-- Humidity-related HTML -->
+                    <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div  class="mx-1">
+                            <h2>Humidity</h2>
+                        </div>
+                        <div class="justify-content-center">
+                            <h2>{{ humidity }}%</h2>
+                        </div>
+                    </div>
+                
+                </div>  
                 <div class ="row">
                     <div class="col d-flex flex-column bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <!-- Level 1 control -->
@@ -133,30 +168,30 @@
 
                 <div class ="row">
                     <div class="col d-flex flex-column bg-warning mx-2 my-2 px-2 py-2 rounded">
-                        <!-- Level 1 control -->
+                        <!-- Level 2 control -->
                         <div class="row">
-                            <h2 class="text-primary">
-                                <u>Level 1</u>
+                            <h2 class="text-light">
+                                <u>Level 2</u>
                             </h2>
                         </div>
                         <div class="row">
-                            <!-- Light1 control -->
+                            <!-- Light2 control -->
                             <div class="col d-flex flex-column bg-success mx-2 my-2 px-2 py-2 rounded">
-                                <div class="d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                                <div class="d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                                     <div  class="mx-1">
-                                        <h1>Light 1(For Tray 1 and 2)</h1>
+                                        <h1>Light 2(For Tray 3 and 4)</h1>
                                         <!-- Light "Turn on" button -->
-                                        <a href="/light1_on">
+                                        <a href="/light2_on">
                                             <button type="button" class="btn btn-primary btn-sm">Turn on</button>
                                         </a>
                                         <!-- Light "Turn off" button -->
-                                        <a href="/light1_off">
+                                        <a href="/light2_off">
                                             <button type="button" class="btn btn-primary btn-sm">Turn off</button>
                                         
                                         </a>
                                     </div>
                                     <div class="justify-content-center">
-                                        <h3>{{ Light 1&2 }}</h3>
+                                        <h3>{{ Light 3&4 }}</h3>
                                     </div>  
                                 </div>
                             </div>  
@@ -165,57 +200,57 @@
                         <div class="row">
                             <!--Tray 1-->
                             <div class="col d-flex flex-column bg-success mx-2 my-2 px-2 py-2 rounded">
-                                <h4 class ="text-dark"> <u>Tray 1</u></h4>
+                                <h4 class ="text-dark"> <u>Tray 3</u></h4>
                                 <div class="d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                                     <div  class="mx-1">
-                                        <h1>Moisture1</h1>
+                                        <h1>Moisture3</h1>
                                     </div>  
                                     <div class="justify-content-center">
-                                        <h3>{{ Moisture1 }}</h3>
+                                        <h3>{{ Moisture3 }}</h3>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                                     <div class="mx-1">
-                                            <h1>Water1</h1>
+                                            <h1>Water3</h1>
                                             <!-- water1 "Turn on" button -->
-                                            <a href="/water1_on">
+                                            <a href="/water3_on">
                                                 <button type="button" class="btn btn-primary btn-sm">Turn on</button>
                                             </a>
                                             <!-- water1 "Turn off" button -->
-                                            <a href="/water1_off">
+                                            <a href="/water3_off">
                                                 <button type="button" class="btn btn-primary btn-sm">Turn off</button>
                                             </a>
                                     </div>
                                     <div class="justify-content-center">
-                                        <h3>{{ Water1 }}</h3>
+                                        <h3>{{ Water3 }}</h3>
                                     </div>
                                 </div>
                             </div>
                             <!--Tray 2-->
                             <div class="col d-flex flex-column bg-success mx-2 my-2 px-2 py-2 rounded">
-                                <h4 class ="text-dark"> <u>Tray 2</u></h4>
-                                <div class="d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                                <h4 class ="text-dark"> <u>Tray 4</u></h4>
+                                <div class="d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                                     <div  class="mx-1">
-                                        <h1>Moisture2</h1>
+                                        <h1>Moisture4</h1>
                                     </div>
                                     <div class="justify-content-center">
-                                        <h3>{{ Moisture2 }}</h3>
+                                        <h3>{{ Moisture4 }}</h3>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                                <div class="d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                                     <div  class="mx-1">
-                                        <h1>Water2</h1>
+                                        <h1>Water4</h1>
                                         <!-- water2 "Turn on" button -->
-                                        <a href="/water2_on">
+                                        <a href="/water4_on">
                                             <button type="button" class="btn btn-primary btn-sm">Turn on</button>
                                         </a>
                                         <!-- water2 "Turn off" button -->
-                                        <a href="/water2_off">
+                                        <a href="/water4_off">
                                             <button type="button" class="btn btn-primary btn-sm">Turn off</button>
                                         </a>
                                     </div>
                                     <div class="justify-content-center">
-                                        <h3>{{ Water2 }}</h3>
+                                        <h3>{{ Water4 }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -223,55 +258,6 @@
                     </div>
                 </div>
                 <!--Level 2 ends-->
-                    <!-- Moisture and pH row -->
-                    <div class="row">
-                        
-                        <!-- Moisture-related HTML -->
-                        <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
-                            <div  class="mx-1">
-                                <h1>Moisture</h1>
-                            </div>
-                            <div class="justify-content-center mx-1">
-                                <h1>{{ moisture_value }}%</h1>
-                            </div>
-                        </div>
-                        
-                        <!-- pH-related HTML -->
-                        <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
-                            <div class="mx-1">
-                                <h1>pH</h1>
-                            </div>
-                            <div class="justify-content-center">
-                                <h1>{{ ph_value }}</h1>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <!-- Temperature and Humidity -->
-                    <div class="row">
-                        
-                        <!-- Temperature-related HTML -->
-                        <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
-                            <div class="mx-1">
-                                <h1>Temperature</h1>
-                            </div>
-                            <div class="justify-content-center">
-                                <h1>{{ temperature_f }}&#8457; / {{ temperature_c }}&#8451;</h1>
-                            </div>
-                        </div>
-                        
-                        <!-- Humidity-related HTML -->
-                        <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
-                            <div  class="mx-1">
-                                <h1>Humidity</h1>
-                            </div>
-                            <div class="justify-content-center">
-                                <h1>{{ humidity }}%</h1>
-                            </div>
-                        </div>
-                    
-                    </div>
 
                     <!-- Button to go to the controls page -->
                     <!--   <div class="py-5 text-center">    
