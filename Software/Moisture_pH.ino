@@ -89,7 +89,7 @@ float calculateAverage(const int pinNumber)
     delay(30);
   }
 
-  for(int i = 0; i < 6; i++)
+  for(int i = 0; i < sampleSize; i++)
   {
     sumOfReadings += analogReadings[i];
   }
