@@ -73,6 +73,29 @@
                     </div>
                 
                 </div>  
+
+                <div class="row">
+                    <!-- Fan Control -->
+                    <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
+                        <div class="mx-1">
+                            <h2>pH</h2>
+                        </div>
+                        <div class="justify-content-center">
+                            <h2>{{ ph_value }}</h2>
+                        </div>
+                    </div>
+                        
+                    <!-- Heat Control -->
+                    <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
+                        <div class="mx-1">
+                            <h2>Temperature</h2>
+                        </div>
+                        <div class="justify-content-center">
+                            <h2>{{ temperature_f }}&#8457; / {{ temperature_c }}&#8451;</h2>
+                        </div>
+                    </div>
+                </div>
+
                 <div class ="row">
                     <div class="col d-flex flex-column bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <!-- Level 1 control -->
