@@ -78,7 +78,15 @@
                     <!-- Fan Control -->
                     <div class="col d-flex justify-content-between bg-warning mx-2 my-2 px-2 py-2 rounded">
                         <div class="mx-1">
-                            <h2>pH</h2>
+                            <h2>Fan Control</h2>
+                            <!-- Light "Turn on" button -->
+                            <a href="/fan_on">
+                                <button type="button" class="btn btn-primary btn-sm">Turn on</button>
+                            </a>
+                            <!-- Light "Turn off" button -->
+                            <a href="/fan_off">
+                                <button type="button" class="btn btn-primary btn-sm">Turn off</button>
+                            </a>                            
                         </div>
                         <div class="justify-content-center">
                             <h2>{{ ph_value }}</h2>
@@ -88,7 +96,7 @@
                     <!-- Heat Control -->
                     <div class="col d-flex justify-content-between bg-danger mx-2 my-2 px-2 py-2 rounded">
                         <div class="mx-1">
-                            <h2>Temperature</h2>
+                            <h2>Heat Control</h2>
                         </div>
                         <div class="justify-content-center">
                             <h2>{{ temperature_f }}&#8457; / {{ temperature_c }}&#8451;</h2>
