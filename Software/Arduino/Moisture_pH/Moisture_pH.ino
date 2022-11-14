@@ -69,7 +69,7 @@ float get_phValue()
   return phValue;  
 }
 
-int get_rhValue(const int moisturePin)
+int get_rhValue(int moisturePin)
 {
   float moistureAverage = 0;
   int rhValue = 0;
