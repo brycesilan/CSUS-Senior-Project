@@ -1,14 +1,15 @@
 //Refer to Software-sem1/Moisture_and_pH/Moisture_and_pH.ino for previous moisture sensor code.
 //Look at rh calculation and translate it to older/newer moisture sensors
 
-//float calibration_value = 23.85 - 0.7;
+float calibration_value = 23.85 - 0.4;
 
-const int pH_sensor_pin  = 19; //A0
-const int moisture_1_pin = 20; //A1
-const int moisture_2_pin = 21; //A2
-const int moisture_3_pin = 22; //A3
-const int moisture_4_pin = 23; //A4
-const int sampleSize = 6;
+int pH_sensor_pin  = A0; //A0
+int moisture_1_pin = A1; //A1
+int moisture_2_pin = A2; //A2
+int moisture_3_pin = A3; //A3
+int moisture_4_pin = A4; //A4
+int sampleSize = 6;
+char incomingByte;
 
 void setup() {
   Serial.begin(9600);
@@ -18,9 +19,15 @@ void loop() {
   // put your main code here, to run repeatedly:
   
   //If you receive something at Serial, only then calculate and send sensor data back
-  if(Serial.available())
+  while(Serial.available() > 0)
   {
-    outputValues();
+    incomingByte = Serial.read();
+    //Serial.println(incomingByte);
+    if(incomingByte == 'x')
+    {
+      outputValues();
+    }
+    
   }
   
 }
@@ -55,10 +62,12 @@ float get_phValue()
   float voltage = 0;
 
   avgValue = calculateAverage(pH_sensor_pin);
-  
+  Serial.print("pH average: ");
+  Serial.println(avgValue);
   voltage = avgValue * (5.0 / 1024);
   phValue = -5.70 * voltage + calibration_value; //y=mx+b
-
+  Serial.print("pH Value: ");
+  Serial.println(phValue);
   return phValue;  
 }
 
@@ -68,7 +77,7 @@ int get_rhValue(const int moisturePin)
   int rhValue = 0;
  
   //Calculate average moisture
-  moistureAverage = calculateAverage(moistureAverage);
+  moistureAverage = calculateAverage(moisturePin);
   
   //Calculate relative humidity
   rhValue = calculateRH(moistureAverage);
@@ -77,7 +86,7 @@ int get_rhValue(const int moisturePin)
   
 }
 
-float calculateAverage(const int pinNumber) 
+float calculateAverage(int pinNumber) 
 {
   float sumOfReadings = 0; //Maybe change to unsigned long int if needed
   int analogReadings[sampleSize];
@@ -86,6 +95,7 @@ float calculateAverage(const int pinNumber)
   for(int i = 0; i < sampleSize; i++)
   {
     analogReadings[i] = analogRead(pinNumber);
+
     delay(30);
   }
 
