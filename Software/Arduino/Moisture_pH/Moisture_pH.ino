@@ -62,12 +62,10 @@ float get_phValue()
   float voltage = 0;
 
   avgValue = calculateAverage(pH_sensor_pin);
-  Serial.print("pH average: ");
-  Serial.println(avgValue);
+
   voltage = avgValue * (5.0 / 1024);
   phValue = -5.70 * voltage + calibration_value; //y=mx+b
-  Serial.print("pH Value: ");
-  Serial.println(phValue);
+
   return phValue;  
 }
 
