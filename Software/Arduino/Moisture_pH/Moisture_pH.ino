@@ -13,6 +13,7 @@ char incomingByte;
 
 void setup() {
   Serial.begin(9600);
+    Serial.println("1"); //Initial print to begin serial communication
 }
 
 void loop() {

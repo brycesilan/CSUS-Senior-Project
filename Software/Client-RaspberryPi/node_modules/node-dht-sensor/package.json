@@ -1,0 +1,48 @@
+{
+  "author": "David Momenso",
+  "name": "node-dht-sensor",
+  "description": "Reads data from DHT sensors on Raspberry Pi",
+  "version": "0.4.3",
+  "repository": {
+    "url": "https://github.com/momenso/node-dht-sensor"
+  },
+  "scripts": {
+    "install": "node-gyp configure",
+    "postinstall": "node-gyp build",
+    "test": "mocha"
+  },
+  "main": "./lib",
+  "files": [
+    "/src",
+    "/lib",
+    "/binding.gyp"
+  ],
+  "dependencies": {
+    "node-addon-api": "^1.6.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "husky": "^2.2.0",
+    "mocha": "^7.1.2",
+    "prettier": "1.17.0",
+    "pretty-quick": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "license": "LGPL-3.0",
+  "keywords": [
+    "DHT",
+    "DHT11",
+    "DHT22",
+    "AM2302",
+    "sensor",
+    "temperature",
+    "humidity",
+    "raspberry",
+    "raspberry pi",
+    "rpi"
+  ]
+}
