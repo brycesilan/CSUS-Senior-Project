@@ -12,12 +12,15 @@ const dhtType = 11; //DHT 11 sensor
 
 function getDHTreadings() {
     const readValues = dht.read(dhtType, dhtPin);
-    
+    let sensorData = [];
     //temperature reading is converted from C to F and rounded to 2 decimal places.
-    const sensorData = {
-        'temperature': Math.round(((readValues.temperature * 9/5) + 32) * 100) / 100,
-        'humidity': readValues.humidity
-    }
+    
+    sensorData.push(`temperature: ${Math.round(((readValues.temperature * 9/5) + 32) * 100) / 100}`);
+    sensorData.push(`humidity: ${readValues.humidity}`);
+    // const sensorData = {
+    //     'temperature': Math.round(((readValues.temperature * 9/5) + 32) * 100) / 100,
+    //     'humidity': readValues.humidity
+    // }
     //console.log(sensorData);
     
     return sensorData;
