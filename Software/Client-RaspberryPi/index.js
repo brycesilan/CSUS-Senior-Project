@@ -1,5 +1,5 @@
 const { sensorValues } = require('./test.js');
-const { getTimestamps } = require('./dates')
+const { getTimestamps } = require('./dates.js')
 
 
 
