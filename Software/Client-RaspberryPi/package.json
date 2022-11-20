@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "firebase": "^9.14.0",
     "node-dht-sensor": "^0.4.3",
     "onoff": "^6.0.3",
     "serialport": "^10.4.0"

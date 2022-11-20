@@ -1,14 +1,54 @@
 const dht = require('node-dht-sensor');
-
+const { getTimestamps } = require('./dates')
 const { SerialPort } = require('serialport');
-const port = new SerialPort({ path: '/dev/ttyUSB0', baudRate: 9600, autoOpen: false});
-
 const { ReadlineParser } = require('@serialport/parser-readline');
-const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }));
-
 
 const dhtPin = 4; //GPIO 4
 const dhtType = 11; //DHT 11 sensor
+
+async function getReadings() {
+    let dataArray = [], readingArray = [];
+
+    //push temp and hum
+    getDHTreadings().forEach((value) => dataArray.push(value));
+    
+    //read from arduino and push
+    await getArduinoReadings().then((data) => {
+        data.shift(); //remove serial begin "1"
+        data.forEach((value) => dataArray.push(value));
+    });
+
+    //split 'temperature: 68' by space and [1] element casted to a number
+    dataArray.forEach((value => {
+       readingArray.push(Number(value.split(" ")[1])); 
+    }))
+    //console.log(readingArray);
+    
+    return readingArray;
+}
+
+//Readings object
+function Readings(readingArray) {
+    this.temperature = readingArray[0],
+    this.humidity    = readingArray[1],
+    this.ph          = readingArray[2],
+    this.moisture1   = readingArray[3],
+    this.moisture2   = readingArray[4],
+    this.moisture3   = readingArray[5],
+    this.moisture4   = readingArray[6]
+}
+
+async function sensorValues() {
+    const readingsObject = await getReadings().then((value) => {
+        // create Readings object
+        const values = new Readings(value);
+        return values;
+    });
+
+    //console.log(readingsObject);
+
+    return readingsObject;
+}
 
 function getDHTreadings() {
     const readValues = dht.read(dhtType, dhtPin);
@@ -17,10 +57,6 @@ function getDHTreadings() {
     
     sensorData.push(`temperature: ${Math.round(((readValues.temperature * 9/5) + 32) * 100) / 100}`);
     sensorData.push(`humidity: ${readValues.humidity}`);
-    // const sensorData = {
-    //     'temperature': Math.round(((readValues.temperature * 9/5) + 32) * 100) / 100,
-    //     'humidity': readValues.humidity
-    // }
     //console.log(sensorData);
     
     return sensorData;
@@ -28,13 +64,18 @@ function getDHTreadings() {
 
 //The Arduino writes 1 to initialize serial communication
 function getArduinoReadings() {
+    const port = new SerialPort({ path: '/dev/ttyUSB0', baudRate: 9600, autoOpen: false});
+    const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }));
     
     return new Promise((resolve, reject) => {
         let dataArray = [];
         let temp = false;
 
         //Open port and write first character to begin Serial communication
-        port.open();
+        if(!port.isOpen){
+            port.open();
+        }
+        
         port.write('x'); //After this, the Arduino writes back "1"
 
         //Start receiving data
@@ -52,38 +93,18 @@ function getArduinoReadings() {
             */
             
             if(dataArray.length == 6) {
-                resolve(dataArray);  
-                port.close();
+                
+                if(port.isOpen){
+                    port.close();
+                }
+                resolve(dataArray);
+                
             }
         });
         
     });
 
 }
-exports.getDHTreadings = getDHTreadings; 
-exports.getArduinoReadings = getArduinoReadings;
 
 
-/*
-
-function getArduinoReadings() {
-    let temp = false;
-    let dataString = [];
-    let chunk;
-    port.write('x');
-    parser.on('data', (data) => {
-        if (temp == false) {
-            port.write('x');
-            temp = true;
-        }
-        dataString.push(data);
-        console.log(dataString);
-        if(dataString.length == 5) {
-            port.close();
-            return dataString;      
-        }
-    });
-    console.log(dataString);
-}
-
-*/
+exports.sensorValues = sensorValues;
