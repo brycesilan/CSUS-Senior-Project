@@ -13,9 +13,6 @@ const { getFirestore, collection,
     doc,} = require('firebase/firestore');
 
 
-
-
-
 setInterval(() => {sensorValues().then((obj) => {
     const timestamps = getTimestamps();
     console.log(obj);
