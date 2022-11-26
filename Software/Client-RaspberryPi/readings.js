@@ -26,22 +26,21 @@ async function getReadings() {
     return readingArray;
 }
 
-//Readings object
-function Readings(readingArray) {
-    this.temperature = readingArray[0],
-    this.humidity    = readingArray[1],
-    this.ph          = readingArray[2],
-    this.moisture1   = readingArray[3],
-    this.moisture2   = readingArray[4],
-    this.moisture3   = readingArray[5],
-    this.moisture4   = readingArray[6]
-}
+
 
 async function sensorValues() {
     const readingsObject = await getReadings().then((value) => {
         // create Readings object
-        const values = new Readings(value);
-        return values;
+        //const values = new Readings(value);
+        let obj = {};
+        obj.Temperature = value[0];
+        obj.Humidity    = value[1];
+        obj.pH          = value[2];
+        obj.Moisture1   = value[3];
+        obj.Moisture2   = value[4];
+        obj.Moisture3   = value[5];
+        obj.Moisture4   = value[6];
+        return obj;
     });
 
     //console.log(readingsObject);
@@ -49,6 +48,7 @@ async function sensorValues() {
     return readingsObject;
 }
 
+//Temperature and Humidity Readings
 function getDHTreadings() {
     const readValues = dht.read(dhtType, dhtPin);
     let sensorData = [];
@@ -107,3 +107,16 @@ function getArduinoReadings() {
 
 
 exports.sensorValues = sensorValues;
+
+/*
+//Readings object
+function Readings(readingArray) {
+    this.temperature = readingArray[0],
+    this.humidity    = readingArray[1],
+    this.ph          = readingArray[2],
+    this.moisture1   = readingArray[3],
+    this.moisture2   = readingArray[4],
+    this.moisture3   = readingArray[5],
+    this.moisture4   = readingArray[6]
+}
+*/

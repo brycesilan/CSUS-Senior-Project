@@ -9,7 +9,9 @@ const { getFirestore, collection,
     setDoc,
     updateDoc,
     doc,
-    getDocs,} = require('firebase/firestore');
+    getDocs,
+    getDoc
+    } = require('firebase/firestore');
 const { initializeApp } = require('firebase/app')
 
 const configs = require('./firebase-config.js');
@@ -22,25 +24,55 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
-async function UploadToFirebase(data) {
-    const ref = doc(db, 'Users', UserUID, 'UserData', 'Current');
-    const UserCol = collection(ref, 'new');
-    const UserDoc = doc(UserCol, UserUID);
-    // const Users = await getDocs(UserCol);
-    // const UsersList = Users.docs.map(doc => doc.data());
-    const temp = {};
-    Object.assign(temp, data);
-    const tester = await addDoc(UserCol, temp);
-    //console.log(tester);
+async function UploadToCurrentDoc(data) {
+    const CurrentDocRef = doc(db, 'Users', UserUID, 'UserData', 'Current');
+    
+    await updateDoc(CurrentDocRef, data);
 }
 
-setInterval(() => {sensorValues().then((obj) => {
+async function UploadToDataArray(CollectionDate, data) {
+    const DocRef = doc(db, 'Users', UserUID, 'UserData', CollectionDate);
+
+    const document = await getDoc(DocRef);
+
+    if(document.exists())
+    {
+        const docData = document.data();
+        docData.Humidity.push(data.Humidity);
+        docData.Temperature.push(data.Temperature);
+        docData.pH.push(data.pH);
+        docData.Moisture1.push(data.Moisture1);
+        docData.Moisture2.push(data.Moisture2);
+        docData.Moisture3.push(data.Moisture3);
+        docData.Moisture4.push(data.Moisture4);
+        docData.Timestamp.push(data.Timestamp);
+        await setDoc(DocRef, docData);
+    }
+    else {
+        await setDoc(DocRef, {
+            Humidity: [data.Humidity],
+            Temperature: [data.Temperature],
+            pH: [data.pH],
+            Moisture1: [data.Moisture1],
+            Moisture2: [data.Moisture2],
+            Moisture3: [data.Moisture3],
+            Moisture4: [data.Moisture4],
+            Timestamp: [data.Timestamp]
+        });
+    }
+
+}
+
+
+
+setInterval(() => {sensorValues().then((data) => {
     const timestamps = getTimestamps();
     
-    obj.timestamp = timestamps.timestamp;
-    console.log(obj);
-    console.log(timestamps);
-    UploadToFirebase(obj);
+    data.Timestamp = timestamps.Timestamp;
+
+    console.log('Uploading Data with timestamp: ', timestamps.Timestamp);
+    UploadToCurrentDoc(data);
+    UploadToDataArray(timestamps.collectionDate, data);
 
 })}, 5000);
 
