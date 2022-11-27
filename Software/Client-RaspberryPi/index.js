@@ -73,24 +73,29 @@ async function UploadToDataArray(CollectionDate, data) {
 
 }
 
-async function HandleMFH(settingMap, sensorData, gpioPin) {
-    if(settingMap.ButtonStatus || sensorData < settingMap.Min)
-    {
-        gpioPin.writeSync(1);
-        settingMap.GPIOStatus = 1;
-    }
-    if(!settingMap.ButtonStatus || sensorData > settingMap.Max) 
-    {
-        gpioPin.writeSync(0);
-        settingMap.GPIOStatus = 0;
-        settingMap.ButtonStatus = 0;
-    }
+async function UpdateControls(sensorDataObject) {
+    const docRef = doc(db, 'Users', UserUID, 'UserSettings', 'Settings');
 
-    return settingMap;
+    const document = await getDoc(docRef);
+    const settingObject = document.data();
+    console.log(settingObject);
 
+    settingObject.Light1 = HandleControls(settingObject.Light1, sensorDataObject.currentTime, Light1);
+    settingObject.Light2 = HandleControls(settingObject.Light2, sensorDataObject.currentTime, Light2);
+
+    settingObject.Pump1 = HandleControls(settingObject.Pump1, sensorDataObject.Moisture1, Pump1);
+    settingObject.Pump2 = HandleControls(settingObject.Pump2, sensorDataObject.Moisture2, Pump2);
+    settingObject.Pump3 = HandleControls(settingObject.Pump3, sensorDataObject.Moisture3, Pump3);
+    settingObject.Pump4 = HandleControls(settingObject.Pump4, sensorDataObject.Moisture4, Pump4);
+
+    settingObject.Heat = HandleControls(settingObject.Heat, sensorDataObject.Temperature, Heat);
+    settingObject.Fan = HandleControls(settingObject.Fan, sensorDataObject.Temperature, Fan);
+
+    await setDoc(docRef, settingObject);
+    console.log("Done updating gpio");
 }
 
-async function HandleControls(settingMap, sensorData, gpioPin) {
+function HandleControls(settingMap, sensorData, gpioPin) {
     if(settingMap.ButtonStatus === 1)
     {
         gpioPin.writeSync(1);
@@ -108,13 +113,16 @@ async function HandleControls(settingMap, sensorData, gpioPin) {
             gpioPin.writeSync(0);
             settingMap.GPIOStatus = 0;
         }
-        //=====================
+        
     }
 
     return settingMap;
 
 }
 
+
+
+/*
 async function HandleLight(settingMap, currentTime, gpioPin) {
     if(settingMap.ButtonStatus === 1 || currentTime > settingMap.StartTime)
     {
@@ -129,20 +137,41 @@ async function HandleLight(settingMap, currentTime, gpioPin) {
     }
 }
 
+async function HandleMFH(settingMap, sensorData, gpioPin) {
+    if(settingMap.ButtonStatus || sensorData < settingMap.Min)
+    {
+        gpioPin.writeSync(1);
+        settingMap.GPIOStatus = 1;
+    }
+    if(!settingMap.ButtonStatus || sensorData > settingMap.Max) 
+    {
+        gpioPin.writeSync(0);
+        settingMap.GPIOStatus = 0;
+        settingMap.ButtonStatus = 0;
+    }
+
+    return settingMap;
+
+}
+*/
+
 
 
 setInterval(() => {sensorValues().then((data) => {
     const timestamps = getTimestamps();
-    console.log(data);
+    
     data.Timestamp = timestamps.Timestamp;
-
+    data.currentTime = timestamps.currentTime;
+    console.log(data);
     console.log('Uploading Data with timestamp: ', timestamps.Timestamp);
-    //UploadToCurrentDoc(data);
-    //UploadToDataArray(timestamps.collectionDate, data);
-    //intializeSensorSettings(UserUID);
+    UploadToCurrentDoc(data);
+    UploadToDataArray(timestamps.collectionDate, data);
+    
+    UpdateControls(data);
+    
     console.log("Done");
 
-})}, 5000);
+})}, 15000);
 
 /*
 async function intializeSensorSettings(UserID) {

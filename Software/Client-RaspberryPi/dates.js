@@ -8,6 +8,8 @@ function getTimestamps() {
         Timestamp.getDate()
     ].join('-');
 
+    let currentTime = [Timestamp.getHours(), Timestamp.getMinutes()].join(':');
+
     /*
     let timestamp = [d.getMonth()+1,
         d.getDate(),
@@ -19,6 +21,7 @@ function getTimestamps() {
     
     return {
         'collectionDate': collectionDate,
+        'currentTime': currentTime,
         'Timestamp': Timestamp
     };
 }
