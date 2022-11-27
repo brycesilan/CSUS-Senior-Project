@@ -13,31 +13,31 @@ char incomingByte;
 
 void setup() {
   Serial.begin(9600);
-    Serial.println("1"); //Initial print to begin serial communication
+  Serial.println("1"); //Initial print to begin serial communication
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  
+
   //If you receive something at Serial, only then calculate and send sensor data back
-  while(Serial.available() > 0)
+  while (Serial.available() > 0)
   {
     incomingByte = Serial.read();
     //Serial.println(incomingByte);
-    if(incomingByte == 'x')
+    if (incomingByte == 'x')
     {
       outputValues();
     }
-    
+
   }
-  
+
 }
 
 void outputValues()
 {
   float phValue = 0;
   int rh1 = 0, rh2 = 0, rh3 = 0, rh4 = 0;
-  
+
   phValue = get_phValue();
   rh1 = get_rhValue(moisture_1_pin);
   rh2 = get_rhValue(moisture_2_pin);
@@ -67,38 +67,38 @@ float get_phValue()
   voltage = avgValue * (5.0 / 1024);
   phValue = -5.70 * voltage + calibration_value; //y=mx+b
 
-  return phValue;  
+  return phValue;
 }
 
 int get_rhValue(int moisturePin)
 {
   float moistureAverage = 0;
   int rhValue = 0;
- 
+
   //Calculate average moisture
   moistureAverage = calculateAverage(moisturePin);
-  
+
   //Calculate relative humidity
   rhValue = calculateRH(moistureAverage);
 
   return rhValue;
-  
+
 }
 
-float calculateAverage(int pinNumber) 
+float calculateAverage(int pinNumber)
 {
   float sumOfReadings = 0; //Maybe change to unsigned long int if needed
   int analogReadings[sampleSize];
 
   //Take sampleSize number of readings 30ms apart
-  for(int i = 0; i < sampleSize; i++)
+  for (int i = 0; i < sampleSize; i++)
   {
     analogReadings[i] = analogRead(pinNumber);
 
     delay(30);
   }
 
-  for(int i = 0; i < sampleSize; i++)
+  for (int i = 0; i < sampleSize; i++)
   {
     sumOfReadings += analogReadings[i];
   }
@@ -112,7 +112,7 @@ int calculateRH(float moistureAverage)
   int rhValue = 0;
 
   voltage = moistureAverage * (5.0 / 1023.0); //Convert to voltage
-  rhValue = (((voltage - 4.4) * -1) * 90); //Convert to relative humidity
+  rhValue = -((63.2911 * voltage) - 171); //Convert to relative humidity
 
   rhValue = constrain(rhValue, 0, 100); //Make rhValue between 0 and 100
 
