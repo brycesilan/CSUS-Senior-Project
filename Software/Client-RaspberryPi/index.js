@@ -13,6 +13,16 @@ const { getFirestore, collection,
     getDoc
     } = require('firebase/firestore');
 const { initializeApp } = require('firebase/app')
+const { Gpio } = require('onoff')
+
+let Pump1 = new Gpio(16, 'out');
+let Pump2 = new Gpio(17, 'out');
+let Pump3 = new Gpio(22, 'out');
+let Pump4 = new Gpio(23, 'out');
+let Light1 = new Gpio(24, 'out');
+let Light2 = new Gpio(25, 'out');
+let Heat = new Gpio(26, 'out');
+let Fan = new Gpio(27, 'out');
 
 const configs = require('./firebase-config.js');
 const firebaseConfig = configs.firebaseConfig;
@@ -63,16 +73,140 @@ async function UploadToDataArray(CollectionDate, data) {
 
 }
 
+async function HandleMFH(settingMap, sensorData, gpioPin) {
+    if(settingMap.ButtonStatus || sensorData < settingMap.Min)
+    {
+        gpioPin.writeSync(1);
+        settingMap.GPIOStatus = 1;
+    }
+    if(!settingMap.ButtonStatus || sensorData > settingMap.Max) 
+    {
+        gpioPin.writeSync(0);
+        settingMap.GPIOStatus = 0;
+        settingMap.ButtonStatus = 0;
+    }
+
+    return settingMap;
+
+}
+
+async function HandleControls(settingMap, sensorData, gpioPin) {
+    if(settingMap.ButtonStatus === 1)
+    {
+        gpioPin.writeSync(1);
+        settingMap.GPIOStatus = 1;
+    }
+    if(settingMap.ButtonStatus === 0)
+    {
+        if(sensorData < settingMap.Min)
+        {
+            gpioPin.writeSync(1);
+            settingMap.GPIOStatus = 1;
+        }
+        else 
+        {
+            gpioPin.writeSync(0);
+            settingMap.GPIOStatus = 0;
+        }
+        //=====================
+    }
+
+    return settingMap;
+
+}
+
+async function HandleLight(settingMap, currentTime, gpioPin) {
+    if(settingMap.ButtonStatus === 1 || currentTime > settingMap.StartTime)
+    {
+        gpioPin.writeSync(1);
+        settingMap.GPIOStatus = 1;
+    }
+    if(settingMap.ButtonStatus === 0 || currentTime > settingMap.EndTime) 
+    {
+        gpioPin.writeSync(0);
+        settingMap.GPIOStatus = 0;
+        settingMap.ButtonStatus = 0;
+    }
+}
+
 
 
 setInterval(() => {sensorValues().then((data) => {
     const timestamps = getTimestamps();
-    
+    console.log(data);
     data.Timestamp = timestamps.Timestamp;
 
     console.log('Uploading Data with timestamp: ', timestamps.Timestamp);
-    UploadToCurrentDoc(data);
-    UploadToDataArray(timestamps.collectionDate, data);
+    //UploadToCurrentDoc(data);
+    //UploadToDataArray(timestamps.collectionDate, data);
+    //intializeSensorSettings(UserUID);
+    console.log("Done");
 
 })}, 5000);
 
+/*
+async function intializeSensorSettings(UserID) {
+    const CurrentDocRef = doc(db, 'Users', UserID, 'UserSettings', 'Settings');
+    const data = {
+        Light1: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 24,
+            StartTime: '08:00',
+            EndTime: '18:00'
+        },
+        Light2: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 25,
+            StartTime: '08:00',
+            EndTime: '18:00'
+        },
+        Pump1: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 16,
+            Min: 50,
+            Max: 70
+        },
+        Pump2: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 17,
+            Min: 50,
+            Max: 70
+        },
+        Pump3: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 22,
+            Min: 50,
+            Max: 70
+        },
+        Pump4: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 23,
+            Min: 50,
+            Max: 70
+        },
+        Heat: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 26,
+            Min: 50,
+            Max: 70
+        },
+        Fan: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 27,
+            Min: 50,
+            Max: 70
+        }
+
+    };
+    await setDoc(CurrentDocRef, data);
+    console.log("Settings are set");
+}
+*/

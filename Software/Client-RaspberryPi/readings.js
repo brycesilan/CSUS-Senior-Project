@@ -73,15 +73,17 @@ function getArduinoReadings() {
         //Open port and write first character to begin Serial communication
         if(!port.isOpen){
             port.open();
+            console.log('Port open');
         }
         
         port.write('x'); //After this, the Arduino writes back "1"
-
+        console.log('1st x written')
         //Start receiving data
         parser.on('data', function(data) {
             //Write 'x' only once as it's our trigger in Arduino script to collect data
             if (temp == false) {
                 port.write('x');
+                console.log('2nd x written')
                 temp = true;
             }
             dataArray.push(data);
