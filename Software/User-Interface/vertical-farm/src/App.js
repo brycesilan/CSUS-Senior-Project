@@ -17,13 +17,19 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<PrivateRoute />}>
+            <Route path="/" element={<Home />} />
+          </Route>
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
-          <Route path="/graphs" element={<Graphs />} />
+          {/* <Route path="/graphs" element={<Graphs />} /> */}
+          <Route path="/graphs" element={<PrivateRoute />}>
+            <Route path="/graphs" element={<Graphs />} />
+          </Route>
           <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </Router>

@@ -19,7 +19,7 @@ export default function Profile() {
 
   function onLogout() {
     auth.signOut();
-    navigate("/");
+    navigate("/sign-in");
   }
 
   function onChange(e) {

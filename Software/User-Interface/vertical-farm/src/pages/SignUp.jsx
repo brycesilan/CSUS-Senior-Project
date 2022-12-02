@@ -43,12 +43,79 @@ export default function SignUp() {
       //Create a user collection with their data
       await setDoc(doc(db, "Users", user.uid), formDataCopy);
       toast.success("Sign Up successful!");
+      intializeSensorSettings(auth.currentUser.uid);
       navigate("/");
 
     } catch (error) {
       toast.error("Something went wrong with the registration! Please try again.");
     }
   }
+
+  async function intializeSensorSettings(UserUID) {
+    const CurrentDocRef = doc(db, 'Users', UserUID, 'UserSettings', 'Settings');
+    const data = {
+        Light1: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 24,
+            StartTime: '08:00',
+            EndTime: '18:00'
+        },
+        Light2: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 25,
+            StartTime: '08:00',
+            EndTime: '18:00'
+        },
+        Pump1: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 16,
+            Min: 50,
+            Max: 70
+        },
+        Pump2: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 17,
+            Min: 50,
+            Max: 70
+        },
+        Pump3: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 22,
+            Min: 50,
+            Max: 70
+        },
+        Pump4: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 23,
+            Min: 50,
+            Max: 70
+        },
+        Heat: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 26,
+            Min: 50,
+            Max: 70
+        },
+        Fan: {
+            ButtonStatus: 0,
+            GPIOStatus: 0,
+            GPIO: 27,
+            Min: 50,
+            Max: 70
+        }
+
+    };
+    await setDoc(CurrentDocRef, data);
+    console.log("Settings are set");
+}
+
   return (
     <section>
       <h1 className="text-3xl text-center mt-6 font-bold">Sign Up</h1>
