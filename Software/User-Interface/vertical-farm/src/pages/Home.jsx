@@ -1,12 +1,16 @@
 import { getAuth } from "firebase/auth";
 import { db } from "../firebase-config";
-import { doc, onSnapshot, updateDoc, getDoc } from "firebase/firestore";
+import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { useState } from "react";
 import { useEffect } from "react";
+//import { TbSettingsAutomation } from "react-icons/tb";
 
 export default function Home() {
   const [SensorData, setSensorData] = useState([]);
+  const [Settings, setSettings] = useState([]);
+
   const CurrentRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserData', 'Current');
+  const SettingRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserSettings', 'Settings');
   
   async function getCurrentData() {
     
@@ -23,39 +27,35 @@ export default function Home() {
 
       setSensorData(CurrentData);
     });
-    console.log(SensorData);
-    // const CurrentDocument = await getDoc(CurrentRef);
-    // const CurrentData = CurrentDocument.data();
-    // console.log(CurrentData);
+    //console.log(SensorData);
+  }
+
+  async function getSettings(){
+
+    onSnapshot(SettingRef, (SettingDoc) => {
+      const SettingData = SettingDoc.data();
+      setSettings(SettingData);
+    });
+
   }
 
   useEffect(() => {
     getCurrentData();
   }, []);
-  
+  useEffect(() => {
+    getSettings();
+  }, []);
+
   async function buttonClick(e){
     const docRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserSettings', 'Settings');
-
-    const document = await getDoc(docRef);
-    const settingObject = document.data();
     
     const id = e.target.id + '.ButtonStatus';
     const value = e.target.value
 
-    console.log(id + ' = ' + value);
+    //console.log(id + ' = ' + value);
     await updateDoc(docRef, { [id]: parseInt(value, 10) });
   }
   
-  // function buttonClick(e) {
-  //   console.log(e.target.id, " ", e.target.value);
-  // }
-  
-  // const Temperature = 50, Humidity = 70, pH = 7.10;
-  // const Moisture1 = 60, Moisture2 = 65, Moisture3 = 70, Moisture4= 75;
-  const Light1 = "ON", Light2="OFF";
-  const Water1 = "OFF", Water2 = "OFF", Water3 = "OFF", Water4 = "OFF";
-  const Heat = "OFF", Fan = "OFF";
-  //const ReadingTime = "06:07:00", ReadingDay = "2022-11-24"
   return (
 
     <div className='container mx-auto px-16 py-6'>
@@ -91,7 +91,7 @@ export default function Home() {
           <div className='bg-red-200 p-2 mb-2'>
             <div className='flex justify-between mb-2'>
               <p>Light</p>
-              <p>{Light1}</p>
+              {Settings.Light1 && Settings.Light1.GPIOStatus === 1 ? <p>ON</p> : <p>OFF</p>}
             </div>
             <div>
               <button className='bg-blue-600 text-white p-2 text-xs rounded-lg shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 mr-2' id='Light1' value='1' onClick={buttonClick}>Turn On</button>
@@ -111,7 +111,7 @@ export default function Home() {
                 <div className='bg-purple-300 p-2 mb-2'>            
                   <div className='flex justify-between mb-2'>
                     <p>Water</p>
-                    <p>{Water1}</p>
+                    {Settings.Pump1 && Settings.Pump1.GPIOStatus === 1 ? <p>ON</p> : <p>OFF</p>}
                   </div>
                   <div>
                     <button className='bg-blue-600 text-white p-2 text-xs rounded-lg shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 mr-2' id='Pump1' value='1' onClick={buttonClick}>Turn On</button>
@@ -131,7 +131,7 @@ export default function Home() {
                 <div className='bg-purple-300 p-2 mb-2'>            
                   <div className='flex justify-between mb-2'>
                     <p>Water</p>
-                    <p>{Water2}</p>
+                    {Settings.Pump2 && Settings.Pump2.GPIOStatus === 1 ? <p>ON</p> : <p>OFF</p>}
                   </div>
                   <div>
                     <button className='bg-blue-600 text-white p-2 text-xs rounded-lg shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 mr-2'id='Pump2' value='1' onClick={buttonClick}>Turn On</button>
@@ -151,7 +151,7 @@ export default function Home() {
           <div className='bg-red-200 p-2 mb-2'>
             <div className='flex justify-between mb-2'>
               <p>Light</p>
-              <p>{Light2}</p>
+              {Settings.Light2 && Settings.Light2.GPIOStatus === 1 ? <p>ON</p> : <p>OFF</p>}
             </div>
             <div>
               <button className='bg-blue-600 text-white p-2 text-xs rounded-lg shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 mr-2' id='Light2' value='1' onClick={buttonClick}>Turn On</button>
@@ -171,7 +171,7 @@ export default function Home() {
                 <div className='bg-purple-300 p-2 mb-2'>            
                   <div className='flex justify-between mb-2'>
                     <p>Water</p>
-                    <p>{Water3}</p>
+                    {Settings.Pump3 && Settings.Pump3.GPIOStatus === 1 ? <p>ON</p> : <p>OFF</p>}
                   </div>
                   <div>
                     <button className='bg-blue-600 text-white p-2 text-xs rounded-lg shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 mr-2' id='Pump3' value='1' onClick={buttonClick}>Turn On</button>
@@ -191,7 +191,7 @@ export default function Home() {
                 <div className='bg-purple-300 p-2 mb-2'>            
                   <div className='flex justify-between mb-2'>
                     <p>Water</p>
-                    <p>{Water4}</p>
+                    {Settings.Pump4 && Settings.Pump4.GPIOStatus === 1 ? <p>ON</p> : <p>OFF</p>}
                   </div>
                   <div>
                     <button className='bg-blue-600 text-white p-2 text-xs rounded-lg shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 mr-2' id='Pump4' value='1' onClick={buttonClick}>Turn On</button>
@@ -210,7 +210,7 @@ export default function Home() {
           <div className='bg-red-200 p-2'>            
             <div className='flex justify-between mb-2'>
               <p>Heat</p>
-              <p>{Heat}</p>
+              {Settings.Heat && Settings.Heat.GPIOStatus === 1 ? <p>ON</p> : <p>OFF</p>}
             </div>
             <div>
               <button className='bg-blue-600 text-white p-2 text-xs rounded-lg shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 mr-2' id='Heat' value='1' onClick={buttonClick}>Turn On</button>
@@ -223,7 +223,7 @@ export default function Home() {
           <div className='bg-red-200 p-2'>            
             <div className='flex justify-between mb-2'>
               <p>Fan</p>
-              <p>{Fan}</p>
+              {Settings.Fan && Settings.Fan.GPIOStatus === 1 ? <p>ON</p> : <p>OFF</p>}
             </div>
             <div>
               <button className='bg-blue-600 text-white p-2 text-xs rounded-lg shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 mr-2' id='Fan' value='1' onClick={buttonClick}>Turn On</button>

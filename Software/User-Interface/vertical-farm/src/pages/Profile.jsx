@@ -8,7 +8,7 @@ import { db } from "../firebase-config";
 export default function Profile() {
   const auth = getAuth();
   const navigate = useNavigate();
-  const [changeName, setChangeName] = useState(true);
+  const [changeName, setChangeName] = useState(false);
 
   const [formData, setFormData] = useState({
     fullname: auth.currentUser.displayName,

@@ -59,56 +59,58 @@ export default function SignUp() {
             GPIOStatus: 0,
             GPIO: 24,
             StartTime: '08:00',
-            EndTime: '18:00'
+            EndTime: '18:00',
+            AutomationStatus: 0
         },
         Light2: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 25,
             StartTime: '08:00',
-            EndTime: '18:00'
+            EndTime: '18:00',
+            AutomationStatus: 0
         },
         Pump1: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 16,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Pump2: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 17,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Pump3: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 22,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Pump4: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 23,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Heat: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 26,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Fan: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 27,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 70,
+            AutomationStatus: 0
         }
 
     };
