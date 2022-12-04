@@ -1,6 +1,6 @@
 import { getAuth, updateProfile } from "firebase/auth";
-import { doc, updateDoc } from "firebase/firestore";
-import { useState } from "react";
+import { doc, updateDoc, getDoc } from "firebase/firestore";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { db } from "../firebase-config";
@@ -8,11 +8,13 @@ import { db } from "../firebase-config";
 export default function Profile() {
   const auth = getAuth();
   const navigate = useNavigate();
-  const [changeName, setChangeName] = useState(false);
+
+  const [changeData, setChangeData] = useState(false);
 
   const [formData, setFormData] = useState({
     fullname: auth.currentUser.displayName,
-    email: auth.currentUser.email,
+    email: auth.currentUser.email
+
   });
 
   const { fullname, email } = formData;
@@ -49,10 +51,10 @@ export default function Profile() {
 
   return (
     <>
-      <section className="max-w-6xl mx-auto flex justify-center items-center flex-col">
+      <section className="max-w-7xl mx-auto flex justify-center items-center flex-col">
         <h1 className="text-3xl text-center mt-6 font-bold">My Profile</h1>
         <div className="w-full md:w-[50%] mt-6 px-3">
-          <form>
+          {/* <form>
             <input
               type="text"
               id="fullname"
@@ -89,6 +91,92 @@ export default function Profile() {
               >
                 Sign Out
               </p>
+            </div>
+          </form> */}
+
+          <div className="flex justify-between pb-6">
+
+            <div className="flex text-lg">
+              <div className="flex pr-6">
+                <p className="pr-2 font-bold">Full name:</p>
+                <p>{fullname}</p>
+              </div>
+              <div className="flex pr-6">
+                <p className="pr-2 font-bold">Email:</p>
+                <p>{email}</p>
+              </div>
+            </div>
+
+            <div>
+              <button className='bg-blue-600 text-white p-2 text-xs rounded-lg shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 mr-2' onClick={onLogout}>Sign Out</button>
+            </div>
+
+          </div>
+          
+          <form>
+            <div className="grid grid-cols-5 gap-2 items-center">
+              <div>Level</div>  
+              <div>Controls</div>
+              <div>Automate?</div>
+              <div>Threshold / Start Time</div>
+              <div>End TIme</div>
+
+              <div>Level 1</div>
+              <div></div><div></div><div></div><div></div>
+
+              <div></div>
+              <div>Light 1</div>
+              <input type="text" value="0" onChange={onChange}/>
+              <input type="text" value="08:00" onChange={onChange} />
+              <input type="text" value="18:00" onChange={onChange} />
+
+              <div></div>
+              <div>Pump 1</div>
+              <input type="text" value="0" onChange={onChange} />
+              <input type="text" value="50" onChange={onChange} />
+              <div></div>
+
+              <div></div>
+              <div>Pump 2</div>
+              <input type="text" value="0" onChange={onChange} />
+              <input type="text" value="50" onChange={onChange} />
+              <div></div>
+
+              <div>Level 2</div>
+              <div></div><div></div><div></div><div></div>
+
+              <div></div>
+              <div>Light 2</div>
+              <input type="text" value="0" onChange={onChange} />
+              <input type="text" value="08:00" onChange={onChange} />
+              <input type="text" value="18:00" onChange={onChange} />
+
+              <div></div>
+              <div>Pump 3</div>
+              <input type="text" value="0" onChange={onChange} />
+              <input type="text" value="50" onChange={onChange} />
+              <div></div>
+
+              <div></div>
+              <div>Pump 4</div>
+              <input type="text" value="0" onChange={onChange} />
+              <input type="text" value="50" onChange={onChange} />
+              <div></div>
+
+              <div>Other</div>
+              <div></div><div></div><div></div><div></div>
+
+              <div></div>
+              <div>Heater</div>
+              <input type="text" value="0" onChange={onChange} />
+              <input type="text" value="50" onChange={onChange} />
+              <div></div>
+
+              <div></div>
+              <div>Fan</div>
+              <input type="text" value="0" onChange={onChange} />
+              <input type="text" value="50" onChange={onChange} />
+              <div></div>
             </div>
           </form>
         </div>
