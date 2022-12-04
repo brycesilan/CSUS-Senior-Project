@@ -47,37 +47,37 @@ export default function Graphs() {
         label: 'Temperature',
         data: SensorData.Temperature,
         fill: false,
-        borderColor: '#36A2EB'
+        borderColor: '#FF6F61'
       },
       {
         label: 'Humidity',
         data: SensorData.Humidity,
         fill: false,
-        borderColor: '#742774',
+        borderColor: '#B565A7',
       },
       {
         label: 'Moisture1',
         data: SensorData.Moisture1,
         fill: false,
-        borderColor: '#36A2EB',
+        borderColor: '#88B04B',
       },
       {
         label: 'Moisture2',
         data: SensorData.Moisture2,
         fill: false,
-        borderColor: '#9BD0F5',
+        borderColor: '#009B77',
       },
       {
         label: 'Moisture3',
         data: SensorData.Moisture3,
         fill: false,
-        borderColor: '#FF6384',
+        borderColor: '#34568B',
       },
       {
         label: 'Moisture4',
         data: SensorData.Moisture4,
         fill: false,
-        borderColor: '#FFB1C1',
+        borderColor: '#6B5B95',
       }
     ],
   };
