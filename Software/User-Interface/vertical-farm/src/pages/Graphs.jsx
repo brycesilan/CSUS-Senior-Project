@@ -12,7 +12,7 @@ export default function Graphs() {
     let TodaysDate = new Date();
     let CollectionName = [TodaysDate.getFullYear(), TodaysDate.getMonth() + 1, TodaysDate.getDay].join('-');
     //const CurrentRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserData', CollectionName);
-    const CurrentRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserData', '2022-11-27');
+    const CurrentRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserData', '2022-12-4');
 
     const document = await getDoc(CurrentRef);
     const documentData = document.data();
@@ -35,7 +35,7 @@ export default function Graphs() {
     plugins: {
       title: {
         display: true,
-        text: 'Chart.js Line Chart',
+        text: 'Sensor Data Charts',
       },
     },
   };

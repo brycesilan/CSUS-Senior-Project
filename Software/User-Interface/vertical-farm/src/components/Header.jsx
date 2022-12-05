@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { useEffect } from "react";
+import Logo from "../assets/svg/Logo.svg"
 
 export default function Header() {
   const [pageState, setPageState] = useState("Sign In")
@@ -31,7 +32,7 @@ export default function Header() {
       <header className="flex justify-between items-center px-3 max-w-6xl mx-auto">
         <div>
           <img
-            src="https://www.gstatic.com/devrel-devsite/prod/vefe830b4ddbb6fbf9f8f84fc45bd4079738c13cea1a4dbeb400bd711e695c305/firebase/images/lockup.svg"
+            src={Logo}
             alt="logo"
             className="h-10 cursor-pointer"
             onClick={() => navigate("/")}

@@ -8,12 +8,28 @@ import { db } from "../firebase-config";
 export default function Profile() {
   const auth = getAuth();
   const navigate = useNavigate();
+  const SettingRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserSettings', 'Settings');
 
-  const [changeData, setChangeData] = useState(false);
+  const [changeData, setChangeData] = useState(true);
+  const [Settings, setSettings] = useState([]);
+  const [L1A, setL1A] = useState("");
+
+  async function getSettings(){
+
+    const document = await getDoc(SettingRef);
+    const settingData = document.data();
+    setL1A(settingData.Light1.Automation);
+    //Settings = settingData;
+    console.log(settingData);
+
+  }
+  useEffect(() => {
+    getSettings();
+  }, []);
 
   const [formData, setFormData] = useState({
     fullname: auth.currentUser.displayName,
-    email: auth.currentUser.email
+    email: auth.currentUser.email,
 
   });
 
@@ -33,21 +49,15 @@ export default function Profile() {
 
   async function onSubmit() {
     try {
-      if(auth.currentUser.displayName !== fullname) {
-        //Update name in firebase auth
-        await updateProfile(auth.currentUser, {
-          displayName: fullname,
-        });
-
-        //update name in firestore
-        const docRef = doc(db, "Users", auth.currentUser.uid);
-        await updateDoc(docRef, {fullname: fullname});
+        
+        await updateDoc(SettingRef, {fullname: fullname});
         toast.success("Name changed Sucessfully");
-      }
+      
     } catch(error) {
       toast.error("Could not change the name");
     }
   }
+  
 
   return (
     <>
@@ -113,11 +123,27 @@ export default function Profile() {
 
           </div>
           
-          <form>
+
+          
+
+          <form className="pb-4">
+            <p className="flex items-center pb-4">
+                  Do you want to change the settings?
+                  <span
+                    onClick={() => {
+                      changeData && onSubmit();
+                      setChangeData((prevState) => !prevState);
+                    }}
+                    className="text-red-600 hover:text-red-700 transition ease-in-out duration-200 ml-1 cursor-pointer"
+                  >
+                    {changeData ? "Apply Change" : "Edit"}
+                  </span>
+            </p>
+
             <div className="grid grid-cols-5 gap-2 items-center">
               <div>Level</div>  
               <div>Controls</div>
-              <div>Automate?</div>
+              <div>Automation? 0=OFF / 1=ON</div>
               <div>Threshold / Start Time</div>
               <div>End TIme</div>
 
@@ -126,20 +152,20 @@ export default function Profile() {
 
               <div></div>
               <div>Light 1</div>
-              <input type="text" value="0" onChange={onChange}/>
-              <input type="text" value="08:00" onChange={onChange} />
-              <input type="text" value="18:00" onChange={onChange} />
+              <input type="text" id="L1A" value="0" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="08:00" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="18:00" onChange={onChange} disabled={!changeData} />
 
               <div></div>
               <div>Pump 1</div>
-              <input type="text" value="0" onChange={onChange} />
-              <input type="text" value="50" onChange={onChange} />
+              <input type="text" value="0" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="50" onChange={onChange} disabled={!changeData} />
               <div></div>
 
               <div></div>
               <div>Pump 2</div>
-              <input type="text" value="0" onChange={onChange} />
-              <input type="text" value="50" onChange={onChange} />
+              <input type="text" value="0" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="50" onChange={onChange} disabled={!changeData} />
               <div></div>
 
               <div>Level 2</div>
@@ -147,20 +173,20 @@ export default function Profile() {
 
               <div></div>
               <div>Light 2</div>
-              <input type="text" value="0" onChange={onChange} />
-              <input type="text" value="08:00" onChange={onChange} />
-              <input type="text" value="18:00" onChange={onChange} />
+              <input type="text" value="0" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="08:00" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="18:00" onChange={onChange} disabled={!changeData} />
 
               <div></div>
               <div>Pump 3</div>
-              <input type="text" value="0" onChange={onChange} />
-              <input type="text" value="50" onChange={onChange} />
+              <input type="text" value="0" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="50" onChange={onChange} disabled={!changeData} />
               <div></div>
 
               <div></div>
               <div>Pump 4</div>
-              <input type="text" value="0" onChange={onChange} />
-              <input type="text" value="50" onChange={onChange} />
+              <input type="text" value="0" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="50" onChange={onChange} disabled={!changeData} />
               <div></div>
 
               <div>Other</div>
@@ -168,14 +194,14 @@ export default function Profile() {
 
               <div></div>
               <div>Heater</div>
-              <input type="text" value="0" onChange={onChange} />
-              <input type="text" value="50" onChange={onChange} />
+              <input type="text" value="0" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="50" onChange={onChange} disabled={!changeData} />
               <div></div>
 
               <div></div>
               <div>Fan</div>
-              <input type="text" value="0" onChange={onChange} />
-              <input type="text" value="50" onChange={onChange} />
+              <input type="text" value="0" onChange={onChange} disabled={!changeData} />
+              <input type="text" value="50" onChange={onChange} disabled={!changeData} />
               <div></div>
             </div>
           </form>
