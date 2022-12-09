@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import OAuth from "../components/OAuth";
+import Logo from "../assets/svg/Logo.svg"
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -30,7 +31,7 @@ export default function ForgotPassword() {
       <div className="flex flex-col justify-center items-center px-20 py-12 max-w-2sm mx-auto">
         <div>
           <img
-            src="https://www.gstatic.com/devrel-devsite/prod/vefe830b4ddbb6fbf9f8f84fc45bd4079738c13cea1a4dbeb400bd711e695c305/firebase/images/lockup.svg"
+            src={Logo}
             alt="logo"
             className="h-10"
           />

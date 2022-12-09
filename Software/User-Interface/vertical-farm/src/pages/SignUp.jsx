@@ -7,6 +7,7 @@ import { db } from "../firebase-config";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Logo from "../assets/svg/Logo.svg"
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -124,7 +125,7 @@ export default function SignUp() {
       <div className="flex flex-col justify-center items-center px-20 py-12 max-w-2sm mx-auto">
         <div>
           <img
-            src="https://www.gstatic.com/devrel-devsite/prod/vefe830b4ddbb6fbf9f8f84fc45bd4079738c13cea1a4dbeb400bd711e695c305/firebase/images/lockup.svg"
+            src={Logo}
             alt="logo"
             className="h-10"
           />
