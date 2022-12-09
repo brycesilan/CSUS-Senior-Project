@@ -28,20 +28,22 @@ const configs = require('./firebase-config.js');
 const firebaseConfig = configs.firebaseConfig;
 const UserUID = configs.UserUID;
 
-console.log(firebaseConfig);
-console.log(UserUID);
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
+//Update sensor data in 'Current' data document
 async function UploadToCurrentDoc(data) {
     const CurrentDocRef = doc(db, 'Users', UserUID, 'UserData', 'Current');
     
     await updateDoc(CurrentDocRef, data);
 }
 
-async function UploadToDataArray(CollectionDate, data) {
-    const DocRef = doc(db, 'Users', UserUID, 'UserData', CollectionDate);
+/*
+Updates new readings in document with the name of today's date.
+Example name: '2022-11-25'
+*/
+async function UploadToDataArray(DocumentDate, data) {
+    const DocRef = doc(db, 'Users', UserUID, 'UserData', DocumentDate);
 
     const document = await getDoc(DocRef);
 
@@ -56,18 +58,20 @@ async function UploadToDataArray(CollectionDate, data) {
         docData.Moisture3.push(data.Moisture3);
         docData.Moisture4.push(data.Moisture4);
         docData.Timestamp.push(data.Timestamp);
+        docData.HourMinTime.push(data.HourMinTime);
         await setDoc(DocRef, docData);
     }
     else {
         await setDoc(DocRef, {
-            Humidity: [data.Humidity],
+            Humidity:    [data.Humidity],
             Temperature: [data.Temperature],
-            pH: [data.pH],
-            Moisture1: [data.Moisture1],
-            Moisture2: [data.Moisture2],
-            Moisture3: [data.Moisture3],
-            Moisture4: [data.Moisture4],
-            Timestamp: [data.Timestamp]
+            pH:          [data.pH],
+            Moisture1:   [data.Moisture1],
+            Moisture2:   [data.Moisture2],
+            Moisture3:   [data.Moisture3],
+            Moisture4:   [data.Moisture4],
+            Timestamp:   [data.Timestamp],
+            HourMinTime: [data.HourMinTime]
         });
     }
 
@@ -80,158 +84,171 @@ async function UpdateControls(sensorDataObject) {
     const settingObject = document.data();
     console.log(settingObject);
 
-    settingObject.Light1 = HandleControls(settingObject.Light1, sensorDataObject.currentTime, Light1);
-    settingObject.Light2 = HandleControls(settingObject.Light2, sensorDataObject.currentTime, Light2);
+    settingObject.Light1 = HandleLight(settingObject.Light1, sensorDataObject.HourMinTime, Light1);
+    settingObject.Light2 = HandleLight(settingObject.Light2, sensorDataObject.HourMinTime, Light2);
 
-    settingObject.Pump1 = HandleControls(settingObject.Pump1, sensorDataObject.Moisture1, Pump1);
-    settingObject.Pump2 = HandleControls(settingObject.Pump2, sensorDataObject.Moisture2, Pump2);
-    settingObject.Pump3 = HandleControls(settingObject.Pump3, sensorDataObject.Moisture3, Pump3);
-    settingObject.Pump4 = HandleControls(settingObject.Pump4, sensorDataObject.Moisture4, Pump4);
+    settingObject.Pump1 = HandlePHF(settingObject.Pump1, sensorDataObject.Moisture1, Pump1);
+    settingObject.Pump2 = HandlePHF(settingObject.Pump2, sensorDataObject.Moisture2, Pump2);
+    settingObject.Pump3 = HandlePHF(settingObject.Pump3, sensorDataObject.Moisture3, Pump3);
+    settingObject.Pump4 = HandlePHF(settingObject.Pump4, sensorDataObject.Moisture4, Pump4);
 
-    settingObject.Heat = HandleControls(settingObject.Heat, sensorDataObject.Temperature, Heat);
-    settingObject.Fan = HandleControls(settingObject.Fan, sensorDataObject.Temperature, Fan);
+    settingObject.Heat = HandlePHF(settingObject.Heat, sensorDataObject.Temperature, Heat);
+    settingObject.Fan = HandlePHF(settingObject.Fan, sensorDataObject.Temperature, Fan);
 
     await setDoc(docRef, settingObject);
     console.log("Done updating gpio");
 }
 
-function HandleControls(settingMap, sensorData, gpioPin) {
-    if(settingMap.ButtonStatus === 1)
+//Handle pumps, heater, fan
+function HandlePHF(settingMap, currentReading, gpioPin) {
+
+    //Automation ON
+    if(settingMap.AutomationStatus == 1)
     {
-        gpioPin.writeSync(1);
-        settingMap.GPIOStatus = 1;
-    }
-    if(settingMap.ButtonStatus === 0)
-    {
-        if(sensorData < settingMap.Min)
+        if(currentReading < settingMap.ThresholdValue)
         {
             gpioPin.writeSync(1);
             settingMap.GPIOStatus = 1;
         }
-        else 
+        else
         {
             gpioPin.writeSync(0);
             settingMap.GPIOStatus = 0;
         }
-        
+    }
+    //Automation OFF
+    else
+    {
+        if(settingMap.ButtonStatus == 1)
+        {
+            gpioPin.writeSync(1);
+            settingMap.GPIOStatus = 1;
+        }
+        else
+        {
+            gpioPin.writeSync(0);
+            settingMap.GPIOStatus = 0;
+        }
     }
 
     return settingMap;
-
 }
 
+function HandleLight(settingMap, CurrentTime, gpioPin) {
 
-
-/*
-async function HandleLight(settingMap, currentTime, gpioPin) {
-    if(settingMap.ButtonStatus === 1 || currentTime > settingMap.StartTime)
+    //Automation ON
+    if(settingMap.AutomationStatus == 1)
     {
-        gpioPin.writeSync(1);
-        settingMap.GPIOStatus = 1;
+        //Turn on lights automatically
+        if(CurrentTime > settingMap.StartTime && CurrentTime < settingMap.EndTime)
+        {
+            gpioPin.writeSync(1);
+            settingMap.GPIOStatus = 1;
+        }
+        //Turn off lights automatically
+        else
+        {
+            gpioPin.writeSync(0);
+            settingMap.GPIOStatus = 0;
+        }
     }
-    if(settingMap.ButtonStatus === 0 || currentTime > settingMap.EndTime) 
+    //Automation OFF
+    else
     {
-        gpioPin.writeSync(0);
-        settingMap.GPIOStatus = 0;
-        settingMap.ButtonStatus = 0;
-    }
-}
-
-async function HandleMFH(settingMap, sensorData, gpioPin) {
-    if(settingMap.ButtonStatus || sensorData < settingMap.Min)
-    {
-        gpioPin.writeSync(1);
-        settingMap.GPIOStatus = 1;
-    }
-    if(!settingMap.ButtonStatus || sensorData > settingMap.Max) 
-    {
-        gpioPin.writeSync(0);
-        settingMap.GPIOStatus = 0;
-        settingMap.ButtonStatus = 0;
+        if(settingMap.ButtonStatus == 1)
+        {
+            gpioPin.writeSync(1);
+            settingMap.GPIOStatus = 1;
+        }
+        else
+        {
+            gpioPin.writeSync(0);
+            settingMap.GPIOStatus = 0;
+        }
     }
 
     return settingMap;
-
 }
-*/
-
 
 
 setInterval(() => {sensorValues().then((data) => {
+    console.log("Starting...")
     const timestamps = getTimestamps();
     
     data.Timestamp = timestamps.Timestamp;
-    data.currentTime = timestamps.currentTime;
+    data.HourMinTime = timestamps.HourMinTime;
     console.log(data);
     console.log('Uploading Data with timestamp: ', timestamps.Timestamp);
     UploadToCurrentDoc(data);
     UploadToDataArray(timestamps.collectionDate, data);
     
     UpdateControls(data);
-    
-    console.log("Done");
+    //intializeSensorSettings(UserUID)
+    console.log("Finishing...");
 
 })}, 15000);
 
 /*
-async function intializeSensorSettings(UserID) {
-    const CurrentDocRef = doc(db, 'Users', UserID, 'UserSettings', 'Settings');
+async function intializeSensorSettings(UserUID) {
+    const CurrentDocRef = doc(db, 'Users', UserUID, 'UserSettings', 'Settings');
     const data = {
         Light1: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 24,
             StartTime: '08:00',
-            EndTime: '18:00'
+            EndTime: '18:00',
+            AutomationStatus: 0
         },
         Light2: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 25,
             StartTime: '08:00',
-            EndTime: '18:00'
+            EndTime: '18:00',
+            AutomationStatus: 0
         },
         Pump1: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 16,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Pump2: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 17,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Pump3: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 22,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Pump4: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 23,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Heat: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 26,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 50,
+            AutomationStatus: 0
         },
         Fan: {
             ButtonStatus: 0,
             GPIOStatus: 0,
             GPIO: 27,
-            Min: 50,
-            Max: 70
+            ThresholdValue: 70,
+            AutomationStatus: 0
         }
 
     };

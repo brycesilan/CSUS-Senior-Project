@@ -8,7 +8,7 @@ function getTimestamps() {
         Timestamp.getDate()
     ].join('-');
 
-    let currentTime = [Timestamp.getHours(), Timestamp.getMinutes()].join(':');
+    let HourMinTime = [Timestamp.getHours(), Timestamp.getMinutes()].join(':');
 
     /*
     let timestamp = [d.getMonth()+1,
@@ -21,7 +21,7 @@ function getTimestamps() {
     
     return {
         'collectionDate': collectionDate,
-        'currentTime': currentTime,
+        'HourMinTime': HourMinTime,
         'Timestamp': Timestamp
     };
 }

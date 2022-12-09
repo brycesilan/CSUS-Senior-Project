@@ -30,8 +30,7 @@ async function getReadings() {
 
 async function sensorValues() {
     const readingsObject = await getReadings().then((value) => {
-        // create Readings object
-        //const values = new Readings(value);
+        
         let obj = {};
         obj.Temperature = value[0];
         obj.Humidity    = value[1];
@@ -109,16 +108,3 @@ function getArduinoReadings() {
 
 
 exports.sensorValues = sensorValues;
-
-/*
-//Readings object
-function Readings(readingArray) {
-    this.temperature = readingArray[0],
-    this.humidity    = readingArray[1],
-    this.ph          = readingArray[2],
-    this.moisture1   = readingArray[3],
-    this.moisture2   = readingArray[4],
-    this.moisture3   = readingArray[5],
-    this.moisture4   = readingArray[6]
-}
-*/
