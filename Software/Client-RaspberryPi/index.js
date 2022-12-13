@@ -1,15 +1,9 @@
 const { sensorValues } = require('./readings.js');
 const { getTimestamps } = require('./dates.js')
-const { getFirestore, collection,
-    addDoc,
-    query,
-    orderBy,
-    limit,
-    onSnapshot,
+const { getFirestore, 
     setDoc,
     updateDoc,
     doc,
-    getDocs,
     getDoc
     } = require('firebase/firestore');
 const { initializeApp } = require('firebase/app')
@@ -40,6 +34,7 @@ async function UploadToCurrentDoc(data) {
 
 /*
 Updates new readings in document with the name of today's date.
+Format: 'YYYY-MM-D' or 'YYYY-MM-DD'.
 Example name: '2022-11-25'
 */
 async function UploadToDataArray(DocumentDate, data) {
@@ -77,7 +72,9 @@ async function UploadToDataArray(DocumentDate, data) {
 
 }
 
+//Turns GPIO on/off as needed for all 8 controls.
 async function UpdateControls(sensorDataObject) {
+    //Reference to 'Settings' document
     const docRef = doc(db, 'Users', UserUID, 'UserSettings', 'Settings');
 
     const document = await getDoc(docRef);
@@ -170,89 +167,24 @@ function HandleLight(settingMap, CurrentTime, gpioPin) {
     return settingMap;
 }
 
-
+/*
+Uploads data and handles controls every 15 seconds. 
+*/
 setInterval(() => {sensorValues().then((data) => {
     console.log("Starting...")
-    const timestamps = getTimestamps();
+    const timestamps = getTimestamps(); //Get current timestamps
     
+    //Add timestamps to our sensor reading object
     data.Timestamp = timestamps.Timestamp;
     data.HourMinTime = timestamps.HourMinTime;
+    
     console.log(data);
     console.log('Uploading Data with timestamp: ', timestamps.Timestamp);
     UploadToCurrentDoc(data);
     UploadToDataArray(timestamps.collectionDate, data);
     
     UpdateControls(data);
-    //intializeSensorSettings(UserUID)
+
     console.log("Finishing...");
 
 })}, 15000);
-
-/*
-async function intializeSensorSettings(UserUID) {
-    const CurrentDocRef = doc(db, 'Users', UserUID, 'UserSettings', 'Settings');
-    const data = {
-        Light1: {
-            ButtonStatus: 0,
-            GPIOStatus: 0,
-            GPIO: 24,
-            StartTime: '08:00',
-            EndTime: '18:00',
-            AutomationStatus: 0
-        },
-        Light2: {
-            ButtonStatus: 0,
-            GPIOStatus: 0,
-            GPIO: 25,
-            StartTime: '08:00',
-            EndTime: '18:00',
-            AutomationStatus: 0
-        },
-        Pump1: {
-            ButtonStatus: 0,
-            GPIOStatus: 0,
-            GPIO: 16,
-            ThresholdValue: 50,
-            AutomationStatus: 0
-        },
-        Pump2: {
-            ButtonStatus: 0,
-            GPIOStatus: 0,
-            GPIO: 17,
-            ThresholdValue: 50,
-            AutomationStatus: 0
-        },
-        Pump3: {
-            ButtonStatus: 0,
-            GPIOStatus: 0,
-            GPIO: 22,
-            ThresholdValue: 50,
-            AutomationStatus: 0
-        },
-        Pump4: {
-            ButtonStatus: 0,
-            GPIOStatus: 0,
-            GPIO: 23,
-            ThresholdValue: 50,
-            AutomationStatus: 0
-        },
-        Heat: {
-            ButtonStatus: 0,
-            GPIOStatus: 0,
-            GPIO: 26,
-            ThresholdValue: 50,
-            AutomationStatus: 0
-        },
-        Fan: {
-            ButtonStatus: 0,
-            GPIOStatus: 0,
-            GPIO: 27,
-            ThresholdValue: 70,
-            AutomationStatus: 0
-        }
-
-    };
-    await setDoc(CurrentDocRef, data);
-    console.log("Settings are set");
-}
-*/

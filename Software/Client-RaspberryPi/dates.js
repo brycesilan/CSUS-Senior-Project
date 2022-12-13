@@ -1,23 +1,15 @@
 function getTimestamps() {
     let Timestamp = new Date;
 
-    //Format: 
+    //Format: 'YYYY-MM-D' or 'YYYY-MM-DD'
     let collectionDate = [
         Timestamp.getFullYear(),
         Timestamp.getMonth() + 1,
         Timestamp.getDate()
     ].join('-');
 
+    //Format: 'HH:MM' 24-hour format
     let HourMinTime = [Timestamp.getHours(), Timestamp.getMinutes()].join(':');
-
-    /*
-    let timestamp = [d.getMonth()+1,
-        d.getDate(),
-        d.getFullYear()].join('/')+' '+
-        [d.getHours(),
-        d.getMinutes(),
-        d.getSeconds()].join(':');
-    */
     
     return {
         'collectionDate': collectionDate,

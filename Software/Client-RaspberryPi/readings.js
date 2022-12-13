@@ -5,6 +5,7 @@ const { ReadlineParser } = require('@serialport/parser-readline');
 const dhtPin = 4; //GPIO 4
 const dhtType = 11; //DHT 11 sensor
 
+//Gets reading from DHT11 on RPi and the 5 sensors on Arduino and returns an array of them.
 async function getReadings() {
     let dataArray = [], readingArray = [];
 
@@ -26,8 +27,7 @@ async function getReadings() {
     return readingArray;
 }
 
-
-
+//Converts the reading array to an object and returns it
 async function sensorValues() {
     const readingsObject = await getReadings().then((value) => {
         
@@ -47,12 +47,12 @@ async function sensorValues() {
     return readingsObject;
 }
 
-//Temperature and Humidity Readings
+//Temperature and Humidity Readings from DHT11
 function getDHTreadings() {
     const readValues = dht.read(dhtType, dhtPin);
     let sensorData = [];
-    //temperature reading is converted from C to F and rounded to 2 decimal places.
     
+    //temperature reading is converted from C to F and rounded to 2 decimal places.
     sensorData.push(`temperature: ${Math.round(((readValues.temperature * 9/5) + 32) * 100) / 100}`);
     sensorData.push(`humidity: ${readValues.humidity}`);
     //console.log(sensorData);
@@ -60,7 +60,7 @@ function getDHTreadings() {
     return sensorData;
 }
 
-//The Arduino writes 1 to initialize serial communication
+//The Arduino writes 1 to initialize serial communication initially
 function getArduinoReadings() {
     const port = new SerialPort({ path: '/dev/ttyUSB0', baudRate: 9600, autoOpen: false});
     const parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }));

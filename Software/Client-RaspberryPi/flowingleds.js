@@ -1,3 +1,5 @@
+//Some code to mimic controls (Pumps 1-4, Relays 1-4) on a breadboard with LEDs and test it out. 
+
 const { Gpio } = require('onoff');
 
 let led16 = new Gpio(16, 'out'); //Pump1
