@@ -3,13 +3,13 @@
 Our approach behind this project was to provide users with the hardware (everything connected)
 - custom designed control board with loaded components
 - Raspberry Pi 4 (With [Client-RaspberryPi](https://github.com/brycesilan/CSUS-Senior-Project/tree/main/Software/Client-RaspberryPi) code on it)
-- Arduino Nano (with the [Moisture_pH.ino](Software/Arduino/Moisture_pH/Moisture_pH.ino) script loaded on it)
+- Arduino Nano (with the [Moisture_pH.ino](https://github.com/brycesilan/CSUS-Senior-Project/blob/main/Software/Arduino/Moisture_pH/Moisture_pH.ino) script loaded on it)
 - All the controls (4 pumps, 2 lights, 1 heater and 1 fan) hooked to the control board.
 - All sensors (4 soil moisture and 1 pH sensors connected to the Arduino Nano, 1 DHT11 sensor connected to Raspberry Pi)
 
 After setting up their farm, the user would sign up on our web app that was hosted on Firebase and receive a unique userID.
 
-They would replace "User_ID" in [firebase-config.js](Software/Client-RaspberryPi/firebase-config.js) and run "node index.js" from the terminal.
+They would replace "User_ID" in [firebase-config.js](https://github.com/brycesilan/CSUS-Senior-Project/blob/main/Software/Client-RaspberryPi/firebase-config.js) and run "node index.js" from the terminal.
 This would start sending sensor data to Cloud Firestore and update any controls (from user interface) every 15 seconds.
 
 The user interface provides them with:
