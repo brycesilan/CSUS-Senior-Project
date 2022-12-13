@@ -11,6 +11,7 @@ const firebaseConfig = {
   appId: "APP_ID"
 };
 
+//Replace USER_ID with unique user id
 const UserUID = "USER_ID";
 
 module.exports = {firebaseConfig, UserUID};
