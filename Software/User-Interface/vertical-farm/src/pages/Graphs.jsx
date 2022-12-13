@@ -8,23 +8,35 @@ import 'chart.js/auto';
 
 export default function Graphs() {
   const [SensorData, setSensorData] = useState([]);
+
+  //Gets sensor data stored in a document in Firestore.
+  //This function plots graph for a given day.
+  //The document name in Firestore is of the form 'YYYY-MM-D' or 'YYYY-MM-DD'.
   async function getData() {
+    //Create document name to get data from
     let TodaysDate = new Date();
-    let CollectionName = [TodaysDate.getFullYear(), TodaysDate.getMonth() + 1, TodaysDate.getDay].join('-');
-    //const CurrentRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserData', CollectionName);
-    const CurrentRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserData', '2022-12-4');
-
-    const document = await getDoc(CurrentRef);
-    const documentData = document.data();
-
-
+    let DocumentName = [TodaysDate.getFullYear(), TodaysDate.getMonth() + 1, TodaysDate.getDay].join('-');
     
-    // documentData.TimestampString = [];
-    // documentData.Timestamp.forEach(element => {
-    //   documentData.TimestampString.push(element.toDate());
-    // });
-    setSensorData(documentData);
+    const TodaysDocRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserData', DocumentName);
+    //const CurrentRef = doc(db, 'Users', getAuth().currentUser.uid, 'UserData', '2022-12-9');
 
+    const document = await getDoc(TodaysDocRef);
+    
+    if(document.exists()){
+      const documentData = document.data();
+      setSensorData(documentData);
+    }
+    else {
+      setSensorData({
+        HourMinTime: [],
+        Temperature: [],
+        Humidity: [],
+        Moisture1: [],
+        Moisture2: [],
+        Moisture3: [],
+        Moisture4: []
+      });
+    }
   }
 
   getData();
